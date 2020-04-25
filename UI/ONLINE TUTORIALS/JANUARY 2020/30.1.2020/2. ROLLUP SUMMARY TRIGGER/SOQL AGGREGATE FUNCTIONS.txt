@@ -1,0 +1,30 @@
+AggregateResult[] groupedResults
+  = [SELECT AVG(Amount)aver FROM Opportunity];
+Object avgAmount = groupedResults[0].get('aver');
+
+
+
+
+AggregateResult[] groupedResults
+  = [SELECT CampaignId, AVG(Amount)
+      FROM Opportunity
+      GROUP BY CampaignId];
+for (AggregateResult ar : groupedResults)  {
+    System.debug('Campaign ID' + ar.get('CampaignId'));
+    System.debug('Average amount' + ar.get('expr0'));
+}
+
+
+
+
+SELECT LeadSource, COUNT(Name)
+FROM Lead
+GROUP BY LeadSource
+
+
+
+
+https://developer.salesforce.com/docs/atlas.en-us.apexcode.meta/apexcode/langCon_apex_SOQL_agg_fns.htm
+
+
+https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_groupby.htm

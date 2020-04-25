@@ -1,0 +1,66 @@
+1. flex-wrap
+
+The flex-wrap property specifies whether the flexible items should wrap or not.
+
+Note: If the elements are not flexible items, the flex-wrap property has no effect.
+
+
+flex-wrap: nowrap|wrap|wrap-reverse|initial|inherit;
+
+
+
+
+2. The justify-content property aligns the flexible container's items when the items do not use all available space on the main-axis (horizontally).
+
+Tip: Use the align-items property to align the items vertically.
+
+justify-content: flex-start|flex-end|center|space-between|space-around|initial|inherit;
+
+
+
+
+
+3. align-content
+
+align-self
+
+
+
+
+
+4. The clip-path property lets you clip an element to a basic shape or to an SVG source.
+
+Note: The clip-path property will replace the deprecated clip property.
+
+
+clip: clip-source|basic-shape|margin-box|border-box|padding-box|content-box|fill-box|stroke-box|view-box|none;
+
+
+
+
+
+
+
+5. The object-fit property is used to specify how an <img> or <video> should be resized to fit its container.
+
+This property tells the content to fill the container in a variety of ways; such as "preserve that aspect ratio" or "stretch up and take up as much space as possible".
+
+
+object-fit: fill|contain|cover|scale-down|none|initial|inherit;
+
+
+
+
+
+
+
+6. The box-sizing property defines how the width and height of an element are calculated: should they include padding and borders, or not.
+
+
+box-sizing: content-box|border-box|initial|inherit;
+
+
+
+
+
+

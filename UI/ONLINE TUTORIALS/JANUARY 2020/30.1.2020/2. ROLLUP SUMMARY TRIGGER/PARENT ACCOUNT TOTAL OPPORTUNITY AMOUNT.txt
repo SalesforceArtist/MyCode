@@ -1,0 +1,29 @@
+trigger childAccountRollupTrigger on Account (after insert,after update,after delete){
+if(checkRecursive.runOnce()){
+Set<Id> setParentAccId = new Set<Id>();
+if(Trigger.isInsert || Trigger.isUpdate){
+for(Account acc: Trigger.new) {
+if(acc.ParentId!=null)
+setParentAccId.add(acc.ParentId);
+}
+}
+if(Trigger.isDelete){
+for(Account acc_Old : Trigger.old){
+if(acc_Old.ParentId!=null)
+setParentAccId.add(acc_Old.ParentId);
+}
+}
+Map<Id,Double> mapChildTotalAmount = new Map<Id,Double>();
+for(AggregateResult agg: [Select ParentId, SUM(Child_Total_Amount__c) from Account where ParentId IN : setParentAccId group by ParentId ]){
+mapChildTotalAmount .put((Id)agg.get(‘ParentId’),(Double)agg.get(‘expr0’));
+}
+List<Account> ParentListUpdate = new List<Account>();
+for(Account acc : [Select Id, Child_Total_Amount__c from Account where Id IN :setParentAccId]){
+Double TotalSummaryAmount = mapChildTotalAmount .get(acc.Id);
+acc.Child_Total_Amount__c = TotalSummaryAmount ;
+ParentListUpdate .add(acc);
+}
+if(ParentListUpdate !=null && ParentListUpdate.size()>0)
+update ParentListUpdate ;
+}
+}

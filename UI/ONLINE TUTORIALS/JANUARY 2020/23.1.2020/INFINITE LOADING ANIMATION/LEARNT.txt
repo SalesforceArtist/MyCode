@@ -1,0 +1,159 @@
+23.1.2020
+
+1. The main reason this is used is because sometimes the browser will apply it's default margin/padding to elements, and in a case where you do not want there to be any margin or padding space around an element you will want to define that there is no margin or padding.
+
+* {
+ margin: 0;
+ padding: 0;
+}
+
+Resets the pages default margin and padding for the entire html file. This will allow you to have more control when you are styling specific elements.
+
+
+
+
+
+
+2. it is effect the performance because the browsers engine have to apply this style to every element on the page this will lead to heavy rendering specially in the big pages with a lot of elements and this method is a bad practice too because it may remove a good default styles for some elements
+
+you may optimize this code by reduce the scope of it like using it on just some elements that make the problems like this
+
+h1,ul
+    { 
+margin:0;
+padding:0;
+}
+
+
+
+
+
+
+3. Also note that <body> adds 8px of margin by default, so if you don't want any scrollbars, you'll also need to offset this with margin: 0 when using viewport-relative lengths:
+
+
+
+
+
+
+4.The min-height property defines the minimum height of an element.
+
+If the content is smaller than the minimum height, the minimum height will be applied.
+
+If the content is larger than the minimum height, the min-height property has no effect.
+
+Note: This prevents the value of the height property from becoming smaller than min-height.
+
+
+
+
+
+
+
+
+5. display: flex;
+        justify-content: center;
+        align-items: center;
+
+https://love2dev.com/blog/absolute-centering-css/
+
+Controlling element and text positioning is an important aspect of making a good layout.
+
+In the past centering and aligning elements was frustrating and required a combination of hacks.
+
+CSS Flexbox has changed the way we align elements. Now centering horizontally, vertically and both at the same time is simple.
+
+Combining Flexbox positioning properties with text-align can make your layouts look great without cumbersome hacks.
+
+
+
+
+
+
+6. CSS Flexbox Layout Module
+Before the Flexbox Layout module, there were four layout modes:
+
+Block, for sections in a webpage
+Inline, for text
+Table, for two-dimensional table data
+Positioned, for explicit position of an element
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+
+
+
+7. The flex container properties are:
+
+flex-direction
+flex-wrap
+flex-flow
+justify-content
+align-items
+align-content
+
+
+
+
+8. The position Property
+The position property specifies the type of positioning method used for an element.
+
+There are five different position values:
+
+static
+relative
+fixed
+absolute
+sticky
+Elements are then positioned using the top, bottom, left, and right properties. However, these properties will not work unless the position property is set first. They also work differently depending on the position value.
+
+https://www.w3schools.com/css/css_positioning.asp
+
+
+
+
+9.@keyframes
+
+transform: translateX(0);
+
+transform: translate(-150px,-50px);
+
+
+
+
+
+10. The animation-timing-function specifies the speed curve of an animation.
+
+The speed curve defines the TIME an animation uses to change from one set of CSS styles to another.
+
+The speed curve is used to make the changes smoothly.
+
+
+animation-timing-function: linear|ease|ease-in|ease-out|ease-in-out|step-start|step-end|steps(int,start|end)|cubic-bezier(n,n,n,n)|initial|inherit;
+
+
+The animation-timing-function uses a mathematical function, called the Cubic Bezier curve, to make the speed curve. You can use your own values in this function, or use one of the pre-defined values:
+
+
+
+
+11. The transform property applies a 2D or 3D transformation to an element. This property allows you to rotate, scale, move, skew, etc., elements.
+
+https://www.w3schools.com/cssref/css3_pr_transform.asp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
