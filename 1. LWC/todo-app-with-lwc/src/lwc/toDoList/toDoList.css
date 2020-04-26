@@ -1,0 +1,37 @@
+h3{
+    border-bottom: 2px solid grey;
+}
+
+.icon-button{
+    padding: 6px 0;
+}
+
+.note-content{
+    padding: 7px 10px;
+    font-size: 15px;
+}
+
+.note-content p.Completed{
+    text-decoration: line-through;
+}
+
+.assigned-to{
+    color: gray;
+}
+
+[data-parent=Completed] .Pending,
+[data-parent=Pending] .Completed{
+    display: none;
+}
+
+.overdue-section{
+    display: none;
+}
+
+[data-title=OVERDUE] .overdue-section{
+    display: inline;
+}
+
+[data-title=OVERDUE] .no-overdue{
+    display: none;
+}

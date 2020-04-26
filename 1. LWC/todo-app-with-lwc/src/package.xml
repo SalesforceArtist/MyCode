@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ToDoController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>General_Notification</members>
+        <name>CustomNotificationType</name>
+    </types>
+    <types>
+        <members>ToDo__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>TODO_List</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Send_Reminder_Notification_to_Users</members>
+        <members>Send_TODO_Notifications_to_Users</members>
+        <name>Flow</name>
+    </types>
+    <types>
+        <members>newToDo</members>
+        <members>toDoDateChanger</members>
+        <members>toDoList</members>
+        <members>toDoListPage</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>TODO_App</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>48.0</version>
+</Package>

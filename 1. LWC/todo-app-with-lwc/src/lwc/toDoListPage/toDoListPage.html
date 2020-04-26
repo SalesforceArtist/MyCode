@@ -1,0 +1,111 @@
+<!--
+MIT License
+
+Copyright (c) 2020 Playground, https://www.playg.app
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<template>
+
+    <!-- header section-->
+    <div class="slds-page-header">
+        <div class="slds-page-header__row">
+            <div class="slds-page-header__col-title">
+                <div class="slds-media">
+                    <div class="slds-media__figure">
+                        <lightning-icon icon-name="custom:custom18" title="custom18"></lightning-icon>
+                    </div>
+                    <div class="slds-media__body">
+                        <div class="slds-page-header__name">
+                            <div class="slds-page-header__name-title">
+                                <h1>
+                                    <span class="slds-page-header__title slds-truncate">TO-DO LIST</span>
+                                </h1>
+                            </div>
+                        </div>
+                        <p class="slds-page-header__name-meta">Manage all your list items from this page</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- main body section -->
+    <div class="slds-p-around_none slds-m-top_x-small slds-m-bottom_medium slds-m-horizontal_none">
+        <lightning-layout multiple-rows>
+            <!-- <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="4">
+                <div class="custom-box slds-p-around_medium">
+                    <c-new-to-do onsuccess={refresh}></c-new-to-do>
+                </div>
+            </lightning-layout-item> -->
+
+            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="4">
+                <div class="custom-box slds-p-around_medium">
+                    <template if:true={records.data}>
+                        <c-to-do-list title="TODO" items={records} onupdate={refresh}></c-to-do-list>
+                    </template>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="4">
+                <div class="custom-box slds-p-around_medium">
+                    <template if:true={dueTomorrow.data}>
+                        <c-to-do-list title="DUE TOMORROW" items={dueTomorrow} onupdate={refresh}>
+                        </c-to-do-list>
+                    </template>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="4">
+                <div class="custom-box slds-p-around_medium">
+                    <template if:true={dueInWeek.data}>
+                        <c-to-do-list title="DUE IN 7 DAYS" items={dueInWeek} onupdate={refresh}>
+                        </c-to-do-list>
+                    </template>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="4">
+                <div class="custom-box slds-p-around_medium">
+                    <template if:true={delegated.data}>
+                        <c-to-do-list title="DELEGATED" items={delegated} onupdate={refresh}>
+                        </c-to-do-list>
+                    </template>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="4">
+                <div class="custom-box slds-p-around_medium">
+                    <template if:true={overdue.data}>
+                        <c-to-do-list title="OVERDUE" items={overdue} onupdate={refresh}></c-to-do-list>
+                    </template>
+                </div>
+            </lightning-layout-item>
+
+            <lightning-layout-item size="12" small-device-size="12" medium-device-size="6" large-device-size="4">
+                <div class="custom-box slds-p-around_medium">
+                    <template if:true={completed.data}>
+                        <c-to-do-list title="COMPLETED" items={completed} onupdate={refresh}></c-to-do-list>
+                    </template>
+                </div>
+            </lightning-layout-item>
+        </lightning-layout>
+    </div>
+</template>

@@ -1,0 +1,53 @@
+<!--
+MIT License
+
+Copyright (c) 2020 Playground, https://www.playg.app
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+-->
+
+<template>
+    <lightning-card>
+        <h3 slot="title">
+            Add New in TODO List
+        </h3>
+        <p class="slds-p-horizontal_smal new-section">
+            <lightning-record-edit-form object-api-name={sObject} onsuccess={handleRecordCreated}>
+                <lightning-messages></lightning-messages>
+                <lightning-layout multiple-rows>
+                    <lightning-layout-item size="12">
+                        <lightning-input-field field-name={notesField} required></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name={reminderDateField}></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="6">
+                        <lightning-input-field field-name={dueDateField}></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12">
+                        <lightning-input-field field-name={assignedToField} value={currentUserId}></lightning-input-field>
+                    </lightning-layout-item>
+                    <lightning-layout-item size="12" class="button-section">
+                        <button type="submit" class="slds-button slds-button_brand slds-button_stretch">Add</button>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-record-edit-form>
+        </p>
+    </lightning-card>
+</template>
