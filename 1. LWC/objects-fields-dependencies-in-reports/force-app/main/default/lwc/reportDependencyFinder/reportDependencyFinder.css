@@ -1,0 +1,30 @@
+.container{
+    padding: 0 20px;
+}
+
+.form{
+    width: 100%;
+    max-width: 500px;
+}
+
+.results{
+    margin-top: 20px;
+}
+
+.spinner-holder{
+    position: relative;
+    display: inline-block;
+    width: 30%;
+}
+
+lightning-input{
+    width: 60%;
+}
+
+lightning-button{
+    width: 30%;
+}
+
+lightning-input, lightning-button{
+    display: inline-block;
+}
