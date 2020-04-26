@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contains_Text__c</fullName>
+    <description>Text to be matched with when using Contains criteria</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Text to be matched with when using Contains criteria</inlineHelpText>
+    <label>Contains Text</label>
+    <required>false</required>
+    <type>TextArea</type>
+</CustomField>

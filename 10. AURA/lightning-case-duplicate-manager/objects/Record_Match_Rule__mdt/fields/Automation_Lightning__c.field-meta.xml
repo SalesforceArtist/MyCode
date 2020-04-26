@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Automation_Lightning__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This filed notify whether the matching rule is used at case trigger Automation or Case lightning component.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>If checked the Rule is used in the Case Trigger Automation</inlineHelpText>
+    <label>Automation/Lightning</label>
+    <type>Checkbox</type>
+</CustomField>

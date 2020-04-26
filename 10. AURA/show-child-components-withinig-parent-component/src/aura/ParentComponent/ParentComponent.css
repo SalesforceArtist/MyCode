@@ -1,0 +1,10 @@
+.THIS div.sidebar {
+  width: 30%;
+  display: inline-block
+}
+
+
+.THIS div.main-content {
+  width: 70%;
+  display: inline-block;
+}

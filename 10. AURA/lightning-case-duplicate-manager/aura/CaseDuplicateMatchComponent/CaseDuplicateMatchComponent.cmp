@@ -1,0 +1,100 @@
+<aura:component controller="CaseMatchComponentCon" implements="flexipage:availableForAllPageTypes,force:hasRecordId,force:lightningQuickAction,forceCommunity:availableForAllPageTypes">
+    
+    <aura:attribute name="isMaster" type="Boolean" description="Is Case a Master?" default="false"/>
+    <aura:attribute name="caseRecord" type="Case"/>
+    <aura:attribute name="showWarning" type="Boolean" default="false"/>
+    <aura:attribute name="caseList" type="object[]" description="List of Cases"/>
+    <aura:attribute name="errorMessage" type="String" description="Error Notification"/>
+    <aura:attribute name="error" type="Boolean" default="false" description="Error"/>
+    <aura:attribute name="fieldList" type="Object[]" description="The field list that is required to show as table columns"/>
+    <aura:attribute name="transformedData" type="Object[]" description="Custom Object"/>
+    <aura:attribute name="caseIndex" type="Integer" description="Case to be handled"/>
+    <aura:attribute name="noMatchingCase" type="String" default="{!$Label.c.NoMatchingCase}" />
+    <aura:attribute name="notDuplicateHeader" type="String" default="{!$Label.c.CaseNotDuplicateHeader}" />
+    <aura:attribute name="removeWarningLabel" type="String" default="{!$Label.c.CaseRemoveWarningLabel}" />
+    <aura:attribute name="makeMasterWarningLabel" type="String" default="{!$Label.c.CaseMakeMasterWarningLabel}" />
+    <aura:attribute name="mergeWarningLabel" type="String" default="{!$Label.c.CaseMergeWarningLabel}" />
+    <aura:attribute name="warningLabel" type="String" default="{!$Label.c.CaseMakeMasterWarningLabel}" />
+    <aura:attribute name="confirmationType" type="String" default="Remove" />
+    <aura:attribute name="Spinner" type="boolean" default="false"/>
+
+    <aura:handler name="init" action="{!c.doInit}" value="{!this}"/>
+    <aura:handler name="handleCase" event="c:CaseMatchOption" action="{!c.handleCaseOption}" />
+    
+    <lightning:workspaceAPI aura:id="workspace"/>
+
+    <aura:if isTrue="{!and(v.isMaster == false, v.caseList.length > 0)}">
+
+        <aura:if isTrue="{!v.Spinner}">
+            <div aura:id="spinnerId" class="slds-spinner_container">
+                <div class="slds-spinner--brand  slds-spinner slds-spinner--large slds-is-relative" role="alert">
+                    <span class="slds-assistive-text">Loading</span>
+                    <div class="slds-spinner__dot-a"></div>
+                    <div class="slds-spinner__dot-b"></div>
+                </div>
+            </div>
+        </aura:if>
+    
+        <lightning:card iconName="standard:case" title="Potential Case Matches">
+                <div class="slds-page-header">
+                    <div class="slds-media">
+                        <div class="slds-col slds-no-flex slds-grid slds-align-top slds-p-bottom_xx-small">
+                            <div class="slds-button-group slds-text-align_center centerDiv" role="group" >
+                                <lightning:button iconName="utility:undeprecate" onclick="{!c.makeMaster}" label="{!v.notDuplicateHeader}" variant="success"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <aura:if isTrue="{!v.caseList.length > 0}">
+                    <div class="slds-p-left--medium slds-p-right--medium caseListDiv">
+                        <ul class="slds-list--vertical">
+                            <aura:iteration items="{!v.transformedData}" var="varData" indexVar="index"> 
+                                <c:CaseDuplicateMatchListItem caseListItem="{!varData}" caseIndex="{!index}"/> 
+                            </aura:iteration>
+                        </ul>
+                        <aura:if isTrue="{!v.showWarning}">
+                            <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+                                <div class="slds-modal__container">
+                                    <header class="slds-modal__header">
+                                        <lightning:buttonIcon iconName="utility:close"
+                                                            onclick="{!c.closeModel}"
+                                                            alternativeText="close"
+                                                            variant="bare-inverse"
+                                                            class="slds-modal__close"/>
+                                        <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Warning!</h2>
+                                    </header>
+                                    <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1">
+                                        <p><b>{!v.warningLabel}
+                                            </b>
+                                        </p>
+                                    </div>
+                                    <footer class="slds-modal__footer">
+                                        <lightning:button variant="neutral" 
+                                                        label="Cancel"
+                                                        title="Cancel"
+                                                        onclick="{!c.closeModel}"/>
+                                        <lightning:button variant="brand" 
+                                                        label="Confirm"
+                                                        title="Confirm"
+                                                        onclick="{!c.handleCaseConfirm}"/>
+                                    </footer>
+                                </div>
+                            </section>
+                            <div class="slds-backdrop slds-backdrop_open"></div>                                
+                        </aura:if>
+                    </div>
+                    <aura:set attribute="else">
+                        <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+                            <h2>{!v.noMatchingCase}</h2>
+                        </div><br/>
+                    </aura:set>
+                </aura:if>
+        </lightning:card>
+        <aura:if isTrue="{!v.error}">
+            <div class="slds-notify slds-notify_alert slds-theme_alert-texture slds-theme_info" role="alert">
+                <h2>{!v.errorMessage}</h2>
+            </div><br/>
+        </aura:if>
+    </aura:if>
+</aura:component>

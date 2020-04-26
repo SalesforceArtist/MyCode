@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>CaseMakeMasterWarningLabel</fullName>
+        <categories>CaseDetailPage,PossibleMatches</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Warning text before making a case as master from possible match list</shortDescription>
+        <value>Are you sure you want to mark this case as Not Duplicate? This component will no longer be displayed once you confirm.</value>
+    </labels>
+    <labels>
+        <fullName>CaseMergeWarningLabel</fullName>
+        <categories>CaseDetailPage,PossibleMatches</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Warning text before merging a case listed from possible match list</shortDescription>
+        <value>Are you sure you want to merge this case with the case being viewed.
+This case will be turned into a screened case and will be related to the main case.</value>
+    </labels>
+    <labels>
+        <fullName>CaseNotDuplicateHeader</fullName>
+        <categories>CaseDetailPage,PossibleMatches</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Heading Text to be displayed for marking the Case as Master</shortDescription>
+        <value>Mark this case as not duplicate</value>
+    </labels>
+    <labels>
+        <fullName>CaseRemoveWarningLabel</fullName>
+        <categories>CaseDetailPage,PossibleMatches</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Warning text before removing a case listed from possible match list</shortDescription>
+        <value>Are you sure you want to remove this case from possible match list. 
+This case will not be displayed on this list in future.</value>
+    </labels>
+    <labels>
+        <fullName>MasterCaseSuccessMessage</fullName>
+        <categories>CaseDetailPage,PossibleMatches</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Success Message post case has been marked as master</shortDescription>
+        <value>This case has been marked as master</value>
+    </labels>
+    <labels>
+        <fullName>NoMatchingCase</fullName>
+        <categories>CaseDetailPage,PossibleMatches</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Notification to display when no matching cases are found</shortDescription>
+        <value>No matching cases found</value>
+    </labels>
+    <labels>
+        <fullName>RemoveCaseSuccessMessage</fullName>
+        <categories>CaseDetailPage,PossibleMatches</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>Success Message post case has been removed from the list</shortDescription>
+        <value>The case has been removed and will be excluded from Possible matches</value>
+    </labels>
+</CustomLabels>

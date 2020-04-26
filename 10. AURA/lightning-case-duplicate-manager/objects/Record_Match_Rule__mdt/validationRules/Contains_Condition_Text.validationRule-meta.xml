@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contains_Condition_Text</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Matching_Criteria__c,&#39;Contains&#39;) &amp;&amp; ISBLANK(Contains_Text__c)</errorConditionFormula>
+    <errorDisplayField>Contains_Text__c</errorDisplayField>
+    <errorMessage>Please enter a valid text to compare with for Contains</errorMessage>
+</ValidationRule>

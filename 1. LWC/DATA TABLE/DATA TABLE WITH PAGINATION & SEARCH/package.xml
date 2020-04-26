@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>DataTableWrapperController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>Data_Table_Wrapper_Preview</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>Data_Table_Wrapper_Preview</members>
+        <name>FlexiPage</name>
+    </types>
+    <types>
+        <members>dataTableWrapper</members>
+        <members>dataTableWrapperPreview</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <version>48.0</version>
+</Package>

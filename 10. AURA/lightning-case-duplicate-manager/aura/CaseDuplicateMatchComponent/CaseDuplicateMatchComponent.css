@@ -1,0 +1,20 @@
+.THIS .centerDiv{
+	padding-left: 100px;
+}
+/* 
+.THIS .fieldLabel{
+	padding-right: 5%;
+} 
+*/
+.THIS .fieldValue{
+	/* padding-left: 5%; */
+    float: right;
+}
+.THIS.slds-spinner_container {  
+	z-index: 10000;
+	position: fixed;   
+}
+.THIS .caseListDiv {  
+	overflow: scroll;
+    max-height: 300px;
+}

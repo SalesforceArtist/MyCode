@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Matching_Criteria__c</fullName>
+    <description>Matching condition for the field.</description>
+    <externalId>false</externalId>
+    <fieldManageability>DeveloperControlled</fieldManageability>
+    <inlineHelpText>Matching condition for the field. Please use Contains  in combination with Contains Text if you want Exact match for a user provided value. 
+Use Like in combination with Levenshtein Distance for Fuzzy matching</inlineHelpText>
+    <label>Matching Criteria</label>
+    <required>false</required>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contains</fullName>
+                <default>true</default>
+                <label>Contains</label>
+            </value>
+            <value>
+                <fullName>Equals</fullName>
+                <default>false</default>
+                <label>Equals</label>
+            </value>
+            <value>
+                <fullName>Regex</fullName>
+                <default>false</default>
+                <label>Regex</label>
+            </value>
+            <value>
+                <fullName>Like</fullName>
+                <default>false</default>
+                <label>Like</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

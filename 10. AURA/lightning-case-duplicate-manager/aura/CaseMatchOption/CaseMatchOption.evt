@@ -1,0 +1,4 @@
+<aura:event type="COMPONENT" description="Handle Remove/Merge option on possible case matches">
+    <aura:attribute name="index" type="Integer"/>
+    <aura:attribute name="type" type="String"/>
+</aura:event>

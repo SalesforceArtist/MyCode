@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Regex_Should_not_be_blank</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Matching_Criteria__c,&#39;Regex&#39;)  &amp;&amp;   ISBLANK(Matching_Condition_Regex__c)</errorConditionFormula>
+    <errorDisplayField>Matching_Condition_Regex__c</errorDisplayField>
+    <errorMessage>Please enter a valid Regular expression</errorMessage>
+</ValidationRule>

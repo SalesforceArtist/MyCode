@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>ParentComponentPage</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>ParentComponent</members>
+        <members>ParentComponentApplication</members>
+        <members>SectionOneCmp</members>
+        <members>SectionTwoCmp</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <version>45.0</version>
+</Package>

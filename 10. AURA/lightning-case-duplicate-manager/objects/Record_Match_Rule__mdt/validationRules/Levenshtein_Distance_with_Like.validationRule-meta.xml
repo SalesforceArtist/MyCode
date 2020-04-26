@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Levenshtein_Distance_with_Like</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISPICKVAL(Matching_Criteria__c,&#39;Like&#39;) &amp;&amp; ISBLANK(Levenshtein_Distance__c)</errorConditionFormula>
+    <errorMessage>Please enter an Integer value for Levenshtein Distance to use for Fuzzy Matching when using Like operator</errorMessage>
+</ValidationRule>

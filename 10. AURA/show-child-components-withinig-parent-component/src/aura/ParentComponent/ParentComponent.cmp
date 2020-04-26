@@ -1,0 +1,15 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes" access="global">
+  <div class="padding:20px;">
+    <div style="width: 30%; display:inline-block; border-right:1px solid;">
+      <div onclick="{!c.displayDivOne}" id="div1" style="cursor:pointer">
+        <p>Click Here -- Section 1 Content</p>
+      </div>
+      <div onclick="{!c.displayDivTwo}" id="div2" style="cursor:pointer">
+        <p>Click Here -- Section 2 Content</p>
+      </div>
+    </div>
+    <div style="width: 70%; display:inline-block;">
+      {!v.body}
+    </div>
+  </div>
+</aura:component>

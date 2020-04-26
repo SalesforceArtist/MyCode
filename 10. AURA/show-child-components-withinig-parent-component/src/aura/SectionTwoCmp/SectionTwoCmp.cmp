@@ -1,0 +1,10 @@
+<aura:component implements="forceCommunity:availableForAllPageTypes,flexipage:availableForAllPageTypes" access="global">
+  <div class="header slds-align_absolute-center">SECTION 2</div>
+  <div class="content">
+    <lightning:layout multipleRows="true" title="SECTION 2">
+      <lightning:layoutItem size="12" class="slds-align_absolute-center slds-text-title_bold">
+        I AM IN SECTION TWO
+      </lightning:layoutItem>
+    </lightning:layout>
+  </div>
+</aura:component>
