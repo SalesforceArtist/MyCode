@@ -1,0 +1,13 @@
+The code to be used basically operates as a Java Application and is available under the heading Complete Quick Start Sample at the following link: 
+Link: https://developer.salesforce.com/docs/atlas.en-us.api_asynch.meta/api_asynch/asynch_api_code_walkthrough.htm
+Important: To successfully run the code, following changes need to be done: 
+
+1. Change the API version in the code (wherever mentioned in the source code) to the current API version of your Salesforce Org. 
+
+2. There are four arguments to be passed as indicated below to the corresponding line of code containing example.runsample().
+
+(i) Account
+(ii) Your Org’s Username 
+(iii) Your Org’s password appended with security token
+(iv) F:\\Soap\\test\\mySampleData.csv 
+

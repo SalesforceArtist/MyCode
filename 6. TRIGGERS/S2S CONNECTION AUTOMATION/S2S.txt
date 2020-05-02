@@ -1,0 +1,31 @@
+trigger ShareAccountS2S on Account (After update) {
+    Set <Id> setAcc = new Set<Id>();
+    for(account acc : Trigger.New){
+        if(acc.Active__c == 'Yes'){
+            setAcc.add(acc.id);
+        }
+    }
+ 
+    if(setAcc.size() >0) {
+        Id NetworkId ;
+        String connName ='ForBlog'; // Plz add connection Name 
+        list<PartnerNetworkConnection> conns = [select id from PartnerNetworkConnection where ConnectionName = :connName ];
+        if(conns.size()>0) {
+            NetworkId = conns[0].id;
+        }
+
+        if( NetworkId != NULL ){
+            string relatedRecords = 'Contact' ;
+            list<PartnerNetworkRecordConnection> recordShares = new list<PartnerNetworkRecordConnection>();
+            for(id accId : setAcc )
+            {
+                recordShares.add(new PartnerNetworkRecordConnection(
+                    ConnectionId = networkId,
+                    LocalRecordId = accId,
+                    RelatedRecords = relatedRecords
+                ));
+            }
+            insert recordShares;  
+        }    
+    }
+}

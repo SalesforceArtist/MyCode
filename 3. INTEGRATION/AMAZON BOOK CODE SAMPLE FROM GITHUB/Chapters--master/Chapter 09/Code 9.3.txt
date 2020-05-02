@@ -1,0 +1,144 @@
+global class Gmail_Details_onRecord {
+      public static string resp{get; set;}
+      public static list<string> listIds {get; set;}
+      public static string msgs;
+    
+      public static string subValue = '';
+      public static string toValue = '';
+      public static string fromValue = '';
+      public static string dateValue = '';
+      public static string body = '';
+      
+      public static list<string> ListToContainEmailBody = new list<string>();
+   //method to get the gmail account email ids 
+    public static void messages(){
+        String fieldValue = '';
+        HttpRequest httpReqCls= new HttpRequest();
+        Http httpcls = new Http();    
+      
+        string endPointMsg ='https://www.googleapis.com/gmail/v1/users/me/messages';  // endpoint to get the account's email ids         
+        httpReqCls.setMethod('GET');
+        httpReqCls.setEndpoint(endPointMsg);
+        //replace the access token value after keyword 'Bearer' with the access token generated in step 2
+        string access_tok ='ya29.GlssBsopPxKcTQ5vWuY9eU9H21IA7-CoKftKZ2oFW5pmoIUt_MhGLw22n7RstISPUVBSDeELehvsIiCuX0lqL7Di_dbSREsi9-vVRbgFKpdFRuD0K46RTHN9hNCO';
+        String authorizationHeader = 'Bearer' + ' ' + string.valueof(access_tok);
+        httpReqCls.setHeader('Authorization', authorizationHeader);
+       
+        HttpResponse httpResCls = httpcls.send(httpReqCls);
+        string respons = httpResCls.getbody();
+        system.debug('respons----------- '+respons);
+        
+        // prefix [ before the json response and suffix ] after the json response to make the response as an array 
+        string jsonstr = ('['+httpResCls.getbody()+']');
+        
+        
+      // Debug the list of gmail message ids using JSON2Apex_Gmail class
+    
+       list<JSON2Apex_Gmail > deserializedbodies = (list<JSON2Apex_Gmail >)JSON.deserialize(jsonstr , list<JSON2Apex_Gmail >.class); 
+       JSON2Apex_Gmail deserializedbodies1 = (JSON2Apex_Gmail)JSON.deserialize(httpResCls.getBody() , JSON2Apex_Gmail.class);
+      //  string a = deserializedbodies[0].messages[0].id; // for one id
+        listIds = new list<string>();
+        Integer count = 0;
+        
+        for(JSON2Apex_Gmail db : deserializedbodies  ){
+            for(JSON2Apex_Gmail.Messages msg : db.Messages){
+            listIds.add(msg.id);
+            msgs = listIds[0];
+            // by default 100 message ids will be received
+            count = listIds.size();
+            }
+        }
+        
+     
+        system.debug('respons --->'+respons );
+        system.debug('listIds-------> '+ listIds);   
+        system.debug('count---------> '+ count);  
+        
+        // referencing a static id for demonstration purpose, you can make it dynamic from the response you are getting above.
+        string msgs = '1663ed992f35b5da';
+        fetchemail(msgs);         
+    }
+    
+    // method to fetch a specified email body and map it to custom object record
+     public static void fetchemail(string m){
+        HttpRequest httpReqCls= new HttpRequest();
+        Http httpcls = new Http();    
+         
+     
+        string endPointMsg ='https://www.googleapis.com/gmail/v1/users/me/messages/'+m;  // endpoint to get the specific email related content
+        httpReqCls.setMethod('GET');
+        httpReqCls.setEndpoint(endPointMsg);
+        //replace the access token value after keyword 'Bearer' with the access token generated in step 2
+        string access_tok ='ya29.GlssBsopPxKcTQ5vWuY9eU9H21IA7-CoKftKZ2oFW5pmoIUt_MhGLw22n7RstISPUVBSDeELehvsIiCuX0lqL7Di_dbSREsi9-vVRbgFKpdFRuD0K46RTHN9hNCO';
+        String authorizationHeader = 'Bearer' + ' ' + string.valueof(access_tok);
+        httpReqCls.setHeader('Authorization', authorizationHeader);
+       
+        HttpResponse httpResCls = httpcls.send(httpReqCls);
+        string respons = httpResCls.getbody();
+        system.debug('respons----------- '+respons);
+        
+        // JSONParser class is used to parse the response
+          JSONParser GMailRespParser = JSON.createParser(respons);
+         
+        while (GMailRespParser.nextToken() != null) {
+            if ((GMailRespParser.getText() == 'Subject')) {
+                // Get the value.
+                GMailRespParser.nextToken();
+                GMailRespParser.nextToken();
+                subValue = GMailRespParser.getText();
+                system.debug('value ---- '+subValue);               
+            }
+             if ((GMailRespParser.getText() == 'To')) {
+                // Get the value.
+                GMailRespParser.nextToken();
+                GMailRespParser.nextToken();
+                toValue = GMailRespParser.getText();
+                system.debug('toValue---- '+toValue);               
+            }
+             if ((GMailRespParser.getText() == 'From')) {
+                // Get the value.
+                GMailRespParser.nextToken();
+                GMailRespParser.nextToken();
+                fromValue = GMailRespParser.getText();
+                system.debug('fromValue---- '+fromValue);               
+            }
+            if ((GMailRespParser.getText() == 'Date')) {
+                // Get the value.
+                GMailRespParser.nextToken();
+                GMailRespParser.nextToken();
+                dateValue = GMailRespParser.getText();
+                system.debug('dateValue---- '+dateValue);               
+            }
+            if ((GMailRespParser.getText() == 'data')) {
+                // Get the value.
+                GMailRespParser.nextToken();
+                
+                string bodyValue = GMailRespParser.getText();
+                system.debug('bodyValue---- '+bodyValue); 
+                ListToContainEmailBody.add(bodyValue);
+                         
+                
+            }
+        }
+         system.debug('ListToContainEmailBody---- '+ListToContainEmailBody);
+               // email body decoded here
+                blob decodedbody = EncodingUtil.base64Decode(ListToContainEmailBody[0]);                               
+                system.debug('decodedbody--------- '+decodedbody);
+                body = decodedbody.tostring();
+                system.debug('********decodedbody:' + body);
+        
+     }
+      //update the existing record with the Gmail 
+      webService static void fetchEmailBody(String gmailRecordid){
+      messages();
+      Gmail_info__c GM = new Gmail_info__c();
+      GM.To__c = toValue;
+      GM.From__c = fromValue;
+      GM.Date__c =dateValue;
+      GM.Subject__c = subValue;
+      GM.Body__c = body;
+      GM.id = gmailRecordid;
+      update GM;
+     
+      }
+}

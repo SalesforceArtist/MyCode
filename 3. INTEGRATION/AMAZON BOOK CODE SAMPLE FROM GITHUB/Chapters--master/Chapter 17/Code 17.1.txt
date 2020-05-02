@@ -1,0 +1,6 @@
+The code is available at the link given below: 
+https://github.com/asagarwal/salesforce-soap-api-with-java/blob/master/salesforce_soap_api_1.java
+
+To successfully run the code the following needs to be done: 
+1. Set USERNAME to your Salesforce Org’s Username
+2. Set PASSWORD to your Salesforce Org’s Password followed by the security token

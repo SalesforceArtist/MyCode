@@ -1,0 +1,88 @@
+<apex:page showHeader="false" controller="LN_Controller">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+       <!-- CDN to reference the LinkedIn Javascript SDK     -->
+        <script type="text/javascript" src="//platform.linkedin.com/in.js">
+        
+        api_key:   81i7a53rjr
+        lang:      en_US
+        authorize: true 
+        </script>
+
+    <!-- (i) Create a HTML button and output Text elements   -->
+
+
+    <button id="au">Authorize</button><br/>
+    <button id="lg">Logout</button><br/>
+         <div>
+          First Name: <output type= "text" id="fname" /><br/>
+          Last Name: <output type= "text" id = "lname"/><br/>
+          Headline: <output type= "text" id= "hdline"/><br/>
+          
+        </div>
+
+
+    <script>
+    var isUserAuthorized ; //this variable track the user's login state
+
+    $(document).ready(function(){
+        $("#au").click(function(){
+           
+            
+         isUserAuthorized =   IN.User.authorize(); // this method from LinkedIn JS library states the user login status
+         alert('isUserAuthorized-------- '+ isUserAuthorized);                   
+            if(isUserAuthorized){
+                   proInfo1();                     
+                }
+                        else {
+             alert("Not authorized");
+             }    
+        });
+           
+        
+         $("#lg").click(function(){
+           alert("Are you sure ?");
+            IN.User.logout();
+           }); 
+    });
+
+    // (ii) function hitting the endpoint(/people/~)       
+        function proInfo1(){
+            IN.API.Raw('/people/~').result(onSuccess)  
+            }  
+     
+    // (iii)  function for mapping the response to the HTML elements on the page.      
+            function onSuccess(data) {
+            console.log(data);
+            console.log('data.firstName------------- ' +data.firstName);
+            console.log('data.lastName------------- ' +data.lastName);
+            document.getElementById("fname").value = data.firstName;
+             document.getElementById("lname").value = data.lastName;
+              document.getElementById("hdline").value = data.headline;
+             
+    // (iv)    Insert a record in LN_info_client object by invoking Javascript Remoting technique          
+              var firstName= data.firstName;
+              var lastName = data.lastName;
+              var Hdline = data.headline;
+              
+               Visualforce.remoting.Manager.invokeAction(
+                '{!$RemoteAction.LN_Controller.insertRec}',
+                firstName , lastName, Hdline,
+                function(result, event){
+                    if (event.status) {
+                       alert('one new record is created in LN_info_client object');
+                    } else if(event.type === 'exception') {
+                        alert('You got this exception - '+event.message);
+                    } 
+                }, 
+                {escape: true}
+            );
+        }  
+
+
+    
+
+    </script>
+
+</apex:page>

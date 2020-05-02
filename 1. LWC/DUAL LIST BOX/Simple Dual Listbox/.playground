@@ -1,0 +1,5 @@
+# This is a compressed archive LWC Playground
+# https://developer.salesforce.com/docs/component-library/tools/playground
+VERSION=1
+PROJECT=Simple Dual Listbox
+DESCRIPTION=A simple dual listbox with options. Use the onchange event handler to capture what's selected.

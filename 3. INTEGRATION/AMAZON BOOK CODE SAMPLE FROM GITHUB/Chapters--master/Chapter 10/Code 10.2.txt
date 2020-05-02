@@ -1,0 +1,16 @@
+<apex:page controller="GoogleDriveController" showHeader="false">
+
+    
+      <apex:form >
+         
+        <center>
+            <apex:inputfile value="{!file}" contentType="{!type}" filename="{!name}" />
+            <br/>
+            
+            <apex:commandButton onclick="this.value = 'Please wait...'" value="Upload file" action="{!fileUploadMethod}" />
+            
+          </center>  
+
+      </apex:form>
+    
+</apex:page>

@@ -1,0 +1,5 @@
+# This is a compressed archive LWC Playground
+# https://developer.salesforce.com/docs/component-library/tools/playground
+VERSION=1
+PROJECT=Dual listbox with Minimum and Maximum Required Options
+DESCRIPTION=This dual listbox requires you to select a minimum and maximum number of options.

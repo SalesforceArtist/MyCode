@@ -1,0 +1,160 @@
+<!--
+Copyright 2019 Lalit Kumar 
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License. -->
+
+<apex:page showHeader="false">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"/>
+ <html>
+  <head>   
+    <meta charset='utf-8' />
+  </head>
+  <body>
+   
+
+    <!--Add buttons to initiate auth sequence and sign out-->
+    <center>
+    <button id="authorize" style="display: none;">Authorize</button>
+    <button id="signout" style="display: none;">Sign Out</button>    
+    <input type="file" id="myFile"/>
+    <button onclick="uploadFile()">Upload file</button>
+    </center>
+    
+
+    <script type="text/javascript">
+      
+      var authorizeButton = document.getElementById('authorize');
+      var signoutButton = document.getElementById('signout');
+
+      /**
+       *  On load, called to load the auth2 library and API client library.
+       */
+      
+       $(document).ready(function(){
+        // called initializeClient once Google library loaded 
+          gapi.load('client:auth2', userLoginState);    
+      });
+
+      /**
+       *  Initializes the API client library and sets up sign-in state
+       *  listeners.
+       */
+      function initializeClient() {
+        gapi.client.init({    
+          clientId: '849709288554-dr1mj1bs2dqh99trhshrhrthapps.googleusercontent.com',
+          discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/drive/v3/rest"],
+          scope: 'https://www.googleapis.com/auth/drive'
+        });
+      }
+   
+   async function userLoginState() {
+            await initializeClient();
+            // Listen for sign-in state changes.
+            gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+            // Handle the initial sign-in state.
+            updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            authorizeButton.onclick = handleAuthClick;
+            signoutButton.onclick = handleSignoutClick;
+           
+        }
+      /**
+       *  Called when the signed in status changes, to update the UI
+       *  appropriately. After a sign-in, the API is called.
+       */
+      function updateSigninStatus(isSignedIn) {
+        if (isSignedIn) {
+          authorizeButton.style.display = 'none';
+          signoutButton.style.display = 'block';    
+        
+        } else {
+          authorizeButton.style.display = 'block';
+          signoutButton.style.display = 'none';
+        }
+      }
+         /** method to call onclick of the 'Upload file' button    **/ 
+      function uploadFile(){                                                                            
+        var file = document.querySelector('#myFile').files[0];                     
+        insertFile(file);
+       }                        
+
+      /**
+       *  Sign in the user upon button click.
+       */
+      function handleAuthClick(event) {
+        gapi.auth2.getAuthInstance().signIn();
+      }
+
+      /**
+       *  Sign out the user upon button click.
+       */
+      function handleSignoutClick(event) {
+        gapi.auth2.getAuthInstance().signOut();
+      }
+
+      
+      /************************ function to upload file****************************/
+      
+     
+    function insertFile(file) {
+    alert('File is uploading. Click Ok');
+    console.log('File is uploading. Click Ok');
+      var boundary = '-------234324353252452532523523';
+      var delimiter = "\r\n--" + boundary + "\r\n";
+      var close_delim = "\r\n--" + boundary + "--";
+
+    alert('file---------- '+file);
+      var reader = new FileReader();
+      reader.readAsBinaryString(file);
+      reader.onload = function(e) {
+        var contentType = file.type || 'application/octet-stream';
+        var metadata = {
+          'title': file.fileName,
+          'mimeType': contentType
+        };
+
+        var base64Data = btoa(reader.result);
+        alert('base64Data---------- '+base64Data);
+        var multipartRequestBody =
+            delimiter +
+            'Content-Type: application/json\r\n\r\n' +
+            JSON.stringify(metadata) +
+            delimiter +
+            'Content-Type: ' + contentType + '\r\n' +
+            'Content-Transfer-Encoding: base64\r\n' +
+            '\r\n' +
+            base64Data +
+            close_delim;
+
+        var request = gapi.client.request({
+            'path': '/upload/drive/v2/files',
+            'method': 'POST',
+            'params': {'uploadType': 'multipart'},
+            'headers': {
+              'Content-Type': 'multipart/mixed; boundary="' + boundary + '"'
+            },
+            'body': multipartRequestBody});  
+        request.execute();
+      }
+    }
+
+
+      /***************** function uploading file ends *************************************************  **/
+
+    </script>
+
+    <script async='' defer='' src="https://apis.google.com/js/api.js">
+      
+    </script>
+  </body>
+</html>
+</apex:page>

@@ -1,0 +1,122 @@
+public class fetchCaseFromSource {
+  
+  private static String clientId = SFDC_Custom_Setting__c.getInstance( 'ClientId' ).Value__c;  
+  private static String clientSecret = SFDC_Custom_Setting__c.getInstance( 'ClientSecret' ).Value__c; 
+  private static String username = SFDC_Custom_Setting__c.getInstance( 'Username' ).Value__c;  
+  private static String password = SFDC_Custom_Setting__c.getInstance( 'Password' ).Value__c;
+ 
+ 
+  // method to get the Access Token 
+ public static String accessToken (string cont)
+  {
+     String reqestBody = 'grant_type=password&client_id='+clientId+'&client_secret='+clientSecret+'&username='+username+'&password='+password;
+     Http httpCls = new Http();
+     HttpRequest request = new HttpRequest();
+     request.setBody(reqestBody);
+     request.setMethod('POST');
+     request.setEndpoint('https://login.salesforce.com/services/oauth2/token');
+     HttpResponse response = httpCls.send(request);
+ 
+    Map<String,object> accTok = (Map<String,object>)JSON.deserializeUntyped(response.getBody());
+    string accessToken =String.valueOf(accTok.get('access_token'));
+    system.debug('access token'+accessToken );   
+    return accessToken;
+  }
+   // method to pass the contact ID of Source Org and get the related cases using Access Token 
+  public static void fetchCases (String conId)
+  {
+       
+          String accessToken = accessToken(conId);
+          system.debug('access token---------------- '+accessToken);                      
+              if(accessToken != null){
+              String endPoint = 'https://ap5.salesforce.com/services/apexrest/v1/getCase/' +conId;  // resource url from source org.
+              Http httpCls = new Http();
+              HttpRequest request = new HttpRequest();
+              request.setHeader('Authorization','Bearer ' + accessToken);
+              request.setHeader('Content-Type','application/json');
+              request.setHeader('accept','application/json');           
+              request.setMethod('GET');          
+              request.setEndpoint(endPoint);          
+              HttpResponse response = httpCls.send(request);
+              system.debug('body---------- '+response.getBody());
+              
+              // JSONParser is used to parse the response and insert the cases in Destination org
+             JSONParser casesBodyParser = JSON.createParser(response.getBody());
+             set<Case> caseSet=new set<Case>();                
+             while (casesBodyParser.nextToken() != null) {               
+               
+             if((casesBodyParser.getCurrentToken() == JSONToken.FIELD_NAME) ){
+                   case cas;
+                              
+               
+               
+               if((casesBodyParser.getCurrentToken() == JSONToken.FIELD_NAME) ){
+                   Contact cont;
+                   if ((casesBodyParser.getCurrentToken() == JSONToken.FIELD_NAME) && (casesBodyParser.getText() == 'Id')) {
+                   // Get the value.
+                   casesBodyParser.nextToken();
+                   
+                   string cId = casesBodyParser.getText();
+                   cas=new case();
+                   cas.Id=cId;
+                   system.debug('Id--- ' + cId);
+                   
+                   casesBodyParser.nextToken();
+                   if ((casesBodyParser.getCurrentToken() == JSONToken.FIELD_NAME) &&
+                       (casesBodyParser.getText() == 'Subject')) {
+                       // Get the value.
+                       casesBodyParser.nextToken();                   
+                       string sub= casesBodyParser.getText();
+                       cas.subject=sub;
+                       system.debug('Subject--- ' + sub );
+                   }
+                                      
+                   casesBodyParser.nextToken();
+                   if ((casesBodyParser.getCurrentToken() == JSONToken.FIELD_NAME) &&
+                       (casesBodyParser.getText() == 'Status')) {
+                       // Get the value.
+                       casesBodyParser.nextToken();                   
+                       string status = casesBodyParser.getText();
+                       cas.status=status;
+                       system.debug('status--- ' + status);
+                   }
+                   
+                   casesBodyParser.nextToken();
+                   if ((casesBodyParser.getCurrentToken() == JSONToken.FIELD_NAME) &&
+                       (casesBodyParser.getText() == 'priority')) {
+                       // Get the value.
+                       casesBodyParser.nextToken();                   
+                       string priority = casesBodyParser.getText();
+                       cas.priority=priority;
+                       system.debug('priority--- ' + priority);
+                   }
+                   
+               
+               }
+               caseSet.add(cas); 
+               }
+                caseSet.remove(null);
+                                      
+           }
+               
+                 
+              }
+              // this list will be initialized with the case records containing in caseSet
+  
+              list<case> caseList =  new list<case>();
+              for(case cas :caseSet){
+              case newcase = new case();
+               newcase.subject = cas.subject;
+               newcase.status =  cas.status;
+               newcase.priority = cas.priority;
+               caseList.add(newcase);
+              }
+              insert caseList;
+              // check newly inserted case's id in Destination Org
+              system.debug('caseSet--------- '+caseList);    
+    
+       }
+    
+  }
+  
+}

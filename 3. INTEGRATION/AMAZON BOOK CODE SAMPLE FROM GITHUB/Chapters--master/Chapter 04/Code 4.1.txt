@@ -1,0 +1,22 @@
+    Http http = new Http();
+    HttpRequest httprequest = new HttpRequest();
+    httprequest.setEndpoint('https://th-apex-http-callout.herokuapp.com/animals');
+    httprequest.setMethod('GET');
+    HttpResponse response = http.send(httprequest);
+    
+// Check the status code	
+    if (response.getStatusCode() == 200){
+// use JSON.desrialize and use the animalList wrapper as an Apex object type       
+	   animalList deserializedAnimalList = (animalList)JSON.deserialize(response.getbody(), animalList.class);
+        system.debug('deserializedAnimalList--- '+deserializedAnimalList.animals);
+        list<string> animals = deserializedAnimalList.animals;
+        for(string animal :animals){
+             system.debug(animal);
+        }
+         
+    }
+	
+// created a wrapper to deserialize the animal List
+public class animalList {
+    public List<string> animals;   
+} 

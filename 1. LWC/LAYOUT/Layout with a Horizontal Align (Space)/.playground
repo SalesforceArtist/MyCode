@@ -1,0 +1,5 @@
+# This is a compressed archive LWC Playground
+# https://developer.salesforce.com/docs/component-library/tools/playground
+VERSION=1
+PROJECT=Layout with a Horizontal Align (Space)
+DESCRIPTION=Position layout items horizontally across the container, with space before, between, and after the items.

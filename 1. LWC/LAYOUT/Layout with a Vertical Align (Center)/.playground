@@ -1,0 +1,5 @@
+# This is a compressed archive LWC Playground
+# https://developer.salesforce.com/docs/component-library/tools/playground
+VERSION=1
+PROJECT=Layout with a Vertical Align (Center)
+DESCRIPTION=Position layout items vertically in the center of the container.

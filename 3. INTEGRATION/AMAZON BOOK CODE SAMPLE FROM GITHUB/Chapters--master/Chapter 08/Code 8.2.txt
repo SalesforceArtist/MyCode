@@ -1,0 +1,68 @@
+global class YT_Video_Details_onRecord {
+public static string commentCount;
+public static string likeCount;
+public static string dislikeCount;
+public static string viewCount;
+//method to get the YouTube video stats
+    webService static void fetchStats(String YTrecordid){
+        string EndpointYT = Youtube_Custom_Setting__c.getInstance('YouTube Endpoint').Value__c; //YouTube endpoint to get video stats 
+       
+        HttpRequest httpReqCls = new HttpRequest();
+        Http httpcls = new Http();    
+        httpReqCls.setMethod('GET');
+        httpReqCls.setEndpoint(EndpointYT);
+        //replace the access token value after keyword 'Bearer' with the access token generated in step 2
+        string accessToken = 'ya29.GlvMBmCghiFvJt2nFlLZ-nyaTXgxt-zt1YKAtaq5nvGKUaFE4VkkO3CB3fkoqGs1dD10w0azmc5xkpHSKB4Qm9ElBiWOxFCUwmN7IcEfDjF2xNRXf9DvGG73M9rB';
+        String authHeader = 'Bearer' + ' ' + string.valueof(accessToken);
+        httpReqCls.setHeader('Authorization', authHeader);
+
+        HttpResponse httpResCls = httpcls.send(httpReqCls);
+        string respon = httpResCls.getbody();
+        system.debug('respon--------------- '+respon);
+
+    // JSONParser class is used to parse the response    
+      JSONParser YTRespParser = JSON.createParser(respon);
+        while (YTRespParser.nextToken() != null) {
+        if ((YTRespParser.getCurrentToken() == JSONToken.FIELD_NAME) &&
+                        (YTRespParser.getText() == 'commentCount')) {
+                        // Get the value.
+                        YTRespParser.nextToken();        
+                        commentCount = YTRespParser.getText();        
+                        system.debug('commentCount= ' + commentCount);
+                    }
+        if ((YTRespParser.getCurrentToken() == JSONToken.FIELD_NAME) &&
+                        (YTRespParser.getText() == 'likeCount')) {
+                        // Get the value.
+                        YTRespParser.nextToken();        
+                        likeCount = YTRespParser.getText();        
+                        system.debug('likeCount= ' + likeCount);
+                    }
+        if ((YTRespParser.getCurrentToken() == JSONToken.FIELD_NAME) &&
+                        (YTRespParser.getText() == 'dislikeCount')) {
+                        // Get the value.
+                        YTRespParser.nextToken();        
+                        dislikeCount = YTRespParser.getText();
+                        system.debug('dislikeCount= ' + dislikeCount);
+                    }
+        if ((YTRespParser.getCurrentToken() == JSONToken.FIELD_NAME) &&
+                        (YTRespParser.getText() == 'viewCount')) {
+                        // Get the value.
+                        YTRespParser.nextToken();        
+                        viewCount = YTRespParser.getText();
+                        system.debug('viewCount= ' + viewCount);
+                    }
+                }
+
+        //update the existing record with the YouTube video details(stats) as follows
+             YouTube_info__c YT = new YouTube_info__c();
+             YT.Views__c = viewCount;
+             YT.Likes__c = likeCount;
+             YT.Dislikes__c = dislikeCount;
+             YT.Comments__c = commentCount;
+             YT.id = YTrecordid;
+             update YT;
+        
+            }
+
+
+}
