@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>NotificationHandler</members>
+        <members>NotificationHandlerTest</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>NotificationUserMapping.NSU001</members>
+        <members>NotificationUserMapping.NSU002</members>
+        <name>CustomMetadata</name>
+    </types>
+    <types>
+        <members>General_Notification</members>
+        <name>CustomNotificationType</name>
+    </types>
+    <types>
+        <members>NotificationUserMapping__mdt</members>
+        <members>Notification__e</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Send_Notification_to_Users</members>
+        <name>Flow</name>
+    </types>
+    <version>47.0</version>
+</Package>

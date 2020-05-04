@@ -1,0 +1,11 @@
+<template>
+    <div if:true={showMap}>
+        <c-leaflet-map 
+            markers={locations} 
+            center={center} 
+            zoom="16"
+            icon={iconUrl}
+            circleradius="300">
+        </c-leaflet-map>
+    </div>
+</template>

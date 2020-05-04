@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>LinechartController</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>DynamicChartPage</members>
+        <name>ApexPage</name>
+    </types>
+    <types>
+        <members>DynamicChart</members>
+        <members>DynamicChartApp</members>
+        <name>AuraDefinitionBundle</name>
+    </types>
+    <types>
+        <members>Highcharts</members>
+        <members>Highchartsexport</members>
+        <members>highchart3d</members>
+        <name>StaticResource</name>
+    </types>
+    <version>45.0</version>
+</Package>

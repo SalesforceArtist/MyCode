@@ -1,0 +1,16 @@
+<aura:component implements="force:appHostable,flexipage:availableForAllPageTypes" access="global"
+  controller="TaskManagerChart">
+  <ltng:require scripts="{!$Resource.Chartjs}" afterScriptsLoaded="{!c.loadPieChart}" />
+  <center>
+    <ui:button aura:id="button" buttonTitle="Pie Chart" class="button" label="Pie Chart" press="{!c.loadPieChart}" />
+    <ui:button aura:id="button" buttonTitle="Bar Chart" class="button" label="Bar Chart" press="{!c.loadBarChart}" />
+    <ui:button aura:id="button" buttonTitle="Polar Chart" class="button" label="Polar Chart"
+      press="{!c.loadPolarChart}" />
+    <ui:button aura:id="button" buttonTitle="Donut Chart" class="button" label="Donut Chart"
+      press="{!c.loadDoughnutChart}" />
+  </center>
+    <ui:message title="Warning" severity="warning" closable="true">
+    Make sure you have data in your Task to check this
+    </ui:message>
+  <canvas id="pie-chart" width="950" height="250"></canvas>
+</aura:component>

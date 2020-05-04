@@ -1,0 +1,52 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForAllPageTypes"
+    access="global">
+    <lightning:omniToolkitAPI aura:id="omniToolkit" />
+    <lightning:navigationItemAPI aura:id="navigationItem" />
+    <lightning:workspaceAPI aura:id="workspace" />
+    <lightning:utilityBarAPI aura:id="utilityBar" />
+    <lightning:conversationToolkitAPI aura:id="conversationKit" />
+
+    <aura:handler event="lightning:omniChannelLoginSuccess" action="{!c.onLoginSuccess}" />
+    <aura:handler event="lightning:omniChannelStatusChanged" action="{!c.onStatusChanged}" />
+    <aura:handler event="lightning:omniChannelLogout" action="{!c.onLogout}" />
+    <aura:handler event="lightning:omniChannelWorkAssigned" action="{!c.onWorkAssigned}" />
+    <aura:handler event="lightning:omniChannelWorkAccepted" action="{!c.onWorkAccepted}" />
+    <aura:handler event="lightning:omniChannelWorkDeclined" action="{!c.onWorkDeclined}" />
+    <aura:handler event="lightning:omniChannelWorkClosed" action="{!c.onWorkClosed}" />
+    <aura:handler event="lightning:omniChannelWorkloadChanged" action="{!c.onWorkloadChanged}" />
+    <aura:handler event="lightning:conversationAgentSend" action="{!c.onAgentSend}" />
+    <aura:handler event="lightning:conversationNewMessage" action="{!c.onNewMessage}" />
+    <aura:handler event="lightning:tabUpdated" action="{!c.onTabUpdated}" />
+    <aura:handler event="lightning:tabClosed" action="{!c.onTabClosed}" />
+    <aura:handler event="lightning:tabCreated" action="{!c.onTabCreated}" />
+    <aura:handler event="lightning:tabFocused" action="{!c.onTabFocused}" />
+    <aura:handler event="lightning:tabRefreshed" action="{!c.onTabRefreshed}" />
+    <aura:handler event="lightning:tabReplaced" action="{!c.onTabReplaced}" />
+    <aura:handler name="change" value="{!v.recordId}" action="{!c.onRecordIdChange}" />
+
+    <aura:attribute name="recordId" type="String" />
+    <aura:attribute name="chatLog" type="Object" />
+    <aura:attribute name="workAcceptTimestamp" type="Datetime" />
+    <aura:attribute name="onAgentSendTimestamp" type="Datetime" />
+    <aura:attribute name="onLoginCalled" type="Boolean" default="false" access="global" />
+    <aura:attribute name="onStatusChangeCalled" type="Boolean" default="false" access="global" />
+    <aura:attribute name="currentAgentSessionId" type="String" default="" access="global" />
+    <aura:attribute name="currentWorkItemId" type="String" default="" access="global" />
+    <aura:attribute name="currentWorkId" type="String" default="" access="global" />
+    <aura:attribute name="workAssignedTime" type="Datetime" default="" access="global" />
+    <aura:attribute name="workAcceptedTime" type="Datetime" default="" access="global" />
+    <aura:attribute name="workDeclinedTime" type="Datetime" default="" access="global" />
+    <aura:attribute name="workClosedTime" type="Datetime" default="" access="global" />
+    <aura:attribute name="agentFirstReponseTime" type="Datetime" default="" access="global" />
+    <aura:attribute name="currentAgentWorkItemId" type="String" default="" access="global" />
+    
+    <lightning:button label="Get Chat Logs" onclick="{!c.getChatLog}" />
+    <lightning:button label="Focus Navigation Item" onclick="{!c.focusNavigationItem}" />
+    <lightning:button label="Open Utility" onclick="{!c.openUtilityBar}" />
+    <lightning:button label="Open Tab" onclick="{!c.openTab}" />
+
+    <div>
+        <p>Currently working on : {!v.recordId}.</p>
+    </div>
+
+</aura:component>

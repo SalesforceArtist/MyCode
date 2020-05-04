@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Expiry_Date__c</fullName>
+        <externalId>false</externalId>
+        <formula>DATE(YEAR(DATEVALUE(CreatedDate)),MONTH(DATEVALUE(CreatedDate)),DAY(DATEVALUE(CreatedDate))) - VALUE(TEXT(DATE(YEAR(DATEVALUE(CreatedDate)),MONTH(DATEVALUE(CreatedDate)),1) - DATE(IF(MONTH(DATEVALUE(CreatedDate))+ 3 &lt;= 12 ,YEAR(DATEVALUE(CreatedDate)) , YEAR(DATEVALUE(CreatedDate))+ 1), IF(MONTH(DATEVALUE(CreatedDate))+ 3 &lt;= 12 , MONTH(DATEVALUE(CreatedDate))+ 3,MONTH(DATEVALUE(CreatedDate))+ 3 - 12),1)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Expiry Date</label>
+        <required>false</required>
+        <type>Date</type>
+    </fields>
+</CustomObject>

@@ -1,0 +1,18 @@
+<apex:page >
+    <apex:includeLightning />
+
+    <div id="lightning" />
+
+    <script>
+        $Lightning.use("c:DynamicChartApp", function() {
+          $Lightning.createComponent("c:DynamicChart",
+              { label : "Press Me!" },
+              "lightning",
+              function(cmp) {
+                console.log("button was created");
+                // do some stuff
+              }
+          );
+        });
+    </script>
+</apex:page>
