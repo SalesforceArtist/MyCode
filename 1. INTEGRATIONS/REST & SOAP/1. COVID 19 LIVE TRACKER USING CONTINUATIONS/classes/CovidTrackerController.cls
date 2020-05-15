@@ -1,9 +1,4 @@
-/*
-This Apex class is used to retrieve the covid19 tracker to each country with counts using covid19api.com API
-Author  : Sakthivel Madesh
-Date    : 01/04/2020
-Comments:
-*/
+
 public with sharing class CovidTrackerController {
     //getCovidSummary
     @AuraEnabled(continuation=true cacheable=true)
