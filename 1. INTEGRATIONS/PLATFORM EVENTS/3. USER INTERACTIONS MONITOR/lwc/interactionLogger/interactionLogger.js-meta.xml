@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata" fqn="interactionLogger">
+    <apiVersion>46.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightningCommunity__Page</target>
+        <target>lightningCommunity__Default</target>
+        <target>lightning__AppPage</target>
+        <target>lightning__HomePage</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightningCommunity__Default,lightning__HomePage">
+            <property name="trackSessionStart" type="Boolean" label="Track Session Start" default="true"/>
+            <property name="trackSessionEnd" type="Boolean" label="Track Session End" default="true"/>
+            <property name="trackClicks" type="Boolean" label="Track Clicks" default="true"/>
+            <property name="trackNavigation" type="Boolean" label="Track Navigation" default="true"/>
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>

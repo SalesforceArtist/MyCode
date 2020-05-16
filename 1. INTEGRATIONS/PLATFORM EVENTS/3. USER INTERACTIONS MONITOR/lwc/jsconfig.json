@@ -1,0 +1,44 @@
+{
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "c/auraPubsubCommunities": [
+                "auraPubsubCommunities/auraPubsubCommunities.js"
+            ],
+            "c/inteactionMonitorCurrentEvents": [
+                "inteactionMonitorCurrentEvents/inteactionMonitorCurrentEvents.js"
+            ],
+            "c/interactionLogger": [
+                "interactionLogger/interactionLogger.js"
+            ],
+            "c/interactionMap": [
+                "interactionMap/interactionMap.js"
+            ],
+            "c/interactionMonitor": [
+                "interactionMonitor/interactionMonitor.js"
+            ],
+            "c/interactionMonitorCurrentUsers": [
+                "interactionMonitorCurrentUsers/interactionMonitorCurrentUsers.js"
+            ],
+            "c/interactionNavigationViewer": [
+                "interactionNavigationViewer/interactionNavigationViewer.js"
+            ],
+            "c/lwcExternalEventSender": [
+                "lwcExternalEventSender/lwcExternalEventSender.js"
+            ],
+            "c/pubsubCommunities": [
+                "pubsubCommunities/pubsubCommunities.js"
+            ]
+        },
+        "experimentalDecorators": true
+    },
+    "include": [
+        "**/*",
+        "../../../../.sfdx/typings/lwc/**/*.d.ts"
+    ],
+    "typeAcquisition": {
+        "include": [
+            "jest"
+        ]
+    }
+}
