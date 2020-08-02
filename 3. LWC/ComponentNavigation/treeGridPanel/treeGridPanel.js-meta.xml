@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>48.0</apiVersion>
+    <isExposed>true</isExposed>
+     <targets>
+    <target>lightning__AppPage</target>
+    <target>lightning__RecordPage</target>
+    <target>lightning__HomePage </target>
+    <target>lightning__Tab </target>
+  </targets>
+
+  <targetConfigs>
+      <targetConfig targets="lightning__RecordPage">
+      
+      <property name="title" type="String" label="Title" placeholder="" description="An alternative title, to display as the component header"/>  
+      <property name="iconStyle" type="String" label="Icon Style" placeholder="" description="Component Icon Name"/>  
+      <property name="financialAccountRecordTypes" type="String" label="Financial Account Record Types" placeholder="" description="Comma separated list of financial account record types to display"/>  
+      <property name="fieldSetForFinancialAccount" type="String" label="Field Set for Financial Account" placeholder="" description="Name of the Field Set to display financial account details"/>
+      <property name="fieldSetForFinancialHolding" type="String" label="Field Set for Financial Holding" placeholder="" description="Name of the Field Set to display financial holding details"/>
+      </targetConfig>
+    </targetConfigs>
+  
+</LightningComponentBundle>
+ 

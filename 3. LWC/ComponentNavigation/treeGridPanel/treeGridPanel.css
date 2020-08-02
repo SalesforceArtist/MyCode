@@ -1,0 +1,6 @@
+.inlineDisplay{
+    position: absolute;
+    display:inline-block;
+    padding-top:15px;
+    padding-right:15px;
+}

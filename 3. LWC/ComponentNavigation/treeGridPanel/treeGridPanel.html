@@ -1,0 +1,41 @@
+<template>
+    <lightning-card class="slds-m-right_small">
+        <h3 slot="title">
+            <lightning-icon class="slds-m-right_xx-small" icon-name={iconStyle} size="small"></lightning-icon>
+            {title}
+        </h3>
+        <div slot="actions" class="slds-clearfix">
+        
+
+        <lightning-button
+        class="slds-float_right "
+            label="New"
+            slot="actions"
+            onclick={navigateToNewAccount}
+            
+        ></lightning-button>
+
+        <lightning-input
+        class="slds-float_right slds-p-right_x-small"
+            type="toggle"
+            slot="actions"
+            label=""
+            name="input1"
+        >
+        </lightning-input>
+    </div>
+        <p class="slds-p-horizontal_small">
+            <c-tree-grid> </c-tree-grid>
+        </p>
+
+        <p slot="footer">
+            <lightning-button
+                variant="base"
+                label="View All"
+                title="Looks like a link"
+                onclick={navigateToNewRecordPage}
+                class="slds-m-left_x-small"
+            ></lightning-button>
+        </p>
+    </lightning-card>
+</template>
