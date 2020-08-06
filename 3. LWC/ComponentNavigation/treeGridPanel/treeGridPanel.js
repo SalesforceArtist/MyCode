@@ -12,21 +12,7 @@ export default class TreeGridPanel extends NavigationMixin(LightningElement) {
     @api recordId;
 
     navigateToNewRecordPage() { 
-        var compDefinition = {
-        componentDef: "c:treeGrid",
-        attributes: {
-            srini : "258525",
-            srini2:"Kavin"
-        }
-    };
-    // Base64 encode the compDefinition JS object
-    var encodedCompDef = btoa(JSON.stringify(compDefinition));
-    this[NavigationMixin.Navigate]({
-        type: 'standard__webPage',
-        attributes: {
-            url: '/one/one.app#' + encodedCompDef
-        }
-    });
+        
     }
 
     navigateToNewAccount() {
