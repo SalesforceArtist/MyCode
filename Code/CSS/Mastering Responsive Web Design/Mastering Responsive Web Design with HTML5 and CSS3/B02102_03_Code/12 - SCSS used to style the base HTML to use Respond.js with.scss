@@ -1,0 +1,10 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+12 - SCSS used to style the base HTML to use Respond.js with
+*/
+
+article { background: red; //Mobile-first declaration
+    @include forLargeScreens(640) { //Target screens 640px wide and larger
+        & { background: green; }
+    }
+}

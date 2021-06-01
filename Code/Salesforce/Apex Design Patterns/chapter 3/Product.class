@@ -1,0 +1,26 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Product class to represent Items to be shipped which extends abstract class, part of Composite Design Pattern
+ * */
+
+public class Product extends Item{
+	
+    private String universalProductCode ;
+    private Double cost;  
+    
+    //constructor
+    public Product(String upc, Integer price){
+        universalProductCode = upc;
+        cost = price;
+    }
+    
+    public override Double getCost(){
+        return cost;
+    }
+    
+    public override String getUPC(){
+        return universalProductCode;
+    }
+    
+}

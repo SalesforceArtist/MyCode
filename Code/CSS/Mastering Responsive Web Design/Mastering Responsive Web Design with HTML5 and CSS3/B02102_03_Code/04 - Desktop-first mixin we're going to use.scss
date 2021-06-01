@@ -1,0 +1,8 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+4 - Desktop-first mixin we're going to use
+*/
+
+@mixin forSmallScreens($media) {
+	@media (max-width: $media/16+em) { @content; }
+}

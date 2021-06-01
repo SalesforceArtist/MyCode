@@ -1,0 +1,16 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+3 - Compiled CSS when using the Mobile-first mixin
+*/
+
+header {
+	width: 50%;
+	background: red;
+}
+
+@media (min-width: 40em) {
+	header {
+		width: 100%;
+		background: blue;
+	}
+}

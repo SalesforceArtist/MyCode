@@ -1,0 +1,36 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Order to be shipped, part of Composite Design Pattern
+ * */
+public class Order {
+    
+    private List<Item> lstItems ;
+    
+    public void loadShipmentsItems(List<Item> lstI){
+        lstItems = lstI;
+    }
+    
+
+   // Below method shows advantage of “Composite Pattern”   
+	public Double getTotalValueOfOrder(){
+        DOuble totalVal = 0;
+        for(Item i : lstItems){
+
+            // method getCost() is used uniformly 
+            totalVal = totalVal + i.getCost();
+        }
+        return totalVal ;
+    }
+    
+    public Integer getTotalItems(){
+        Integer totalItems = 0;
+        
+        for(Item i : lstItems){
+
+            // method getTotalItems () is used uniformly
+            totalItems = totalItems + i.getTotalItems();
+        }
+        return totalItems;
+    }
+}

@@ -1,0 +1,5 @@
+<apex:page controller="GetterSetterExample">
+  <apex:form >
+      <apex:inputText value="{!GetterVariable}"/>
+  </apex:form>
+</apex:page>

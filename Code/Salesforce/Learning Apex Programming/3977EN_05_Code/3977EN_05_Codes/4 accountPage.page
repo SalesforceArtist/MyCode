@@ -1,0 +1,3 @@
+<apex:page standardController="Account">
+	<!-- markup goes here -->
+</apex:page>

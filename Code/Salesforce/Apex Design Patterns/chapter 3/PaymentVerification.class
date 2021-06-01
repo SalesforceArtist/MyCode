@@ -1,0 +1,11 @@
+/**
+ * Apex Design Patterns - 	Chapter 3 
+ * This class validates Payment Information in Facade Pattern
+ * */
+public class PaymentVerification {
+	
+    public boolean verify(String cardNumber){
+        System.debug('Card with number '+cardNumber+' is used for payment');
+        return true;
+    } 
+}

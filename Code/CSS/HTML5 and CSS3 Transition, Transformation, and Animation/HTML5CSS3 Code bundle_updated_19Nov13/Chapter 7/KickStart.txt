@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> HTML KickStart is cool </title>
+<link rel="stylesheet" type="text/css" href="C:\Users\Aravind Shenoy\Desktop\HTML5 Tools\kickstart\css\kickstart.css" />
+<script type="text/javascript" src="C:\Users\Aravind Shenoy\Desktop\HTML5 Tools\kickstart\js\kickstart.js"></script>
+</head>
+<!-- Menu Horizontal -->
+<ul class="menu">
+    <li class="current"><a href="">Login</a></li>
+    <li><a href="">Version of the Application</a></li>
+    <li><a href="">Downloads</a></li>            
+    <li><a href="">About us</a></li>
+    <li><a href="">Contact us</a></li>
+    <li><a href="">Customer Care info</a></li>
+</ul>
+</html>

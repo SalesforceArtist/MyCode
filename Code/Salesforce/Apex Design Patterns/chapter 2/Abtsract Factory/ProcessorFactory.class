@@ -1,0 +1,21 @@
+/**
+ * 	Chapter 2 	- 	Creational Design Pattern
+ * 	Author		-	Jitendra Zaa
+ *   Factory class to return actual implementation of Processor
+*/
+public class ProcessorFactroy{
+    
+    //Factory method to return instance of concrete class of processor
+    public static IProcessor getInstance(String processorType){ 
+         IProcessor retVal = null;
+        
+        if(processorType == 'QuadCore'){
+            retVal = new QuadCore();
+            
+        }else if(processorType == 'DualCore'){
+            retVal = new DualCore();
+            
+        }         
+        return retVal;         
+    }    
+}

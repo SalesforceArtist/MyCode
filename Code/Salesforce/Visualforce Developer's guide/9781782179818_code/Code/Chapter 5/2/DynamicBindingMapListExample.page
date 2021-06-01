@@ -1,0 +1,23 @@
+<apex:page controller="DynamicBindingsMapListExample">
+  <apex:form >
+    <apex:actionFunction name="reDisplayCustomers" rerender="cust" />
+    <apex:pageBlock title="Criteria">
+       <apex:outputLabel value="Starting Letter"/>
+       <apex:selectList value="{!selectedKey}" size="1" onchange="reDisplayCustomers()">
+          <apex:selectOptions value="{!keys}" />
+       </apex:selectList>
+    </apex:pageBlock>
+    <apex:pageBlock title="Customers">
+      
+             <apex:outputPanel id="cust">
+                <apex:pageBlockTable value="{!customerMap[selectedKey]}" var="cus">
+                   <apex:column value="{!cus.name}"/>
+                   <apex:column value="{!cus.Address__c}"/>
+                   <apex:column value="{!cus.Email__c}"/>
+                  
+                </apex:pageBlockTable>
+             </apex:outputPanel>
+         
+    </apex:pageBlock>
+  </apex:form>
+</apex:page>

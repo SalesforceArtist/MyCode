@@ -1,0 +1,21 @@
+<!-- a standard hyperlink that calls our action -->
+<apex:commandLink value=”Cancel” action=”{!cancel}” />
+
+<!-- an input button that calls our action -->
+<apex:commandButton value=”Save” action=”{!save}” />
+
+<!-- a Javascript event added to an image -->
+<apex:image value=”http://www.thisbook.com/save.png” >
+	<apex:actionSupport event=”onclick” action=’{!save}” />
+</apex:image>
+
+<!-- a Javascript function that can be called from elsewhere -->
+<apex:actionFunction name=”jsSave” action=”{!save}” />
+<script type=”text/javascript” >
+	function doSave(){
+		jsSave();
+}
+</script>
+
+<!-- a poller that will keep executing each interval -->
+<apex:actionPoller action=”{!cancel}” interval=”60” />

@@ -1,0 +1,12 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+51 - Vendor prefixing the linear-gradient property
+*/
+
+*, *:before, *:after {
+	background-image: -webkit-linear-gradient(red, blue);
+	background-image: -moz-linear-gradient(red, blue);
+	background-image: -ms-linear-gradient(red, blue);
+	background-image: -o-linear-gradient(red, blue);
+	background-image: linear-gradient(red, blue);
+}

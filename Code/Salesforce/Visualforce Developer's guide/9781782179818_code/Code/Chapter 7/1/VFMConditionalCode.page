@@ -1,0 +1,12 @@
+<apex:page controller="ConditionalCodeController">
+
+  <apex:outputPanel rendered="{!deviceType = 'BlackBerry'}">
+    <apex:outputText value="This is BlackBerry"></apex:outputText>
+  </apex:outputPanel>
+
+  <apex:outputPanel rendered="{!deviceType  = 'iPhone'}">
+    <apex:outputText value="This is iPhone"></apex:outputText>
+  </apex:outputPanel>
+  
+  
+</apex:page>

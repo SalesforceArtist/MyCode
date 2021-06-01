@@ -1,0 +1,17 @@
+/**
+ * Implementation of invoice payment functionality
+ * */ 
+public class InvoicePaymentService{
+    /**
+     * This method invokes third party library to submit 
+     * payment processing request
+     */
+    public void submitPaymentRequest(Invoice__c invoice){
+        PaymentRequest invoicePaymentRequest;
+        
+        //send payment processing request
+        IPaymentAdapter adapter = 
+            PaymentAdapterFactory.getAdapter('PaymentForYou');
+        adapter.submitRequest(invoicePaymentRequest);
+    }
+}

@@ -1,0 +1,11 @@
+<apex:page standardController="account" >
+	<apex:sectionHeader 
+		title=”Upload Multiple Attachments” 
+		subtitle=”{!account.Name}” 
+	/>
+	<c:fileUploader parentId=”{!account.Id}” />
+	<c:fileUploader parentId=”{!account.Id}” />
+	<c:fileUploader parentId=”{!account.Id}” />
+	<c:fileUploader parentId=”{!account.Id}” />
+	<c:fileUploader parentId=”{!account.Id}” />
+</apex:page>

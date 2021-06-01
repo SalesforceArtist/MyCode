@@ -1,0 +1,20 @@
+/*
+Chapter 8: Responsive Emails
+9 - Add Media Queries
+*/
+
+/*Responsive Styles*/
+@media (max-width: 380px) {
+    .main-cta {
+        padding:10px 30px !important;
+        white-space: nowrap !important;
+    }
+}
+@media (max-width: 600px) {
+    .inner-container-table {
+        width: 95% !important;
+    }
+    .footer-table-ctnr td {
+        padding: 10px 0 10px 5px !important;
+    }
+}

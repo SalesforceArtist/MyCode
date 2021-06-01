@@ -1,0 +1,10 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+63 - Pleeease JSON configuration file
+*/
+
+{
+	"in": "style.css",
+	"out": "styles.fixed.css"
+}
+

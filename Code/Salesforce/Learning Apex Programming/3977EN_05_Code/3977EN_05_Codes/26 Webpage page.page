@@ -1,0 +1,8 @@
+<apex:page standardController="Webpage__c" >
+	<!-- various css -->
+	<!-- maybe some Javascript -->
+	<apex:outputText
+		value="{!webpage__c.custom_long_text_area_field__c}" 
+		escape="false"
+	/>
+</apex:page>

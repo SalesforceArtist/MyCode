@@ -1,0 +1,1 @@
+function Toddler(e){"use strict";this.ToddlerName=e,this.says=this.ToddlerName+" says, "}console.time("test time"),Toddler.prototype.cry=function(){"use strict";console.log(this.says+"WAHHH!")},Toddler.prototype.giggle=function(){"use strict";console.log(this.says+"Hehehe!")};var Leo=new Toddler("Leo");Leo.cry(),Leo.giggle(),console.timeEnd("test time");

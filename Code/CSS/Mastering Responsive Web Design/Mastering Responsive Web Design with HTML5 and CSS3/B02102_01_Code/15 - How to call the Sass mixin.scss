@@ -1,0 +1,8 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+15 - How to call the Sass mixin
+*/
+
+.selector-a {
+	@include genericContainer;
+}

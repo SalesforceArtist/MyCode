@@ -1,0 +1,3 @@
+<apex:page StandardController="Customer__c">
+  <c:CustomerSummary customerId="{!Customer__c.Id}" noOfRecentOrders="3"></c:CustomerSummary>
+</apex:page>

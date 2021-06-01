@@ -1,0 +1,6 @@
+/**
+* Factory for payment processor adapters
+*/
+public interface IPaymentAdapter{
+    void submitRequest(PaymentRequest request);
+}

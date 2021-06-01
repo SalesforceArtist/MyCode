@@ -1,0 +1,13 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+7 - Example of how we've been using Desktop-first
+*/
+
+header {
+    //Desktop-first declaration
+    width: 50%;
+    @include forSmallScreens(768) {
+    	//Target small screens (mobile devices)
+        width: 100%;
+    }
+}

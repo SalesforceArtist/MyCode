@@ -1,0 +1,17 @@
+/**
+ * Factory class to generate Payment adapters
+ **/
+public class PaymentAdapterFactory{
+
+    public static IPaymentAdapter getAdapter(String adapterName){
+        IPaymentAdapter adapter;
+        if(adapterName == 'PaymentForYou'){
+            adapter = new PaymentForYouAdapter();
+        }
+        else if(adapterName == 'PayByCard'){
+            adapter = new PayByCardAdapter();
+        }
+        
+        return adapter;
+    }
+}

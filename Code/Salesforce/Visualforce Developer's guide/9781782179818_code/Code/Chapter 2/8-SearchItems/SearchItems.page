@@ -1,0 +1,21 @@
+<apex:page controller="SearchItemController">
+  <apex:form >
+      <apex:pageBlock >
+          <apex:pageBlockSection >
+              <apex:pageBlockSectionItem >
+                  <apex:outputLabel value="Item Name Or keyword"></apex:outputLabel>
+                  <apex:inputText value="{!Keyword}"/>                 
+              </apex:pageBlockSectionItem>  
+               <apex:commandButton value="Search" action="{!SearchItems}"/>            
+          </apex:pageBlockSection>
+      </apex:pageBlock>
+      
+       <apex:pageBlock title="Search Result" id="searchResult">
+            <apex:pageBlockTable value="{!ExistingItems}" var="oneItem" rendered="{!ExistingItems.size > 0}">
+                <apex:column value="{!oneItem.Item_Name__c}"/>
+                <apex:column value="{!oneItem.Unit_Price__c}"/>
+            </apex:pageBlockTable> 
+            <apex:outputText value="No records to display" rendered="{!ExistingItems.size == 0}"></apex:outputText>       
+        </apex:pageBlock>
+  </apex:form>
+</apex:page>

@@ -1,0 +1,8 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+70 - Prepros - Compact style outpout
+*/
+
+header { background: blue; }
+header .logo { float: left; }
+.container { float: right; }

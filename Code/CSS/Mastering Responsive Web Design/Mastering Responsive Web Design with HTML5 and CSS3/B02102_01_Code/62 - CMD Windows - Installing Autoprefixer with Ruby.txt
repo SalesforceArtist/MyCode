@@ -1,0 +1,6 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+62 - CMD Windows - Installing Autoprefixer with Ruby
+*/
+
+gem install autoprefixer-rails

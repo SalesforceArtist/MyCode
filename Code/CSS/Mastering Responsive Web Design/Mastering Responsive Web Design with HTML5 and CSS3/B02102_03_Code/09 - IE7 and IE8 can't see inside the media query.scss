@@ -1,0 +1,12 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+9 - IE7 and IE8 can't see inside the media query
+*/
+
+.article {
+    width: 100%; //Mobile-first declaration
+    @include forLargeScreens(768) { //IE7 and IE8 won’t be able to see this rule.
+        width: 50%;
+    }
+}
+

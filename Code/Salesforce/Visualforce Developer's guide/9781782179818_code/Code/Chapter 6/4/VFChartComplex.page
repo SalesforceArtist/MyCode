@@ -1,0 +1,11 @@
+<apex:page controller="ComplexChartController">
+    <apex:chart height="400" width="700" data="{!vFChartData}">
+    
+    <apex:axis type="Numeric" position="left" fields="data1" title="Items Sold Quantity" grid="true"/>
+    <apex:axis type="Category" position="bottom" fields="name" title="Item"> </apex:axis>
+    
+    <apex:lineSeries axis="left" fill="true" xField="name" yField="data1" markerType="cross" markerSize="4" markerFill="#FF0000"/>
+    <apex:lineSeries axis="left" xField="name" yField="data2" markerType="circle" markerSize="4" markerFill="#8E35EF"/>
+    <apex:lineSeries axis="left" xField="name" yField="data3" markerType="circle" markerSize="8" markerFill="#FFFFFF"/>
+    </apex:chart>
+</apex:page>

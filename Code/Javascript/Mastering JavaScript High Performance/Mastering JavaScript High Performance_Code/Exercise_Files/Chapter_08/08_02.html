@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Chapter 08 - 02</title>
+</head>
+
+<body>
+	
+	
+<script type="text/javascript">
+
+function function1() {
+	console.info("function1(): Called.");
+	console.time("Worker");
+}
+
+function function2() {
+	for (var i = 0; i <= 1000; i++) {
+		console.log("func2_Worker says : Processing a slow for loop... " + i);
+  	}
+}
+
+function function3() {
+	console.info("function3(): Called.");
+	console.timeEnd("Worker");
+}
+
+window.addEventListener("DOMContentLoaded", function () { 
+	console.log("DOM Loaded");
+}, false);
+window.addEventListener("load", function () { 
+	console.log("Page Loaded"); 
+	
+	function1();
+	function2();
+	function3();
+	
+}, false);
+
+</script>
+	
+</body>
+</html>

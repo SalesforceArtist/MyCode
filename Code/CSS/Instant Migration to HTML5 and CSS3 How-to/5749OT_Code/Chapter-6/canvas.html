@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Canvas</title>
+</head>
+
+<body>
+<canvas id="TestCanvas" width="300" height="300" style="border:1px solid #333;"> Your browser does not support Canvas element from HTML5. </canvas>
+<script>
+var test=document.getElementById("TestCanvas");
+var col1=test.getContext("2d");
+col1.fillStyle="#808";
+col1.fillRect(10,0,20,80);
+var col2=test.getContext("2d");
+col2.fillStyle="#808";
+col2.fillRect(40,0,20,100); 
+var col3=test.getContext("2d");
+col3.fillStyle="#808";
+col3.fillRect(70,0,20,120);
+</script> 
+<br />
+<canvas id="TestCanvas2" width="300" height="300" style="border:1px solid #333;"> Your browser does not support Canvas element from HTML5. </canvas>
+<script>
+var test=document.getElementById("TestCanvas2");
+var line=test.getContext("2d");
+line.moveTo(10,10);
+line.lineTo(150,250);
+line.stroke();
+</script> 
+<br />
+<canvas id="TestCanvas3" width="300" height="300" style="border:1px solid #333;"> Your browser does not support Canvas element from HTML5. </canvas>
+<script>
+var test=document.getElementById("TestCanvas3");
+var circle=test.getContext("2d");
+circle.beginPath();
+circle.arc(150,150,80,0,2*Math.PI);
+circle.fill();
+</script> 
+<br />
+<canvas id="TestCanvas5" width="300" height="300" style="border:1px solid #333;"> Your browser does not support Canvas element from HTML5. </canvas>
+<script>
+var test=document.getElementById("TestCanvas5");
+
+var text=test.getContext("2d");
+text.font="30px Arial";
+text.fillText("HTML5 Canvas",10,50);
+
+text.strokeText("HTML5 Canvas Text",10,100);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+40 - Retrofitting with RWD - Initial SCSS
+*/
+
+.container_12 {
+	.grid_12 { //Header and Footer sections
+		width: 97.91%;
+	}
+	.grid_3 { //Nav section
+		width: 22.91%;
+	}
+	.grid_9 { //Content section
+		width: 72.91%;
+	}
+}

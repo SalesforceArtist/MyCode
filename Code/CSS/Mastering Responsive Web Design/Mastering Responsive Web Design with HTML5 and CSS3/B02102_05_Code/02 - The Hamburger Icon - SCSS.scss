@@ -1,0 +1,27 @@
+/*
+Chapter 5: Designing Small UIs Driven by Large Fingers
+2 - The Hamburger Icon - SCSS
+*/
+
+.hamburger-icon {
+	//Basic styling, modify if you want
+	font-size: 40px;
+	color: #666;
+	background: #efefef;
+	padding: 0 10px;
+	border-radius: 3px;
+	cursor: pointer;
+	//Hamburger Icon
+	&:before {
+		content: '≡';
+	}
+	//Hide the term Menu from displaying without sacrificing accessibility
+	span {
+		display: inline-block;
+		width: 0;
+		height: 0;
+		text-indent: -100%;
+		overflow: hidden;
+		white-space: nowrap;
+	}
+}

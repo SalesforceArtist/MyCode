@@ -1,0 +1,6 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+37 - Width of Header and Footer
+*/
+
+(940px ÷ 960px) x 100 = 97.91666666666667%

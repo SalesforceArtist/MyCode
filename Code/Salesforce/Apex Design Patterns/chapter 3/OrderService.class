@@ -1,0 +1,16 @@
+/**
+ * Generate new orders
+ */
+public class OrderService extends ClientEnterpriseBridge {
+    
+    public OrderService(IClientAdapter adapter){
+        super(adapter);
+    }
+    
+    public void create(){
+        Order__c customerOrder = new Order__c();
+        
+        // processing logic for populating order details
+        create(customerOrder);
+    }
+}

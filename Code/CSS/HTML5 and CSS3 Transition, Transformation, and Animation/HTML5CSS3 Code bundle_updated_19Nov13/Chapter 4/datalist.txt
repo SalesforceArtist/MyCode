@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Datalist attribute</title>
+<h1> The Datalist Attribute </h1>
+</head>
+<p> <em> Genres of Music </em> </p>
+<div>
+<label for="packt"> Music : </label>
+<input id="packt" name="packt" type="text" list="music">
+<input type="submit" value ="Go">
+<datalist id="music">
+   <option value="Pop">
+   <option value="Rock">
+   <option value="Jazz">
+   <option value="Blues">
+   <option value="Classical">
+</datalist> 
+</div>
+</html>

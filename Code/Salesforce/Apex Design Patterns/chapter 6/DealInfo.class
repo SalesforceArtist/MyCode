@@ -1,0 +1,43 @@
+/**
+ * Chapter 6   	:   Anti Pattern
+ * Author    	:  	Jitendra Zaa
+ * Description	:	This class explains usecases of overriding Equals() and Hashcode() for Comparable interface
+ * */
+global class DealInfo implements Comparable  {
+    
+    public Integer amount {get;set;}
+    public String amountCurrency {get;set;}
+    
+    //Implement "compareTo" method from Comparable interface
+    global Integer compareTo(Object objToCompare) {
+        DealInfo obj = (DealInfo) objToCompare ;
+        if(this.equals(obj)){
+            return 0;
+        }
+        return this.amount - obj.amount;
+    }
+    
+    //Override equals() method    
+    public Boolean equals(Object o) {
+        //Rule 1
+        if (this === o) {
+           return true;
+        } 
+        //Rule 2
+        if ( (o == null) || !(o instanceof DealInfo) ) {
+            return false;
+        } 
+        //Rule 3
+        DealInfo obj = (DealInfo)o;
+        if(obj.amount == this.amount && obj.amountCurrency == this.amountCurrency)
+        {
+            return true;
+        }
+        return false;
+    }
+    
+    //Override equals() method
+    public Integer hashCode() {
+        return this.amount  + this.amountCurrency.hashcode();
+    } 
+}

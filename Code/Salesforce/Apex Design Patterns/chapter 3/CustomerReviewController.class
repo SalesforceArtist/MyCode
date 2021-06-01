@@ -1,0 +1,155 @@
+/**
+*	This is example of "Fly Weight" pattern
+*/
+public class CustomerReviewController{
+    
+    public List<ProductWrapper> Products {get; set;}
+    
+    public class TaxBracket{
+        public String Name {get; set;}
+        public String Description {get; set;}
+        public Decimal Rate {get; set;}
+        
+        public TaxBracket(String name, String description, Decimal rate){
+            this.Name = name;
+            this.Description = description;
+            this.Rate = rate;
+        }
+    }
+    
+    public class Vendor{
+        public String Name {get; set;}
+        public String ShippingAddress {get; set;}
+        public String Phone {get; set;}
+        public String Email {get; set;}
+        
+        public Vendor(String name, String address, String phone, String email){
+            this.Name = name;
+            this.ShippingAddress = address;
+            this.phone = phone;
+            this.Email = email;
+        }
+    }
+    /*
+    public CustomerReviewController(){
+        
+        Products = new List<ProductWrapper>();
+        List<TaxBracket> TaxBrackets = new List<TaxBracket>();
+        
+        TaxBrackets.add( new TaxBracket( 'Service Tax', 'Tax levied on all services provided', 2));
+        TaxBrackets.add( new TaxBracket( 'Entertainment Tax', 'Tax levied on all entertainment facilities', 1.5));
+        TaxBrackets.add( new TaxBracket( 'Luxury Tax', 'Tax levied for luxury items', 0.5));
+        
+        //Create vendors
+        List<Vendor> Vendors = new List<Vendor>();
+        Vendors.add( new Vendor('ABC Corp', '123 Park street, Mount View', '345-435-2345', 'sales@abccopr.com'));
+        Vendors.add( new Vendor('XYZ Corp', 'A-34 Oakwood ave., Santa Clara', '345-435-2345', 'sales@abccopr.com'));
+        Vendors.add( new Vendor('ABC Corp', '123 Park street, Mount View', '345-435-2345', 'sales@abccopr.com')); 
+        
+        Integer i=0; 
+        Integer k=0;
+        for(Product2 p : [select id, Name, ProductCode from Product2 limit 10]){
+            ProductWrapper productInfo = new ProductWrapper(p.Name, p.ProductCode);
+            
+            if(k > 1) k=0; else k++;
+                
+            //productInfo.TaxRate = TaxBrackets[k].Rate;
+            //productInfo.TaxType = TaxBrackets[k].Name;
+            //productInfo.TaxDetails = TaxBrackets[k].Description;
+            productInfo.ProductTax = TaxBrackets[k];
+            productInfo.SalesPrice = 100 * (k + 1);
+            productInfo.TotalTax = productInfo.SalesPrice * TaxBrackets[k].Rate;
+            
+            productInfo.ProductVendor = Vendors[k];
+            
+            Products.add(productInfo);
+        }
+        Products.addAll(Products);
+        Products.addAll(Products);
+        Products.addAll(Products);
+        Products.addAll(Products);
+
+    }
+    
+    
+    public class ProductWrapper{
+        public String Name {get; set;}
+        public String ProductCode {get; set;}
+        public Decimal SalesPrice {get; set;}
+        public Attachment ProductAttachment {get; set;}
+        public Decimal TotalTax {get; set;}
+        public Vendor ProductVendor {get; set;}
+        public TaxBracket ProductTax {get; set;}
+        
+        public ProductWrapper(String name, String productCode){
+            this.Name = name;
+            this.ProductCode = productCode;
+        }
+    }
+    */
+    
+    public CustomerReviewController(){
+        
+        Products = new List<ProductWrapper>();
+        List<TaxBracket> TaxBrackets = new List<TaxBracket>();
+        
+        TaxBrackets.add( new TaxBracket( 'Service Tax', 'Tax levied on all services provided', 2));
+        TaxBrackets.add( new TaxBracket( 'Entertainment Tax', 'Tax levied on all entertainment facilities', 1.5));
+        TaxBrackets.add( new TaxBracket( 'Luxury Tax', 'Tax levied for luxury items', 0.5));
+        
+        //Create vendors
+        List<Vendor> Vendors = new List<Vendor>();
+        Vendors.add( new Vendor('ABC Corp', '123 Park street, Mount View', '345-435-2345', 'sales@abccopr.com'));
+        Vendors.add( new Vendor('XYZ Corp', 'A-34 Oakwood ave., Santa Clara', '345-435-2345', 'sales@abccopr.com'));
+        Vendors.add( new Vendor('ABC Corp', '123 Park street, Mount View', '345-435-2345', 'sales@abccopr.com')); 
+        
+        Integer i=0; 
+        Integer k=0;
+        for(Product2 p : [select id, Name, ProductCode from Product2 limit 10]){
+            ProductWrapper productInfo = new ProductWrapper(p.Name, p.ProductCode);
+            
+            if(k > 1) k=0; else k++;
+                
+            productInfo.TaxRate = TaxBrackets[k].Rate;
+            productInfo.TaxType = TaxBrackets[k].Name + '';
+            productInfo.TaxDetails = TaxBrackets[k].Description + '';
+            productInfo.SalesPrice = 100 * (k + 1);
+            productInfo.TotalTax = productInfo.SalesPrice * TaxBrackets[k].Rate;
+            
+            productInfo.VendorName = Vendors[k].Name + '';
+            productInfo.VendorShippingAddress = Vendors[k].ShippingAddress + '';
+            productInfo.VendorContactPhone = Vendors[k].Phone + '';
+            productInfo.VendorContactEmail = Vendors[k].Email + '';
+            
+            Products.add(productInfo);
+        }
+        Products.addAll(Products);
+        Products.addAll(Products);
+        Products.addAll(Products);
+        Products.addAll(Products);
+
+    }
+    
+    
+    public class ProductWrapper{
+        public String Name {get; set;}
+        public String ProductCode {get; set;}
+        public Decimal SalesPrice {get; set;}
+        public Attachment ProductAttachment {get; set;}
+        
+        public Decimal TaxRate {get; set;}
+        public String TaxType {get; set;}
+        public String TaxDetails {get; set;}
+        public Decimal TotalTax {get; set;}
+        
+        public String VendorName {get; set;}
+        public String VendorShippingAddress {get; set;}
+        public String VendorContactPhone {get; set;}
+        public String VendorContactEmail {get; set;}
+        
+        public ProductWrapper(String name, String productCode){
+            this.Name = name;
+            this.ProductCode = productCode;
+        }
+    }
+}

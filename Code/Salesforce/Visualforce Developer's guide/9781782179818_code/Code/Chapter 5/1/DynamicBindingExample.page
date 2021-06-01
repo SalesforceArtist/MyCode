@@ -1,0 +1,13 @@
+<apex:page standardController="Order__c" extensions="DynamicOrderExtension">
+    <apex:pageMessages /><br/>
+    <apex:form >
+        <apex:pageBlock title="Edit Order" mode="edit">        
+            <apex:pageBlockSection columns="1">
+                <apex:inputField value="{!Order__c.Name}"/>
+                <apex:repeat value="{!editableFields}" var="f">
+                    <apex:inputField value="{!Order__c[f]}"/>
+                </apex:repeat>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

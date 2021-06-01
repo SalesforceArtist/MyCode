@@ -1,0 +1,11 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+26 - Compiled CSS after using a Sass argument
+*/
+
+.selector-a {
+	padding: 10px;
+	border: #416e8e 1px solid;
+	background: #cccccc;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}

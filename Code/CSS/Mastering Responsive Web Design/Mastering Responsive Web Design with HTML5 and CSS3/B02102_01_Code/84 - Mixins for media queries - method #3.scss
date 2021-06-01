@@ -1,0 +1,8 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+84 - Mixins for media queries - method #3
+*/
+
+@mixin mobileFirst($media) {
+	@media (min-width: $media/16+em) { @content; }
+}

@@ -1,0 +1,7 @@
+/**
+ * Chapter 2 	- 	Creational Design Pattern
+ * Author		-	Jitendra Zaa
+ * */
+Public interface IMonitor {
+    void display(); 
+}

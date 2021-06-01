@@ -1,0 +1,16 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Pattern				-	Bridge Design Pattern
+ * Description			-	CMS Framework
+ * */
+public class CMSFramework extends CoreFramework {
+    public CMSFramework(ITheme t){
+        //Call constructor of parent class
+        super(t);
+    }
+    
+    public override void capability(){
+        System.debug('This is CMS Framework and supports workflow to publish public content');
+    }
+}

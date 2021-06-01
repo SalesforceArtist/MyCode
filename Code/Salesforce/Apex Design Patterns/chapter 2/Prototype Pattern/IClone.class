@@ -1,0 +1,9 @@
+/**
+ * Chapter 2 	- 	Creational Design Pattern -  prototype Pattern
+ * Author		-	Jitendra Zaa
+ * */
+public interface IClone {
+    
+    Iclone cloneObject();
+ 
+}

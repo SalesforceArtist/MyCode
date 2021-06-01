@@ -1,0 +1,8 @@
+/**
+ * Data container class to be used to send data 
+ */
+public class PaymentRequest {
+    public Integer Amount {get; set;}
+    public String PaymentMethod {get; set;}
+    public String AuthorizationCode {get; set;}
+}

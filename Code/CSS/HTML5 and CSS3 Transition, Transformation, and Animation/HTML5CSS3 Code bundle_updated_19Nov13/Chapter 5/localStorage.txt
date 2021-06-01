@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Local Storage in HTML5 </title>
+</head>
+<body>
+  <script type=“text/javascript”>
+    if( localStorage.visitWebsite ){
+       localStorage.visitWebsite = Number(localStorage.visitWebsite) +1;
+    }else{
+       localStorage.visitWebsite = 1;
+    }
+    document.write(“The webpage has been visited :” + localStorage.visitWebsite + “ times”);
+  </script>
+  <p>Refresh the page to increase number of hits.</p>
+  <p>Close the window and open it again and check the result.</p>
+</body>
+</html>

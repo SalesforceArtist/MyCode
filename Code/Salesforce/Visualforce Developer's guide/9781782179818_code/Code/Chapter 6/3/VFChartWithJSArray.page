@@ -1,0 +1,15 @@
+<apex:page >
+    <script>
+        // Build the chart data array in JavaScript
+        var dataArray = new Array();
+        dataArray.push({'data':15,'name':'Hard Disk'});
+        dataArray.push({'data':10,'name':'VGA Card'});
+        dataArray.push({'data':20,'name':'Mouse'});
+        dataArray.push({'data':20,'name':'USB Drive 16BG'});
+        dataArray.push({'data':5,'name':'USB Drive 32BG'});
+    </script>
+    <apex:chart height="350" width="450" data="dataArray">
+        <apex:pieSeries dataField="data" labelField="name"/>
+        <apex:legend position="right"/>
+    </apex:chart>
+</apex:page>

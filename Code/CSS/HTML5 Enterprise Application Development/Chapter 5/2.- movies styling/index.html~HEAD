@@ -1,0 +1,175 @@
+<!-- HTML5 Enterprise Applications 
+  -- by Nehal Shah & Gabriel Balda 
+  -- July 2012
+  -- HTML5 Shiv Example
+  -->
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>MovieNow</title>
+        <!-- Charset Encoding -->
+        <meta charset="utf-8" />
+        <!-- Description of MovieNow -->
+        <meta name="description" content="Your movie theater finder" />
+        <!-- Author or Authors of MovieNow -->
+        <meta name="author" content="Me" />
+        <!-- Keyword (recognized by certain search engines, not google) -->
+        <meta name="keywords" content="movie, hollywood" />
+        <!-- Copyright information -->
+        <meta name="copyright" content="Copyright &copy;  2012 MovieNow. All rights reserved." />
+        <!-- favico -->
+        <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+        <!-- Apple iOS icons -->
+        <!-- iPhone 57x57 -->
+        <link rel="apple-touch-icon-precomposed" href="img/touch-icon-iphone.png" />
+        <!-- iPad 72x72 -->
+        <link rel="apple-touch-icon-precomposed" href="img/touch-icon-ipad.png" sizes="72x72" />
+        <!-- iPhone Retina Display 114x114 -->
+        <link rel="apple-touch-icon-precomposed" href="img/touch-icon-iphone-rd.png" sizes="114x114" />
+        <!-- iPad Retina Display 144x144 -->
+        <link rel="apple-touch-icon-precomposed" href="img/touch-icon-ipad-rd.png" sizes="144x144" />
+        <!-- Cascade Style Sheet import -->
+        <link rel="stylesheet" href="css/styles.css" type="text/css" />
+        <script src="js/modernizr.js" type="text/javascript"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    </head>
+    <body class="no-js">
+        <section class="wrapper">
+            <div class="main">
+                <header>
+                    <div></div>
+                </header>
+                <nav>
+                	<ul>
+        				<li><a href="index.html">Home</a></li>
+        			</ul>
+        		</nav>
+                <aside>
+                    <h2>Top 5 Box Office</h2>
+            		<ol>
+                		<li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Dark Knight Rises</h3>
+                            <p itemprop="genre">Action</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Avengers</h3>
+                            <p itemprop="genre">Action</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Ice Age: Continental Drift</h3>
+                            <p itemprop="genre">Animation</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">The Amazing Spider-Man</h3>
+                            <p itemprop="genre">Action</p>
+                        </li>
+                        <li itemscope itemtype="http://schema.org/Movie">
+                            <h3 itemprop="name">Dark Shadows</h3>
+                            <p itemprop="genre">Comedy</p>
+                        </li>
+            		</ol>
+            	</aside>
+                <section>
+                	<article>
+                        <h1>In Theaters Now</h1>
+                        <div id="movies-near-me">
+                            <ul>
+                            	<li itemscope itemtype="http://schema.org/Movie">
+                                    <img src="http://content9.flixster.com/movie/11/16/53/11165387_pro.jpg" alt="Dark Knight Rises" />
+                                    <section class="main-info">
+                                        <h3 itemprop="name">Dark Knight Rises</h3>
+                                        <p class="details" itemprop="genre">Action</p>
+                                        <p class="details">PG-13</p>
+                                        <p class="quotation">The Dark Knight Rises is an ambitious, thoughtful, and potent action film.</p>
+                                        <p class="actors">Christian Bale, Michael Caine, Anne Hathaway</p>
+                                    </section>
+                                    <section class="description">
+                                        <h3 itemprop="name">Dark Knight Rises</h3>
+                                        <p>It has been eight years since Batman vanished into the night, turning, in that instant, from hero to fugitive. Assuming the blame for the death of D.A. Harvey Dent, the Dark Knight sacrificed everything for what he and Commissioner Gordon both hoped was the greater good.</p>
+                                    </section>
+                                </li>
+                                <li itemscope itemtype="http://schema.org/Movie">
+                                    <img src="http://content6.flixster.com/movie/11/16/44/11164400_pro.jpg" alt="Diary of a Wimpy Kid: Dog Days" />
+                                    <section class="main-info">
+                                        <h3 itemprop="name">Diary of a Wimpy Kid: Dog Days</h3>
+                                        <p class="details" itemprop="genre">Comedy</p>
+                                        <p class="details">PG</p>
+                                        <p class="quotation">Overly familiar and a bit too reliant.</p>
+                                        <p class="actors">Zachary Gordon, Devon Bostick, Rachael Harris</p>
+                                    </section>
+                                    <section class="description">
+                                        <h3 itemprop="name">Diary of a Wimpy Kid: Dog Days</h3>
+                                        <p>During his summer vacation, "Wimpy Kid" Greg Heffley, the hero of the phenomenally successful book series, hatches a plan to pretend he has a job at a ritzy country club - which fails to keep him away from the season's dog days.</p>
+                                    </section>
+                                </li>
+                                <li itemscope itemtype="http://schema.org/Movie">
+                                    <img src="http://content6.flixster.com/movie/11/16/56/11165676_pro.jpg" alt="Ice Age: Continental Drift" />
+                                    <section class="main-info">
+                                        <h3 itemprop="name">Ice Age: Continental Drift</h3>
+                                        <p class="details" itemprop="genre">Animation</p>
+                                        <p class="details">PG</p>
+                                        <p class="quotation">Has moments of charm and witty slapstick, but it often seems content to recycle ideas from the previous films.</p>
+                                        <p class="actors">Ray Romano, John Leguizamo, Denis Leary</p>
+                                    </section>
+                                    <section class="description">
+                                        <h3 itemprop="name">Ice Age: Continental Drift</h3>
+                                        <p>Scrat's nutty pursuit of the cursed acorn, which he's been after since the dawn of time, has world-changing consequences - a continental cataclysm that triggers the greatest adventure of all for Manny, Diego and Sid.</p>
+                                    </section>
+                                </li>
+                                <li itemscope itemtype="http://schema.org/Movie">
+                                    <img src="http://content6.flixster.com/movie/11/16/59/11165980_pro.jpg" alt="Total Recall" />
+                                    <section class="main-info">
+                                        <h3 itemprop="name">Total Recall</h3>
+                                        <p class="details" itemprop="genre">Action</p>
+                                        <p class="details">PG-13</p>
+                                        <p class="quotation">Total Recall lacks the intricate plotting, wry humor, and fleshed out characters that made the original a classic.</p>
+                                        <p class="actors">Colin Farrell, Kate Beckinsale</p>
+                                    </section>
+                                    <section class="description">
+                                        <h3 itemprop="name">Total Recall</h3>
+                                        <p>Welcome to Rekall, the company that can turn your dreams into real memories. For a factory worker named Douglas Quaid, even though he's got a beautiful wife who he loves, the mind-trip sounds like the perfect vacation from his frustrating life</p>
+                                    </section>
+                                </li>
+                                <li itemscope itemtype="http://schema.org/Movie">
+                                    <img src="http://content7.flixster.com/movie/11/16/57/11165729_pro.jpg" alt="Ted" />
+                                    <section class="main-info">
+                                        <h3 itemprop="name">Ted</h3>
+                                        <p class="details" itemprop="genre">Comedy</p>
+                                        <p class="details">R</p>
+                                        <p class="quotation">Ted's "romance versus bromance" plot is familiar, but the film's held aloft by the high-concept central premise.</p>
+                                        <p class="actors">Mila Kunis, Mark Wahlberg, Seth MacFarlane</p>
+                                    </section>
+                                    <section class="description">
+                                        <h3 itemprop="name">Ted</h3>
+                                        <p>Family Guy creator Seth MacFarlane brings his boundary-pushing brand of humor to the big screen for the first time as writer, director and voice star of Ted.</p>
+                                    </section>
+                                </li>
+                                <li itemscope itemtype="http://schema.org/Movie">
+                                    <img src="http://content9.flixster.com/movie/11/16/38/11163831_pro.jpg" alt="Brave" />
+                                    <section class="main-info">
+                                        <h3 itemprop="name">Brave</h3>
+                                        <p class="details" itemprop="genre">Animation</p>
+                                        <p class="details">PG</p>
+                                        <p class="quotation">Brave offers young audiences and fairy tale fans a rousing, funny fantasy adventure.</p>
+                                        <p class="actors">Kelly Macdonald, Billy Connolly</p>
+                                    </section>
+                                    <section class="description">
+                                        <h3 itemprop="name">Brave</h3>
+                                        <p>Merida is a skilled archer and impetuous daughter of King Fergus and Queen Elinor. Determined to carve her own path in life, Merida defies an age-old custom sacred to the uproarious lords of the land.</p>
+                                    </section>
+                                </li>
+                    		</ul>
+                        </div>
+            		</article>
+            	</section>
+            <div>
+            <div class="push"></div>
+        </section>
+    	<footer>Copyright &copy; 2012 MovieNow. All rights reserved.</footer>
+        <script src="js/ios-orientationchange-fix.js"></script>
+        <script src="js/jquery-1.8.0.min.js"></script>
+        <!--<script src="http://maps.googleapis.com/maps/api/js?client=AIzaSyDNzu8q8rMlsY9I-7uYOLr3W73tVtk2qUk&sensor=false&v=3.8" type="text/javascript"></script>-->
+        <script src="js/movienow.js"></script>
+        <!--<script src="js/movienow.geolocation.js"></script>-->
+    </body>
+</html>

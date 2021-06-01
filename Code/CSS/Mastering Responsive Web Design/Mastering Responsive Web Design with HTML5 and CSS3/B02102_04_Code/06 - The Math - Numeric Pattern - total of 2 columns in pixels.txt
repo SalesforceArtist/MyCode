@@ -1,0 +1,6 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+6 - The Math – Numeric Pattern: total of 2 columns in pixels
+*/
+
+80px + 20px + 80px = 180px

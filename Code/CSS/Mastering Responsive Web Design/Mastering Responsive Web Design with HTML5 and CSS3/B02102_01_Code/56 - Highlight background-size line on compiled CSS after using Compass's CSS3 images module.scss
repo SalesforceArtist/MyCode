@@ -1,0 +1,13 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+56 - Highlight background-size line on compiled CSS after using Compass's CSS3 images module
+*/
+
+header {
+	background-image: url('data:image/svg+xml;base64,…');
+	background-size: 100%;
+	background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, red), color-stop(100%, blue));
+	background-image: -moz-linear-gradient(red, blue);
+	background-image: -webkit-linear-gradient(red, blue);
+	background-image: linear-gradient(red, blue);
+}

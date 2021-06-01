@@ -1,0 +1,27 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * This class extends "SalesforceSupport" abstract class to give information about cost of Apex related supports.
+ * */
+public class ApexSupport extends SalesforceSupport {
+     
+     Integer totalCase = 1 ;
+    
+    public ApexSupport( Integer totalCasePerMonth)
+    {
+        totalCase = totalCasePerMonth;
+    }
+    
+    
+    /**
+     * Total cost to resolve one case
+     * */
+    public override Double getCost( ){
+        return 80.0* totalCase ;
+    }
+    
+    public override String getDescription(){
+        return 'This class represents informations related to Apex and Trigger classes';
+    } 
+
+}

@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Chapter 7 - 04</title>
+        
+        <style type="text/css">
+            body { font-family: sans-serif; }
+            #dot {
+                width: 100px;
+                height: 100px;
+                -webkit-border-radius: 50px;
+                background-color: #333;
+                position: absolute;
+                left: 50px;
+                top: 50px;
+            }
+            /* CSS3 ANIMATION */
+            #dot.active {
+                -webkit-animation: moveDot 1000ms 0 ease both;
+                animation: moveDot 1000ms 0 ease both;
+            }
+            @-webkit-keyframes moveDot {
+                from { transform: translate3d(0, 0, 0); }
+                to { transform: translate3d(450px, 0, 0); }
+            }
+            @keyframes moveDot {
+                from { transform: translate3d(0, 0, 0); }
+                to { transform: translate3d(450px, 0, 0); }
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Data goes here -->
+        <div id="dot"></div>
+    </body>
+    <script type="text/javascript">
+        // Annonomous function to render data.
+        (function(){
+             var dot = document.getElementById("dot");
+             
+             console.time("JavaScript Animation");
+             setTimeout(dot.setAttribute("class", "active"), 1000);
+             console.timeEnd("JavaScript Animation");
+         }())
+        </script>
+</html>

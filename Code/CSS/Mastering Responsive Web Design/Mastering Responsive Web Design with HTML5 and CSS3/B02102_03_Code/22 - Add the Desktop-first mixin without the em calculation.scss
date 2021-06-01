@@ -1,0 +1,12 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+22 - Add the Desktop-first mixin without the em calculation
+*/
+
+//Retrofitting with Adaptive Web Design
+@import "980gs";
+
+//Desktop-first Media Query Mixin
+@mixin forSmallScreens($media) {
+    @media (max-width: $media) { @content; }
+}

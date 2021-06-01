@@ -1,0 +1,7 @@
+<apex:page controller="TransientExampleController">
+    Non Transient Date: {!t1} <br/>
+    Transient Date    : {!t2} <br/>
+    <apex:form >
+        <apex:commandLink value="Refresh"/>
+    </apex:form>
+</apex:page>

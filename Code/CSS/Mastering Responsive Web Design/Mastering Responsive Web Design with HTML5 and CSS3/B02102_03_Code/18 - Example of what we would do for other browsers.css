@@ -1,0 +1,8 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+18 - Example of what we would do for other browsers
+*/
+
+nav {
+    display: flex;
+}

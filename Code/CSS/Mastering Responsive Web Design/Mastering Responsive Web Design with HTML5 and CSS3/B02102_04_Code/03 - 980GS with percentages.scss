@@ -1,0 +1,46 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+3 - 980GS with percentages
+*/
+
+//Container
+.container-12 {
+    width: 100%;
+    max-width: 980px;
+    padding: 0 1.02%;
+    margin: auto;
+}
+//Grid >> Global
+.grid {
+    &-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9, &-10, &-11, &-12 {
+        float: left;
+        margin: 0 1.02%;
+    }
+}
+//Grid >> 12 Columns
+.container-12 {
+    .grid-1  { width: 6.12%; }
+    .grid-2  { width: 14.29%; }
+    .grid-3  { width: 22.45%; }
+    .grid-4  { width: 30.61%; }
+    .grid-5  { width: 38.78%; }
+    .grid-6  { width: 46.94%; }
+    .grid-7  { width: 55.10%; }
+    .grid-8  { width: 63.27%; }
+    .grid-9  { width: 71.43%; }
+    .grid-10 { width: 79.59%; }
+    .grid-11 { width: 87.76%; }
+    .grid-12 { width: 95.92%; }
+}
+//Clear Floated Elements - http://davidwalsh.name/css-clear-fix
+.clear, .row {
+  &:before,
+  &:after { content: ''; display: table; }
+  &:after { clear: both; }
+}
+//Use rows to nest containers
+.row { margin-bottom: 10px;
+  &:last-of-type { margin-bottom: 0; }
+}
+//Legacy IE
+.clear { zoom: 1; }

@@ -1,0 +1,27 @@
+<apex:component controller="CustomerSummaryComponenetController">
+    <!-- Attribute Definitions -->
+    <apex:attribute name="customerId" Type="String" required="true" description="customer id" assignTo="{!CusID}"/>
+    <apex:attribute name="noOfRecentOrders" Type="Integer" required="true" description="Number of recent orders" assignTo="{!RecentNo}"/>
+    <!-- Attribute Definitions : End -->
+    
+    <!-- Component Definition -->
+    <apex:componentBody >
+        <apex:pageBlock >
+            <apex:pageBlockSection title="Customer Details">
+                <apex:outputField value="{!CurrentCustomer.Name}"/>
+                <apex:outputField value="{!CurrentCustomer.Address__c}"/>
+                <apex:outputField value="{!CurrentCustomer.Email__c}"/>
+            </apex:pageBlockSection> 
+            
+            <apex:pageBlockSection title="Recent Order Details">
+                <apex:pageBlockTable value="{!RecentOrderList}" var="order">
+                    <apex:column value="{!order.Name}"/>
+                    <apex:column value="{!order.Planned_Delivery_Date__c}"/>
+                    <apex:column value="{!order.Status__c}"/>
+                </apex:pageBlockTable>
+            </apex:pageBlockSection>    
+        </apex:pageBlock>
+    </apex:componentBody>
+    <!-- Component Definition : End -->
+
+</apex:component>

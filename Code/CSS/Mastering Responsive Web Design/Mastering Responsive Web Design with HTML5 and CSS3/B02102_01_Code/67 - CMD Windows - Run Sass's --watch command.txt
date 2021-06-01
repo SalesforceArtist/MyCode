@@ -1,0 +1,6 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+67 - CMD Windows - Run Sass's --watch command
+*/
+
+--sass watch scss:css

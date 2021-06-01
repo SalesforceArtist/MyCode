@@ -1,0 +1,48 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Pantry class to represent collection Items to be shipped which extends abstract class, part of Composite Design Pattern
+ * */
+
+public class Pantry extends Item{
+	
+    private List<Item> lstItems;
+    
+    //Constructor
+    public Pantry(){
+        lstItems = new List<Item>() ;
+    }
+    
+    public override Integer getTotalItems(){
+        return lstItems.size();
+    }
+    
+    public override void addItem(Item i){
+        lstItems.add(i);
+    }
+    
+    public override void removeItem(Integer index){
+        if(lstItems.size() >= index)
+            lstItems.remove(index);
+    }
+    
+    public override Item getItem(Integer index)
+    {
+        if(lstItems.size() >= index)
+            return lstItems[index];
+        
+        return null;            
+    }
+    
+    //Get cost from each product inside pantry
+    public override Double getCost(){
+        Double totalCost = 0;
+        
+        for(Item i : lstItems){
+            totalCost = totalCost + i.getCost();
+        }
+        
+        return totalCost;
+    }
+        
+}

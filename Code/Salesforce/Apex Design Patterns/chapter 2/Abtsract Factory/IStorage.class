@@ -1,0 +1,7 @@
+/**
+ * Chapter 2 	- 	Creational Design Pattern
+ * Author		-	Jitendra Zaa
+ * */
+public interface IStorage {
+    void storeData(); 
+}

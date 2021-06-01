@@ -1,0 +1,21 @@
+/**
+ * Chapter 6    :   Anti Pattern
+ * Author       :   Anshul Verma
+ * Description  :   This trigger shows how to effectively handle DML within loops/ triggers
+ * */
+trigger ContactCreation on Contact (before insert) {
+    /* Iterate over all contacts to retrieve unique account ids */
+    Set<Id> setAccountIds = new Set<id>();
+    for(Contact newContact :Trigger.new){
+        setAccountIds.add(newContact.AccountId);
+    }
+    
+    /* Retrieve all related accounts and create a map of accounts */
+    Map<id, Account> mapAccounts = new Map<id, Account>([select id, SLA__c from Account where id in :setAccountIds]);
+    
+    /* Iterate over all contacts and populate SLA field */
+    for(Contact newContact :Trigger.new){
+        Account relatedAccount = mapAccounts.get(newContact.AccountId);
+        newContact.SLA__c = relatedAccount.SLA__c;
+    }
+}

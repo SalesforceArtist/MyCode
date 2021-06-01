@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<title>  HTML5 Audio player </title>
+<body>
+<audio autoplay=“autoplay” controls=“controls” id=“player”>
+<source src =“aravind.ogg” />
+<source src =“aravind.mp3” />
+<p> Your browser doesn’t support the audio tag </p>
+</audio>
+<div>
+<button onclick=“document.getElementById(‘player’).play()”>Play</button>
+<button onclick=“document.getElementById(‘player’).pause()”>Pause</button>
+<button onclick=“document.getElementById(‘player’).volume+= 0.1”>Vol+ </button>
+<button onclick=“document.getElementById(‘player’).volume-= 0.1”>Vol- </button>
+</div>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type=“text/javascript”>
+function demoTranslation(){
+
+var canvas = document.getElementById(‘packt’);
+ 
+var context = canvas.getContext(‘2d’);
+
+context.fillStyle = “silver”;
+context.fillRect(30,30, 150, 100);
+
+context.translate(50, 25);
+
+context.fillStyle = “navy”;
+context.fillRect(30,30, 200, 100);
+}
+
+</script>
+</head>
+<body onload=“demoTranslation();”>
+<canvas id=“packt”></canvas>
+</body>
+</html>

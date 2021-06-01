@@ -1,0 +1,31 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Chapter 7 - 08</title>
+        
+        <style type="text/css">
+            body { font-family: sans-serif; }
+            #txtfield {
+                font-size: 1em;
+                font-weight: bold;
+                margin: 50px;
+            }
+        </style>
+    </head>
+    <body>
+        <input id="txtfield" type="text" value="" />
+    </body>
+    <script type="text/javascript">
+         var txtfield = document.getElementById("txtfield");
+		 
+         (function(){
+			 txtfield.addEventListener("mousewheel", getMouseLocation, false);
+			
+         }())
+         
+         function getMouseLocation(event) {
+             txtfield.value = "X: " + event.pageX + " Y: " + event.pageY;
+         }
+        </script>
+		</html>

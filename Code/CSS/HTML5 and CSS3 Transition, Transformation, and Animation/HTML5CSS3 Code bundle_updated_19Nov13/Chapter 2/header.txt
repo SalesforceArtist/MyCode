@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+<header>
+<h2> Importance of the Header element </h2><hr>
+</header>
+<p> The header element tells the crawler about the content inside it </p>
+</body>
+</html> 

@@ -1,0 +1,54 @@
+.rightAlignFixed {
+    right: 5px;
+    position:fixed;
+}
+
+.tableCellWordWrap {
+    word-wrap: break-word;
+    white-space: pre-wrap; /* css-3 */
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */
+    white-space: -o-pre-wrap; /* Opera 7 */
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    font-family:"Salesforce Sans", Arial, sans-serif;
+}
+
+
+.colorHighlight{
+
+    background-color:lightgray;
+    
+    
+
+}
+
+.boxColorHighlight{
+    border-radius:5px;
+    border-color:white;
+    background-color:#008fd5;
+    color:white;
+}
+
+.yellowTextColor{
+    color:yellow;
+}
+
+.skyBlueTheme{
+
+    background-color:rgb(3, 134, 185) !important;
+
+}
+
+.textStyling{   
+font-weight:bolder;
+text-transform: capitalize;
+
+}
+
+.skyBlueGradient{
+    background-color: #5ca0f2 !important;
+background-image: linear-gradient(315deg, #5ca0f2 0%, #f5f7f6 74%) !important;
+
+}
+
+

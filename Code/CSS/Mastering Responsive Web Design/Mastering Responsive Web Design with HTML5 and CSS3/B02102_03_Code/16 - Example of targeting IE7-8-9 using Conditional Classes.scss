@@ -1,0 +1,10 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+16 - Example of targeting IE7/8/9 using Conditional Classes
+*/
+
+.ie7, .ie8, .ie9 {
+    nav li {
+        float: left;
+    }
+}

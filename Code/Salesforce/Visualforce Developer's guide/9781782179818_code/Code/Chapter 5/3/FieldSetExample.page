@@ -1,0 +1,5 @@
+<apex:page standardController="Customer__c">
+    <apex:repeat value="{!$ObjectType.Customer__c.FieldSets.CustomerDetails}" var="f">
+        <apex:outputText value="{! Customer__c [f]}" /><br/>
+    </apex:repeat>
+</apex:page>

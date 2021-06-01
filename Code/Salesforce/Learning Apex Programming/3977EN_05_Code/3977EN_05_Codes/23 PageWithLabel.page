@@ -1,0 +1,5 @@
+<apex:page>
+	//Reference a Label
+	Here’s our slogan:<br/> 
+	<i><apex:outputText value="{!$LABEL.Our_Slogan}" /></i>
+</apex:page>

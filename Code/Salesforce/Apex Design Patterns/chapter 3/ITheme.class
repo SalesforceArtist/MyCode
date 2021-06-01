@@ -1,0 +1,12 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Pattern				-	Bridge Design Pattern
+ * Description			-	This interface should be implemented by all child theme classes
+ * */
+public interface ITheme {
+	void styleHeader();
+    void styleFooter();
+    void styleMenu();
+    void styleContent();
+}

@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<head>	
+<title>Input types: Email and URL </title>
+</head>
+<body>
+<form>
+<p> Enter your email address in the textbox below and click <strong>Go</strong> </p>
+<input type="email" placeholder="abcxyzpqr@email.com">
+<input type="submit" value="Go">
+<br>
+<hr>
+<p> Enter the web address (URL) of the website in the textbox below and click <strong>Go </strong> </p>
+<input id="website" type="url">
+<input type="submit" value="Go">
+</form>
+</body>
+</html>

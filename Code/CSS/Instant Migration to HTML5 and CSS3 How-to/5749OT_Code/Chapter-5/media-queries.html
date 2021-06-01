@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Media Queries</title>
+<style>
+body {color:#FFF;}
+#wrapper{padding:20px;}
+	@media screen and (max-width: 600px) { 
+		#wrapper{
+width:100%;
+background-color:#F00;	
+}
+}
+	@media screen and (min-width: 600px) and (max-width: 900px) { 
+		#wrapper{
+width:100%;
+background-color:#03F;
+}
+}
+	@media screen and (min-width: 900px) { 
+		#wrapper{
+width:100%;
+background-color:#060;	
+}
+}
+
+</style>
+</head>
+
+<body>
+<div id="wrapper">
+<p>please resize the window to see the media queries in action.</p>
+<p>if the screen size is more than 900px, the background color will be dark green.</p>
+<p>if the screen size is over 600px and less than 900px, the background color will be dark blue.</p>
+<p>if the screen size is less than 600px, the background color will be red.</p>
+</div>
+</body>
+</html>

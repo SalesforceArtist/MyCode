@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Chapter 7 - 02</title>
+        
+        <style type="text/css">
+            body { font-family: sans-serif; }
+            #datainsert tr:nth-of-type(odd) td {
+                background-color: #eeeeee;
+                color: #333;
+            }
+            #datainsert tr:nth-of-type(even)  td {
+                background-color: #bababa;
+                color: white;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Data goes here -->
+        <div id="datainsert"></div>
+    </body>
+    <script type="text/javascript">
+        // Annonomous function to render data.
+        (function(){
+         console.time("Time for innerHTML");
+         
+         var tableContents = "<table width=\"300\ cellspacing=\"0\" cellpadding=\"10\"><tbody>";
+         
+         for (var i = 0; i <= 10000; i++) {
+         
+            tableContents += "<tr><td>" + "Loop count: " + i + "</tr></td>";
+         
+         }
+         tableContents += "</tbody></table>";
+         
+         document.getElementById("datainsert").innerHTML = tableContents;
+         console.timeEnd("Time for innerHTML");
+         
+         }())
+         
+         
+        </script>
+</html>

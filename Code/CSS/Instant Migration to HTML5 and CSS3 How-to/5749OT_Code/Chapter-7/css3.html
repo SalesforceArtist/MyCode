@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href='http://fonts.googleapis.com/css?family=Marcellus+SC' rel='stylesheet' type='text/css'>
+<style>
+body{font-family:Marcellus SC; color:#FFF;
+background-image: -webkit-linear-gradient(top, #2F2727, #1a82f7);
+background-image: -moz-linear-gradient(top, #2F2727, #1a82f7);
+background-image: -ms-linear-gradient(top, #2F2727, #1a82f7);
+background-image: -o-linear-gradient(top, #2F2727, #1a82f7);
+
+}
+#shadow{
+	border:2px solid #0CC;
+	border-bottom-right-radius:25px;
+	border-top-left-radius:25px;
+	width:450px;
+	padding:10px 25px;
+
+}
+
+h1{
+	text-shadow:1px 1px 3px #033;
+}
+div.transform
+{
+width:100px;
+height:30px;
+background:red;
+transition:height 2s;
+-moz-transition:height 2s; /* Firefox 4 */
+-webkit-transition:height 2s; /* Safari and Chrome */
+-o-transition:width 2s; /* Opera */
+}
+
+div.transform:hover
+{
+height:50px;
+}
+div.threecols
+{
+columns:100px 3;
+-webkit-columns:100px 3; /* Safari and Chrome */
+-moz-columns:100px 3; /* Firefox */
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div id="shadow">
+<h1>Web Fonts, Rounded Corners and Shadows with CSS3</h1>
+</div>
+<h1>3 Column DIV</h1>
+<div class="threecols">
+<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque egestas pharetra ultricies. Cras vel metus sit amet quam auctor lobortis. Mauris adipiscing, diam eu pharetra varius, magna libero tincidunt metus, non interdum quam tortor ac augue. Suspendisse nec facilisis risus. Aliquam erat volutpat. Quisque eget ante ac metus aliquet ullamcorper. Nullam viverra placerat felis vel accumsan. Ut ultrices leo eu arcu rutrum vestibulum. Nunc lorem nisl, aliquam a ullamcorper eget, pharetra non massa. Aenean dignissim scelerisque commodo. Integer luctus est id dui tincidunt dignissim.</p>
+<p>
+Maecenas tempor imperdiet tincidunt. Nulla fringilla nunc et orci luctus nec mattis tortor ullamcorper. Praesent vitae eros mauris, et aliquam mauris. Suspendisse potenti. Donec convallis ullamcorper odio, et porta turpis congue et. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam blandit commodo felis, posuere gravida ante suscipit eu. Phasellus semper interdum leo, sit amet convallis nunc gravida nec. Vivamus ut urna a nibh euismod iaculis. Sed dignissim elit nec turpis molestie eget rhoncus arcu accumsan.</p>
+</div>
+<h1>Transforming DIV on rollover</h1>
+<div class="transform"></div>
+</body>
+</html>

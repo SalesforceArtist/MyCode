@@ -1,0 +1,9 @@
+/**
+* It interacts with external Payment service “PaymentForYou” and 
+* existing code uses it via adapter resulting in loose coupling 
+**/
+public class PaymentForYouProcessor{
+    public void submitRequest(String xmlData){
+        //send document for signing
+    }
+}

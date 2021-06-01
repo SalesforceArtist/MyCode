@@ -1,0 +1,66 @@
+<!--
+Chapter 8: Responsive Emails
+2 - CSS Reset to Normalize Display
+-->
+
+<!DOCTYPE html>
+<html lang="en" style="height: 100%;">
+<head>
+    <title>Title Of Email</title>
+    <meta charset="utf-8">
+    <!-- Responsive: Tell browsers that this template is optimized for small screens -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- IE: Make IE use its best rendering engine rather than Compatibility View mode -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- OSX/iOS: Remove auto styling of phone numbers -->
+    <meta name="format-detection" content="telephone=no">
+    <!-- Webfont from Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Roboto:300,500' rel='stylesheet'>
+    <style>
+        /*Force Outlook to provide a "View in Browser" link.*/
+        #outlook a { padding: 0; }
+        body {
+            width: 100% !important;
+            margin: 0;
+            padding: 0;
+            /*Outlook: Make Outlook maintain any custom line heights defined.*/
+            mso-line-height-rule: exactly;
+            /*OSX/iOS/Windows Mobile: Fix automatic increasing of font size to 13px when fonts are small.*/
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        /*Yahoo: Fix paragraph issue*/
+        p { margin: 1em 0; }
+        /*Outlook: Remove spaces on left and right side of a table elements.*/
+        table {
+            mso-table-lspace:0pt;
+            mso-table-rspace:0pt;
+        }
+        /*Outlook 07, 10: Fix padding issue.*/
+        table td { border-collapse: collapse; }
+        img {
+            outline: none;
+            text-decoration: none;
+            /*IE: Make resized images look fine.*/
+            -ms-interpolation-mode: bicubic;
+        }
+        /*Remove border around linked images.*/
+        a img { border: none; }
+        /*Prevent Webkit and Windows Mobile platforms from changing default font sizes, while not breaking desktop design.*/
+        /*Force Hotmail to display emails at full width.*/
+        .ExternalClass{ width:100%; }
+        /*Force Hotmail to display normal line spacing.*/
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+            line-height: 100%;
+        }
+    </style>
+</head>
+<body style="height: 100%;">
+
+</body>
+</html>

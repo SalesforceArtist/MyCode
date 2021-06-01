@@ -1,0 +1,28 @@
+List<Item> lstItems = new List<Item>();
+
+//Two products to be part of pantry “p”
+Product amazonEcho = new Product('89065437074',178) ;
+Product iphone6s = new Product('5680863467',200);
+
+//Below Pantry will become part of other “Pantry”
+Pantry pantryInsidePantry = new Pantry();
+pantryInsidePantry.addItem(new Product('5654465318' , 10));
+pantryInsidePantry.addItem(new Product('5654465788' , 10));
+
+//Below “Pantry” contains products and pantries
+Pantry p = new Pantry();
+p.addItem(new Product('5678953188' , 890));
+p.addItem(new Product('5645654318' , 100));
+p.addItem(new Product('5898595318' , 20));
+p.addItem(new Product('5656744318' , 89));
+p.addItem(pantryInsidePantry);
+
+lstItems.add(amazonEcho);
+lstItems.add(iphone6s);
+lstItems.add(p);
+
+
+Order o = new Order();
+o.loadShipmentsItems(lstItems);
+System.debug('Total Items in Shipment '+o.getTotalItems());
+System.debug('Total value of Shipment '+o.getTotalValueOfOrder());

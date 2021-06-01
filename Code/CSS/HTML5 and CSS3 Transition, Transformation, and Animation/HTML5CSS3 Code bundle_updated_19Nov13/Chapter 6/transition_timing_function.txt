@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#flex-container {
+    display: -webkit-flex;
+    display: flex;
+    width: 500px;
+    height: 500px;
+    background-color: Silver;
+}
+
+#flex-item {
+    background-color: lime;
+   transition-property: background, border-radius;
+transition-duration: 3s,3s;
+-webkit-transition-duration: 3s,3s;
+
+-webkit-transition-property: background, border-radius;
+ transition-timing-function: ease-in;
+-webkit-transition-timing-function: ease-in;
+ 
+   width: 200px;
+    height: 200px;
+    margin: 20px;
+}
+#flex-item:hover {
+  background: red;
+  border-radius: 70% 
+}
+
+</style>
+</head>
+<body>
+<div id="flex-container">
+<div id="flex-item">Alpha</div>
+<div id="flex-item">Beta</div>
+</div>
+</body>
+</html>

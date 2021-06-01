@@ -1,0 +1,38 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Abstract class to represent Items to be shipped, part of Composite Design Pattern
+ * */
+public abstract class Item {
+	
+    // Custom Exception class to throw an error
+    public class UnSupportedOperationException extends Exception{}
+    //By default items will be ‘1’ in count
+    public virtual integer getTotalItems(){
+        return 1;
+    }
+    
+    //Child class can either implement this or leave this unimplemented
+    public virtual void addItem(Item i) {
+        throw new UnSupportedOperationException('AddItem() method is not supported');
+     }
+    
+    //Child class can either implement this or leave this unimplemented
+    public virtual void removeItem(Integer index) {
+        throw new UnSupportedOperationException('removeItem() method is not supported');
+     }
+    
+    //Child class can either implement this or leave this unimplemented
+    public virtual Item getItem(Integer index){
+        throw new UnSupportedOperationException('getItem() method is not supported');
+    }
+
+    //This method is only needed in Product class not in Pantry
+    public virtual String getUPC(){
+     throw new UnSupportedOperationException('getUPC() method is not supported');
+    }
+    
+    //All child class must implement this abstract class
+    public abstract Double getCost();
+    
+}

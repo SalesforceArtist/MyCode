@@ -1,0 +1,51 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+48 - (RWD) Compiled CSS file of all media queries
+*/
+
+.container_12 {
+    width: 980px;
+    padding: 0 1.04%;
+    margin: auto;
+}
+
+.grid_1, .grid_2, .grid_3, .grid_4, .grid_5, .grid_6, .grid_7, .grid_8, .grid_9, .grid_10, .grid_11, .grid_12 {
+    float: left;
+    margin: 0 1.04%;
+}
+
+@media (max-width: 980px) {
+    .container_12 {
+        width: 768px;
+    }
+}
+@media (max-width: 768px) {
+    .container_12 {
+        width: 640px;
+    }
+}
+@media (max-width: 640px) {
+    .container_12 {
+        width: 480px;
+    }
+}
+@media (max-width: 480px) {
+    .container_12 {
+        width: 320px;
+        padding: 0;
+    }
+}
+.container_12 .grid_12 {
+    width: 97.91%;
+}
+.container_12 .grid_3 {
+    width: 22.91%;
+}
+.container_12 .grid_9 {
+    width: 72.91%;
+}
+@media (max-width: 640px) {
+    .container_12 .grid_3, .container_12 .grid_9 {
+        width: 97.91%;
+    }
+}

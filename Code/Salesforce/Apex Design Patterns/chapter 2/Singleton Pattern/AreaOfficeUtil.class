@@ -1,0 +1,56 @@
+/**
+ * Chapter 2 	- 	Singleton Pattern - Problem Statement
+ * Author		-	Jitendra Zaa
+ * 
+ * This class is used to query all existing offices and utility methods
+ * to return Office record on basis of state and city
+ * */
+public class AreaOfficeUtil {
+	private List<Area_Office__c> lstAllOffices;
+    private Map<String,Area_Office__c> mpAllOffices ;
+    
+    //Static variable to hold instance of same class
+    //and avoid creation of object again
+    private static AreaOfficeUtil selfInstance = null;
+    
+    //Static method to check if its already instantiated,
+    //if not then call private constructor and return
+    //object
+    public static AreaOfficeUtil getInstance(){
+        if(selfInstance == null)
+            selfInstance = new AreaOfficeUtil();
+        return selfInstance;
+    }
+    
+    //Private constructor to make sure no one
+    //can instantiate this class
+    private AreaOfficeUtil(){
+        
+        //Even though there are no more than 1500 records, but 
+        //on safer side, Limit 2000
+        
+        lstAllOffices = [Select 
+                         	Name,
+                         	City__c,
+                         	State__c,
+                         	Manager__c,
+                         	Head_Count__c
+                        FROM
+                         	Area_Office__c
+                        LIMIT 2000
+                        ];
+        
+       mpAllOffices = new Map<String,Area_Office__c>();
+        
+        for(Area_Office__c ofc : lstAllOffices){
+            mpAllOffices.put(ofc.State__c+'-'+ofc.City__c,ofc);
+        }
+        
+    }
+        
+    // Get "Area_Office__c" on basis of state and city      
+    public Area_Office__c getOffice(String state, String city){
+        return mpAllOffices.get(state+'-'+city);
+    }
+    
+}

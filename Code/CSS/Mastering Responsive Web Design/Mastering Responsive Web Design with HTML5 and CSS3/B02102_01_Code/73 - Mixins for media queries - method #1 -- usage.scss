@@ -1,0 +1,13 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+73 - Mixins for media queries - method #1 -- usage
+*/
+
+header {
+	width: 50%;
+	background: red;
+	@include minw(640) {
+		width: 100%;
+		background: blue;
+	}
+}

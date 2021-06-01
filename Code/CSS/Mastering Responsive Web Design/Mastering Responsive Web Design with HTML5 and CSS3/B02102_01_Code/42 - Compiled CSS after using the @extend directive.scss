@@ -1,0 +1,15 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+42 - Compiled CSS after using the @extend directive
+*/
+
+.generic-container, .box-customer-service {
+	padding: 10px;
+	border: #416e8e 1px solid;
+	background: #cccccc;
+	box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.box-customer-service {
+	padding: 25px;
+}

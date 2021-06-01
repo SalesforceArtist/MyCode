@@ -1,0 +1,6 @@
+/*
+Chapter 7: Meaningful Typography for RWD
+1 - RWD Magic Formula
+*/
+
+(target ÷ context) x 100 = result %

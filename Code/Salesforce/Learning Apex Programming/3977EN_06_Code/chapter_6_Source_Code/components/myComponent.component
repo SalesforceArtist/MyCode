@@ -1,0 +1,22 @@
+<apex:component>
+	<apex:attribute 
+		name="bgcolor"
+		description="Background Color" 
+		type="String" 
+		default="Red"
+		/>
+			<apex:attribute 
+		name="color"
+		description="Font Color"
+		type="String"
+		default="Black"
+	/>
+
+	<table bgcolor="{!bgcolor}" width="100%">
+		<tr>
+			<td style="color: {!color}" >
+				This table has a {!bgcolor} background and {!color} font
+			</td>
+		</tr>
+	</table>
+</apex:component>

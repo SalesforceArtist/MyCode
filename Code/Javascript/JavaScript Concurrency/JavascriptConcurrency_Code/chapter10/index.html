@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Quick Chat</title>
+		<meta charset="utf-8">
+		<script src="worker.js"></script>
+		<script src="ui-events.js" defer></script>
+		<style>
+			body {
+				font-family: arial;
+				margin: 4em;
+			}
+
+			p {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			ul {
+				list-style-type: none;
+			}
+
+			li.user {
+				font-size: 0.8em;
+				opacity: 0.7;
+			}
+
+			.hide {
+				display: none;
+			}
+
+			#create, #join {
+				width: 20%;
+			}
+
+			#view > div {
+				display: flex;
+				justify-content: flex-start;
+			}
+
+			#view input {
+				width: 100%;
+			}
+
+			#messages {
+				height: 300px;
+				width: 500px;
+				border: solid 1px;
+				margin-bottom: 5px;
+				padding: 10px;
+				overflow-y: auto;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="create" class="hide">
+			<h1>Create Chat</h1>
+			<p>
+				<label for="topic">Topic:</label>
+				<input name="topic" id="topic" autofocus/>
+			</p>
+			<p>
+				<label for="create-user">Your Name:</label>
+				<input name="create-user" id="create-user"/>
+			</p>
+			<button>Create</button>
+		</div>
+		<div id="join" class="hide">
+			<h1>Join Chat</h1>
+			<p>
+				<label for="join-user">Your Name:</label>
+				<input name="join-user" id="join-user" autofocus/>
+			</p>
+			<button>Join</button>
+		</div>
+		<div id="view" class="hide">
+			<h1></h1>
+			<div>
+				<div>
+					<ul id="messages"></ul>
+					<input placeholder="messaage" autofocus/>
+				</div>
+				<ul id="users"></ul>
+			</div>
+		</div>
+	</body>
+</html>

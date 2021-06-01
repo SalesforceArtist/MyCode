@@ -1,0 +1,27 @@
+<apex:page controller="JavaScriptRemotingController" id="pageId">
+  <script type="text/javascript">
+function updateStatus(input,id) {
+var inputStatus=id;
+JavaScriptRemotingController.doStartShipping(inputStatus,function(result,event){
+
+},{escape:true});
+}</script>
+
+ <apex:form id="formId">
+    <apex:pageBlock id="pageBId">
+        <apex:pageBlockTable id="tableId" value="{!Orders}" var="order">
+            <apex:column value="{!order.Name}"/>
+            <apex:column value="{!order.Customer__c}"/>
+            <apex:column id="checkId" headerValue="Status">
+                <apex:inputField id="inputStatus" value="{!order.Status__c}" />
+            </apex:column>
+            <apex:column headerValue="Started Processing" >
+                <apex:selectCheckboxes onclick="updateStatus(this,'{!order.Id}');">                    
+                 </apex:selectCheckboxes>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+
+</apex:page>

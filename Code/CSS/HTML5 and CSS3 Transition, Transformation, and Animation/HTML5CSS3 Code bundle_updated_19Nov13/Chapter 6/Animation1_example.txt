@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+div:hover
+{
+width:200px;
+height:100px;
+border:2px dotted;
+border-radius:5px;
+border-color: navy;
+background:red;
+position:relative;
+animation:packt 5s;
+-webkit-animation:packt 5s; /* Safari and Chrome */
+animation-iteration-count:3;
+animation-direction:alternate;
+animation-play-state:running;
+-webkit-animation-iteration-count:3;
+-webkit-animation-direction:alternate;
+-webkit-animation-play-state:running;
+}
+
+@keyframes packt
+{
+0%   {background:lime; left:0px; top:0px;}
+25%  {background:pink; left:300px; top:0px;}
+50%  {background:yellow; left:300px; top:300px;}
+75%  {background:silver; left:0px; top:300px;}
+100% {background:lime; left:0px; top:0px;}
+}
+
+@-webkit-keyframes packt 
+{
+0%   {background:lime; left:0px; top:0px;}
+25%  {background:pink; left:300px; top:0px;}
+50%  {background:yellow; left:300px; top:300px;}
+75%  {background:silver; left:0px; top:300px;}
+100% {background:lime; left:0px; top:0px;}
+}
+
+</style>
+</head>
+<body>
+<br>
+<div> PACKT : Always finding a way </div>
+</body>
+</html>

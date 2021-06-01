@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>
+The Placeholder  Attribute
+</title>
+<h1>  The Placeholder Attribute </h1>
+<div>
+Enter the name of the animal in the search box below and click on Go
+<br><br>
+<label for="animal">Animal Name :  </label> 
+<input id="animal" placeholder="Enter the animal name">
+<input type="submit" value="Go">
+</div>
+</html>

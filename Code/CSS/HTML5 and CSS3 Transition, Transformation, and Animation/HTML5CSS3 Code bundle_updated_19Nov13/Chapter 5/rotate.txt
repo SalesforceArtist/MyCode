@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type=“text/javascript”>
+function demoRotation()
+{
+var canvas = document.getElementById(‘packt’);
+var xyz = canvas.getContext(‘2d’);
+
+xyz.strokeRect(10,10, 120, 120);
+
+xyz.rotate( (Math.PI / 180) * 25);  //rotate 25 degrees.
+
+xyz.fillStyle = “#0000ff”;
+xyz.fillRect(10,10, 50, 50);
+
+}
+</script>
+</head>
+<body onload=“demoRotation();”>
+<canvas id=“packt”></canvas>
+</body>
+</html>
+

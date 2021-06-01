@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+	<html>
+	<head>
+	<title>
+	The " flex " property 
+	</title>
+	<style>
+	
+	.flex-container {
+	    display: -webkit-flex;
+	    display: flex;
+	    width: 700px;
+    height: 300px;
+	    background-color: DeepSkyBlue;
+	}
+	
+	.flex-item {
+	    background-color: Yellow;
+	    margin: 15px;
+	}
+	
+	.first_item {
+	    -webkit-flex: 1;
+	    flex: 1;
+	}
+	
+	.second_item {
+	    -webkit-flex: 3;
+	    flex: 3;
+	}
+	
+	.third_item {
+	    -webkit-flex: 5;
+	    flex: 5;
+	}
+	</style>
+	</head>
+	<body>
+	<div class="flex-container">
+	<div class="flex-item first_item"> Box One </div>
+	<div class="flex-item second_item"> Box Two </div>
+	<div class="flex-item third_item"> Box Three </div>
+	</div>
+	</body>
+	</html>

@@ -1,0 +1,7 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+64 - CMD Windows - Pleeease compilation instruction
+*/
+
+pleeease compile
+

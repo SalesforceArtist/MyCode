@@ -1,0 +1,6 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+38 - Width of Nav
+*/
+
+(220px ÷ 960px) x 100 = 22.91666666666667%

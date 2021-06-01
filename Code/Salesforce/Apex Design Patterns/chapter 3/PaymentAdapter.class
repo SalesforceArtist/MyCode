@@ -1,0 +1,12 @@
+/**
+ * 	Chapter 3   -   Behavioral Design Pattern
+ *	Desc 		-	It interacts with external Payment service and loosely coupled with existing code
+ * */ 
+public class PaymentAdapter{
+    PaymentForYouProcessor processor;
+    
+    //submit request to processor class to invoke payment processing
+    public void submitRequest(String xmlData){
+        processor.submitRequest(xmlData);
+    }
+}

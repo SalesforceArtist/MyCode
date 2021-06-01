@@ -1,0 +1,13 @@
+/**
+ * Chapter 1   	:   Introduction to design pattern
+ * Author    	:  	Jitendra Zaa
+ * Description	:	Example of interface
+ * */
+public class Level_UnderWater implements GameLevel {
+    public void levelNumber(){
+        System.debug('Level 2');
+    }
+    public void environment(){
+        System.debug('This level will be played Under Water');
+    }
+}

@@ -1,0 +1,21 @@
+/**
+ * Chapter 2 	- 	Creational Design Pattern
+ * Author		-	Jitendra Zaa
+*   Factory class to return actual implementation of Monitors
+*/
+public class MonitorFactory{
+    
+     //Factory method to return instance of concrete class of monitor
+    public static IMonitor getInstance(String monitorType){ 
+        IMonitor retVal = null;
+        
+        if(monitorType == 'LEDMonitor'){
+            retVal = new LEDMonitor();
+            
+        }else if(monitorType == 'LCDMonitor'){
+            retVal = new LCDMonitor();
+            
+        }          
+        return retVal;         
+    }    
+}

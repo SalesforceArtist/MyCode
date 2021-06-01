@@ -1,0 +1,7 @@
+<apex:page showHeader="false" sidebar="false" >
+	<c:myComponent /> //Use the default bgcolor
+	<c:myComponent bgcolor="Orange" />
+	<c:myComponent bgcolor="Yellow" />
+	<c:myComponent bgcolor="Green" color="Yellow" />
+	<c:myComponent bgcolor="Blue" color="White" />
+</apex:page>

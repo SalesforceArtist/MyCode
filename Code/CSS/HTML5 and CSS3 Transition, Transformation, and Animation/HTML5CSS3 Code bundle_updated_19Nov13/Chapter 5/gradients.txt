@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type=“application/javascript”>
+
+function drawGrad () {
+var canvas  = document.getElementById(“packt”);
+var context = canvas.getContext(“2d”);
+
+var linGrad = context.createLinearGradient(0,0,100,0);
+linGrad.addColorStop(0,”lime”);
+linGrad.addColorStop(0.5,”navy”);
+linGrad.addColorStop(1,”pink”);
+
+context.fillStyle = linGrad;
+context.fillRect(10,10,160,200);
+}
+</script>
+</head>
+ <body onload=“drawGrad();”>
+   <canvas id=“packt” width=“200” height=“200”></canvas>
+</body>
+</html>

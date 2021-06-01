@@ -1,0 +1,11 @@
+/**
+ * Chapter 6   	:   Anti Pattern
+ * Author    	:  	Jitendra Zaa
+ * Description	:	This class explains usecases of overriding Equals() and Hashcode()	
+ * */
+public class AntiPattern_EqualsAndHashcode {
+    
+    public integer amount {get;set;}
+    public String amountCurrency {get;set;}
+
+}

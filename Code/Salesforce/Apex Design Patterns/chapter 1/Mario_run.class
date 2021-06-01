@@ -1,0 +1,11 @@
+/**
+ * Chapter 1   	:   Introduction to design pattern
+ * Author    	:  	Jitendra Zaa
+ * Description	:	Example of child class of Mario
+ * */
+public class Mario_run extends Mario {
+    public override void ability(){
+        super.ability();
+        System.debug('I can Run');
+    }  
+}

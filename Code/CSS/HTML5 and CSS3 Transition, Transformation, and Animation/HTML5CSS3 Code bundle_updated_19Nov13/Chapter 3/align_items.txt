@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+   <head>
+	<style>
+	#flex-container {
+	    display: -webkit-flex;
+	    display: flex;
+	    -webkit-align-items: center;
+	    align-items: center;
+	    width: 330px;
+	    height: 370px;
+	    background-color: Green;
+	}
+	
+	#flex-item {
+	    background-color: Silver;
+	    width: 110px;
+	    height: 150px;
+	    margin: 25px;
+	}
+	</style>
+   </head>
+     <body>
+	<div id="flex-container">
+	<div id="flex-item">Alpha</div>
+	<div id="flex-item">Beta</div>
+	</div>
+     </body>
+</html>

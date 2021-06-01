@@ -1,0 +1,14 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+22 - Recap example - omitted the 0 in the alpha value
+*/
+
+$brandBlue: #416e8e;
+$supportGray: #ccc;
+
+@mixin genericContainer {
+	padding: 10px;
+	border: $brandBlue 1px solid;
+	background: $supportGray;
+	box-shadow: 1px 1px 1px rgba($brandBlue, .3);
+}

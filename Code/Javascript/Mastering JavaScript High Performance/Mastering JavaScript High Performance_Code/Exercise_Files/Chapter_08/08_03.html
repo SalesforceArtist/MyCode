@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Chapter 08 - 03</title>
+<style type="text/css">
+	body { font-family: monospace;  font-size: 1em; }
+	#results { margin-top: 1em; }
+</style>
+</head>
+
+<body>
+<button onclick="makeAPromise()">Make A Promise</button>
+
+<div id="results"></div>
+	
+<script type="text/javascript">
+
+	function makeAPromise() {
+		var promiseCount = 0;
+		
+		var promiseNo1 = new Promise(
+	    function(resolve) {       
+	      	for (var i = 0; i <= 1000; i++) {
+		      	promiseCount = i * 5;
+	      	}
+	      	
+	      	/* Assign a value to our promise */
+	        resolve("Our final count: <strong>" + promiseCount + "</strong>")
+	    });
+	    
+	    promiseNo1.then(
+		    function(promiseCount) {
+			    document.getElementById("results").innerHTML = promiseCount;
+		    }
+	    )
+	}
+
+</script>
+</body>
+</html>

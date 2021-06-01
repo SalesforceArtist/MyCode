@@ -1,0 +1,3 @@
+The book assumes you already have basic knowledge of JavaScript, and works up from there. Modern features of the language are explained, so we can develop code in the best way. Best practices for the language are also introduced and followed in all the code. Knowledge of HTML and CSS will also be required for the web and mobile applications. 
+
+All the code in the book runs on Windows, macOS, and Linux machines, so you shouldn't have any problems with regard to whatever computer you use. Some experience with terminal/command-line tools will come in handy, but most of the work will be done with a graphic interface.

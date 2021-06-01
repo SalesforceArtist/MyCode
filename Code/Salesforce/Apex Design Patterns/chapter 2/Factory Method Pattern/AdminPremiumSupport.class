@@ -1,0 +1,24 @@
+/**
+ * Book Name	- 	Apex Design Pattern
+ * Chapter 2	-	Factory Method Pattern
+ * Description	-	Problem before applying any design pattern
+ * 
+ * */
+public class AdminPremiumSupport{
+                
+        /**
+        * return SLA in hours
+        */           
+        public Integer getSLA()
+        {
+            return 12;
+        }
+        
+        /**
+        * Total allowed support tickets allowed every month is 50
+        */
+        public Integer allowedTickets()
+        {
+           return 50;
+        }
+}

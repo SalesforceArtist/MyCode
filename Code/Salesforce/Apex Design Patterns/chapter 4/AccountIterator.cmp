@@ -1,0 +1,30 @@
+<aura:component controller="AccountIteratorController" >
+    <aura:attribute name="accountName" type="String" />
+	<aura:attribute name="accountSymbol" type="String" />
+    <aura:attribute name="currentIndex" type="Integer" />
+    <aura:handler name="init" value="{!this}" action="{!c.doInit}" />    
+    <div class="container">	   
+        <div class="slds-grid slds-wrap slds-grid--align-center">
+            
+            <div class="slds-col">
+            	<span class="slds-icon__container slds-icon-standard-account slds-icon__container--circle">            
+                    <c:svg class="slds-icon--large" 
+                           xlinkHref="/resource/SLDS/assets/icons/standard-sprite/svg/symbols.svg#account"/>            
+                    <span class="slds-assistive-text">Client Icon</span>
+                </span>
+            </div>            
+  			<div class="slds-col slds-p-left--x-small">  
+                <div id="AccountName">
+                    {!v.accountName}
+                </div>
+                <div id="AccountAddress">
+                    {!v.accountSymbol}
+                </div> 
+                <div class="button slds-p-top--large">
+                	<button aura:id="btnNext" class="slds-button slds-button--destructive slds-button--small" 
+                            onclick="{!c.getNext}">Next</button>
+                </div>
+            </div> 
+        </div>        
+    </div>    
+</aura:component>

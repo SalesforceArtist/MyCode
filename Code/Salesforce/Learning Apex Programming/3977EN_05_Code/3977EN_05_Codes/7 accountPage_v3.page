@@ -1,0 +1,22 @@
+<apex:page standardController="account">
+	<apex:sectionHeader title="Account Edit" subtitle="{!account.name}" />
+	<apex:pageMessages />	
+	<apex:form >
+		<apex:pageBlock title="Account Edit" mode="edit" >
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save" action="{!save}" />
+				<apex:commandButton value="Cancel" action="{!cancel}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Account Info" columns="3" >
+				<apex:inputField value="{!account.name}" />
+				<apex:inputField value="{!account.phone}" />
+				<apex:inputField value="{!account.website}" />
+
+				<apex:inputField value="{!account.industry}" />
+				<apex:inputField value="{!account.fax}" />
+				<apex:inputField value="{!account.type}" />
+				<!-- keep adding more fields -->
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

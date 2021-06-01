@@ -1,0 +1,11 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+07 - Example of Sass syntax
+*/
+
+.selector-a
+   float: left
+
+      .selector-b
+         background: orange
+

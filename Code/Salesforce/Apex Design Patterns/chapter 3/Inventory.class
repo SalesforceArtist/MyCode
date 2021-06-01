@@ -1,0 +1,15 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * This class represents Inventory module in Facade Pattern
+ * */
+public class Inventory {
+	
+    //This method updates Inventory
+    public boolean updateInventory(String prodId, Integer count)
+    {
+        System.debug(count+' Product with Id '+prodId+' is subtracted from Inventory');
+        return true;
+    }
+    
+}

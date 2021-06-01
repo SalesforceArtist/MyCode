@@ -1,0 +1,16 @@
+<apex:page standardController="Account" >
+	<apex:sectionHeader title="Account Edit" subtitle="New Account" />
+	<apex:form >
+		<apex:pageBlock title="Account Edit" mode="edit" >
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save" action="{!save}" />
+				<apex:commandButton value="Cancel" action="{!cancel}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Account Information" >
+				<apex:inputField value="{!account.Name}" />
+				<apex:inputField value="{!account.Website}" />
+			</apex:pageBlockSection>
+
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

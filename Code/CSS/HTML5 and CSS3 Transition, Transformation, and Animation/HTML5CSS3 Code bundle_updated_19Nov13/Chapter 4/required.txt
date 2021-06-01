@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Required attribute </title>
+<h1> The Required Attribute </h1>
+<br>
+<head>
+<br>
+<form>
+<label for="loginid"><em>Login name<em> : </label>
+<input name="loginid" type="text" required>
+<input type="submit" value="Submit">
+</form>
+</html>

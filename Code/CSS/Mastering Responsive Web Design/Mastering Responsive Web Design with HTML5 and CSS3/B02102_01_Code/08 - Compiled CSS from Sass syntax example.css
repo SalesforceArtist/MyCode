@@ -1,0 +1,12 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+08 - Compiled CSS from Sass syntax example
+*/
+
+.selector-a {
+   float: left;
+}
+
+.selector-a, .selector-b {
+   background: orange;
+}

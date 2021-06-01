@@ -1,0 +1,34 @@
+/* Anonymous Apex */
+
+CoreFramework webFrameowrk = new BlogFramework(new Theme_WhiteBlue());
+webFrameowrk.setProperties('Salesforce Blog', 'Salesforce, Design Pattern','Article on Bridge Pattern');
+webFrameowrk.printKeyword();
+webFrameowrk.printTitle();
+webFrameowrk.printContent();
+webFrameowrk.showHeader_Footer();
+webFrameowrk.showMenu_Body();
+
+O/p :
+Keyword - Salesforce, Design Pattern
+Title - Salesforce Blog
+Content - Article on Bridge Pattern
+Header - Font size : 16px, Background	: Blue,	Color : Black
+Footer - Font size : 14px, Background	: White,	Color : Blue
+Content - Font size : 16px, Background	: White,	Color : Black
+
+CoreFramework webFrameowrk = new CMSFramework(new Theme_WhiteGreen());
+webFrameowrk.setProperties('Salesforce Community CMS', 'Non Profit Information','First Post on NPSP');
+webFrameowrk.printKeyword();
+webFrameowrk.printTitle();
+webFrameowrk.printContent();
+webFrameowrk.showHeader_Footer();
+webFrameowrk.showMenu_Body();
+
+O/p :
+Keyword - Non Profit Information
+Title - Salesforce Community CMS
+Content - First Post on NPSP
+Header - Font size : 16px, Background	: Green,	Color : Black
+Footer - Font size : 14px, Background	: White,	Color : Green
+Menu - Font size : 12px, Background	: Green,	Color : White
+Content - Font size : 16px, Background	: White,	Color : Black

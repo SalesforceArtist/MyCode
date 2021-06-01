@@ -1,0 +1,8 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+25 - Setting a value on the Sass argument
+*/
+
+.selector-a {
+	@include genericContainer(10px);
+}

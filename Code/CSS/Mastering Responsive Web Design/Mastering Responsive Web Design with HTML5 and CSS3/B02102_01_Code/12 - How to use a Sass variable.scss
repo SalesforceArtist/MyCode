@@ -1,0 +1,10 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+12 - How to use a Sass variable
+*/
+
+$brandBlue: #416e8e;
+
+body {
+	background: $brandBlue;
+}

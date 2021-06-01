@@ -1,0 +1,85 @@
+<html>
+<head>
+
+</head>
+<body onload="doAjax()">
+
+<p>Hello world</p>
+<p>
+  <div id="debug"></div>
+</p>
+<p>
+  <div id="json"></div>
+</p>
+<p>
+  <div id="result"></div>
+</p>
+
+<p>Powered by <a href="http://www.aprs.fi">aprs.fi</a></p>
+
+<script>
+var debug = document.getElementById('debug');
+ 
+function progress(evt){
+  debug.innerHTML += "'progress' called...<br />";
+}
+ 
+function abort(evt){
+  debug.innerHTML += "'abort' called...<br />";
+}
+ 
+function error(evt){
+  debug.innerHTML += "'error' called<br />";
+}
+ 
+function load(evt){
+   debug.innerHTML += "'load' called<br />";
+}
+ 
+function loadstart(evt){
+  debug.innerHTML += "'loadstart' called<br /> ";
+}
+
+function doAjax() {
+  document.getElementById("result").innerHTML = "loaded... executing.";
+
+  var xmlhttp;
+  if (window.XMLHttpRequest)
+  {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp=new XMLHttpRequest();
+  }
+  else
+  {
+    // code for IE6, IE5
+    xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+  }
+  	
+  var request = { 
+    call: "kf6gpe-7"
+  };
+
+
+  xmlhttp.addEventListener("loadstart", loadstart, false);
+  xmlhttp.addEventListener("progress", progress, false);  
+  xmlhttp.addEventListener("load", load, false);
+  xmlhttp.addEventListener("abort", abort, false);
+  xmlhttp.addEventListener("error", error, false);
+
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 && xmlhttp.status == 200)
+    {
+      var result = JSON.parse(xmlhttp.responseText);
+	  document.getElementById("json").innerHTML = xmlhttp.responseText;
+      document.getElementById("result").innerHTML = result.call + ":" + result.lat + ", " + result.lng;
+    }
+  };
+
+  xmlhttp.open("POST","/", true);
+  xmlhttp.setRequestHeader("Content-Type","application/json");
+  xmlhttp.send(JSON.stringify(request));
+}
+
+</script>
+</body>
+</html>

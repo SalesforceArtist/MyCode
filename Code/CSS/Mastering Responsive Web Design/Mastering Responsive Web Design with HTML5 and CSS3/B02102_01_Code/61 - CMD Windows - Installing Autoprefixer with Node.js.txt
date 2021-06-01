@@ -1,0 +1,7 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+61 - CMD Windows - Installing Autoprefixer with Node.js
+*/
+
+npm install --global autoprefixer
+autoprefixer *.css

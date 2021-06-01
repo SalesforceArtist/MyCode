@@ -1,0 +1,15 @@
+<apex:page controller="VFRemoteChartController" title="Pie Chart">
+    <script>
+        function getRemoteChartData(callback) {
+            VFRemoteChartController.getRemotePieChartData(function(result, event) {
+                if(event.status && result && result.constructor === Array) {
+                    callback(result);
+                }
+            });
+        }
+    </script>
+    <apex:chart height="350" width="450" data="getRemoteChartData">
+        <apex:pieSeries dataField="data" labelField="name"/>
+        <apex:legend position="right"/>
+    </apex:chart>
+</apex:page>

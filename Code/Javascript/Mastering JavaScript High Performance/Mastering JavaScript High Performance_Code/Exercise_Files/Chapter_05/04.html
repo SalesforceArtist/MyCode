@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Chapter 05 - 04</title>
+    </head>
+    <body>
+        
+        
+        <script type="text/javascript">
+            /**
+             * Chapter 05 - 04
+             */
+        
+        
+        var i, ptag;
+        console.time("process time");
+        for (i = 0; i <= 9000; i++) {
+            ptag = document.createElement("p");
+            ptag.innerText = i;
+            document.body.appendChild(ptag);
+        }
+        console.timeEnd("process time");
+        </script>
+    </body>
+</html>

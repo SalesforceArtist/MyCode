@@ -1,0 +1,140 @@
+<html>
+<head>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body>
+
+<p>Hello world</p>
+<p>
+  <div id="debug"></div>
+</p>
+<p>
+  <div id="json"></div>
+</p>
+<p>
+  <div id="result"></div>
+</p>
+
+<button type="button" id="get" onclick="doGet()">Get</button><br/>
+<form>
+  Id: <input type="text" id="id"/>
+  Rev: <input type="text" id="rev"/>
+  Call: <input type="text" id="call"/>
+  Lat: <input type="text" id="lat"/>
+  Lng: <input type="text" id="lng"/>
+  <button type="button" id="insert" onClick="doUpsert('insert')">Insert</button>
+  <button type="button" id="update" onClick="doUpsert('update')">Update</button>
+  <button type="button" id="remove" onClick="doRemove()">Remove</button>
+</form><br/>
+
+<script>
+function doGet() { 	
+  $.ajax({
+    type: 'GET',
+    url: 'http://localhost:5984/documents/_design/stations/_view/byCall',
+    dataType: 'json'
+  })
+  .fail(function() {
+    $('#debug').append('<br/>failed');
+  })
+  .always(function() {
+    $('#debug').append('<br/>complete');
+  })
+  .done(function(result) {
+    $('#json').html(JSON.stringify(result));
+    var resultHtml = '<table><tr><td><b>id</b></td>';
+	resultHtml += '<td><b>revision</b></td><td><b>call</b></td>';
+    resultHtml += '<td><b>lat</b></td><td><b>lng</b></td></tr>';
+    for(var i = 0; i < result.total_rows; i++)
+    {
+      var item = result.rows[i]
+      resultHtml += '<tr>';
+      resultHtml += '<td>' + item.id + '</td>';
+	  resultHtml += '<td>' + item.value._rev + '</td>';
+      resultHtml += '<td>' + item.value.call + '</td>';
+      resultHtml += '<td>' + item.value.lat + '</td>';
+      resultHtml += '<td>' + item.value.lng + '</td>';
+      resultHtml += '</tr>';
+    }
+	resultHtml += '</table/>';
+    $('#result').html(resultHtml);
+  })
+}
+
+function doUpsert(which)
+{	
+  var value = {};
+  id = $('#id').val();
+    
+  value.call = $('#call').val();
+  value.lat = $('#lat').val();
+  value.lng = $('#lng').val();
+  
+  if (which != 'insert') {
+    value._rev = $('#rev').val();
+    value._id = id;
+  }
+  
+  $('#debug').html(JSON.stringify(value));
+ 
+  var reqType = which == 'insert' ? "POST" : "PUT";
+  var reqUrl = "http://localhost:5984/documents/" + 
+    (which == 'insert' ? '' : id);
+
+  $.ajax({
+    type: reqType,
+    url: reqUrl,
+    dataType:"json",
+    headers: { 'Content-Type' : 'application/json' },
+    data: JSON.stringify(value)
+  })
+  .fail(function() {
+    $('#debug').html( $('#debug').html() + "<br/>failed");
+  })
+  .always(function() {
+    $('#debug').html( $('#debug').html() + "<br/>complete");
+  })
+  .done(function(result) {
+    $('#json').html(JSON.stringify(result));
+    var resultHtml = which == 'insert' ? "Inserted" : "Updated";
+    $('#result').html(resultHtml);
+  })
+}
+
+function doRemove()
+{	
+  id = $('#id').val();
+  rev = $('#rev').val();
+  if (id == '') 
+  {
+    alert("Must provide an ID to delete!");
+    return;
+  }
+  if (rev == '')
+  {
+  	alert("Must provide a document revision!");
+	return;
+  }
+
+
+  $.ajax({
+    type: "DELETE",
+    url: "http://localhost:5984/documents/" + id + '?rev=' + rev,
+  })
+  .fail(function() {
+    $('#debug').html( $('#debug').html() + "<br/>failed");
+  })
+  .always(function() {
+    $('#debug').html( $('#debug').html() + "<br/>complete");
+  })
+  .done(function(result) {
+    $('#json').html(JSON.stringify(result));
+    var resultHtml = "Deleted";
+    $('#result').html(resultHtml);
+  })
+}
+
+</script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Example of Decorator Pattern. This is abstract class ehich must be implemented by all Decorators
+ * */
+public abstract class SalesforceSupportDecorator extends SalesforceSupport{
+	
+    /**
+     * It is possible that all child decorator class may have extra
+     * properties as compare to actual base class.
+     * We want all child classes to have description method
+     * */   
+    public abstract override String getDescription() ;
+}

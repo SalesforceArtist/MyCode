@@ -1,0 +1,6 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+7 - The Math – Numeric Pattern: converting 2 columns to percentages
+*/
+
+180 ÷ 1200 x 100 = 15%

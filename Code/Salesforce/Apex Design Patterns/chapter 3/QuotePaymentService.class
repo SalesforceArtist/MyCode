@@ -1,0 +1,17 @@
+/**
+ * Implementation of quote payment functionality
+ * */ 
+public class QuotePaymentService{
+    /**
+     * This method invokes third party library to submit 
+     * payment processing request
+     */
+    public void submitPaymentRequest(Quote invoice){
+        PaymentRequest quotePaymentRequest;
+        
+        //send payment processing request
+        IPaymentAdapter adapter = 
+            PaymentAdapterFactory.getAdapter('PayNow');
+        adapter.submitRequest(quotePaymentRequest);
+    }
+}

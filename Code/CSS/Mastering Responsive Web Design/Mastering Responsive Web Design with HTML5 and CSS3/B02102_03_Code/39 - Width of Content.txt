@@ -1,0 +1,6 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+39 - Width of Content
+*/
+
+(700px ÷ 960px) x 100 = 72.91666666666667%

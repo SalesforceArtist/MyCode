@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Chapter 05 - 06</title>
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+        /**
+         * Chapter 05 - 06
+         */
+        var result = 0;
+        console.time("Time up");
+        for (var i = 9000; i > 0; i--) {
+            /** Trigger a timeEnd, when the loop hit's 0. */
+            result++;
+            if (result === 9000) {
+                console.timeEnd("Time up");
+            }
+            
+        }
+        </script>
+    </body>
+</html>

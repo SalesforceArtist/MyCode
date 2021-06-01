@@ -1,0 +1,30 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+44 - (RWD) Media queries aimed at 768px
+*/
+
+.container_12 {
+    width: 980px;
+    padding: 0 1.04%;
+    margin: auto;
+}
+.grid {
+    &_1, &_2, &_3, &_4, &_5, &_6, &_7, &_8, &_9, &_10, &_11, &_12 {
+        float: left;
+        margin: 0 1.04%;
+    }
+}
+.container_12 {
+    @include forSmallScreens(980px) {
+        width: 768px;
+    }
+	.grid_12 { //Header and Footer sections
+		width: 97.91%;
+	}
+	.grid_3 { //Nav section
+		width: 22.91%;
+	}
+	.grid_9 { //Content section
+		width: 72.91%;
+	}
+}

@@ -1,0 +1,50 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+1 - SCSS file from "Chapter 3: Mobile-first or Desktop-first"
+*/
+
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+//Container
+.container-12 {
+	width: 980px;
+	padding: 0 10px;
+	margin: auto;
+}
+//Grid >> Global
+.grid {
+	&-1, &-2, &-3, &-4, &-5, &-6, &-7, &-8, &-9, &-10, &-11, &-12 {
+		float: left;
+		margin: 0 10px;
+	}
+}
+//Grid >> 12 Columns
+.container-12 {
+	.grid-1  { width: 60px; }
+	.grid-2  { width: 140px; }
+	.grid-3  { width: 220px; }
+	.grid-4  { width: 300px; }
+	.grid-5  { width: 380px; }
+	.grid-6  { width: 460px; }
+	.grid-7  { width: 540px; }
+	.grid-8  { width: 620px; }
+	.grid-9  { width: 700px; }
+	.grid-10 { width: 780px; }
+	.grid-11 { width: 860px; }
+	.grid-12 { width: 940px; }
+}
+//Clear Floated Elements - http://davidwalsh.name/css-clear-fix
+.clear, .row {
+	&:before,
+	&:after { content: ''; display: table; }
+	&:after { clear: both; }
+}
+//Use rows to nest containers
+.row { margin-bottom: 10px;
+	&:last-of-type { margin-bottom: 0; }
+}
+//Legacy IE
+.clear { zoom: 1; }
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<style type=“text/css”>
+#packt {
+		border:lime 10px solid
+		
+	}
+</style>
+
+<title>Canvas tutorial</title>
+    <script type=“text/javascript”>
+var x =  0;
+var y = 15;
+var z = 5;
+
+function demoAnimation() {
+
+    animationMethod = window.mozRequestAnimationFrame    ||
+                window.webkitRequestAnimationFrame ||
+                window.msRequestAnimationFrame     ||
+                window.oRequestAnimationFrame
+                ;
+
+    animationMethod(demoAnimation);
+
+    x = (x + z);
+
+    if(x <= 0 || x >= 370){
+        z = -z;
+    }
+
+    draw();
+}
+
+
+function draw() {
+    var canvas  = document.getElementById(“packt”);
+    var context = canvas.getContext(“2d”);
+
+    context.clearRect(0, 0, 500, 170);
+    context.strokeStyle = “black”;
+    context.strokeRect(x, y, 25, 25);
+}
+
+demoAnimation();
+</script>
+</head>
+<body onload=“draw();”>
+    <canvas id=“packt” width=“400” height=“400”></canvas>
+  </body>
+</html>

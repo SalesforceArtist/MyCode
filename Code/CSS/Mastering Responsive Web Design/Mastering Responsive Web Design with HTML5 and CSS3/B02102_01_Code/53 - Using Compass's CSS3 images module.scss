@@ -1,0 +1,8 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+53 - Using Compass's CSS3 images module
+*/
+
+header {
+  @include background-image(linear-gradient(red, blue));
+}

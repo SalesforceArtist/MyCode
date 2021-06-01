@@ -1,0 +1,9 @@
+/**
+ * Chapter 1   	:   Introduction to design pattern
+ * Author    	:  	Jitendra Zaa
+ * Description	:	Example of interface
+ * */
+public interface GameLevel {
+	 void levelNumber();
+     void environment();
+}

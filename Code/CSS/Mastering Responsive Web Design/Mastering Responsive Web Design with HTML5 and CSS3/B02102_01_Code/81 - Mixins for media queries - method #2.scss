@@ -1,0 +1,17 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+81 - Mixins for media queries - method #2
+*/
+
+//Mobile-first
+@mixin breakpoint($point) {
+	@if $point == small {
+		@media (min-width: 20em) { @content; }
+	}
+	@else if $point == medium {
+		@media (min-width: 40em) { @content; }
+	}
+	@else if $point == large {
+		@media (min-width: 48em) { @content; }
+	}
+}

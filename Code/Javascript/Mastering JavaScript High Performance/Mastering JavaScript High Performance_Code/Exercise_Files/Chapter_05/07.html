@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Chapter 05 - 07</title>
+    </head>
+    <body>
+        
+        <script type="text/javascript">
+            /**
+             * Chapter 05 - 07
+             */
+        function delay300000() {
+            console.log("delay300000()");
+            for(var i = 0; i < 300000; i++) {
+                console.info("Writing i to the console." + [i]);
+            }
+        }
+        
+        function delay3000() {
+            console.log("delay3000()");
+            for(var i = 0; i < 3000; i++) {
+                console.info("Writing i to the console." + [i]);
+            }
+        }
+        
+        window.onload = function() {
+            setTimeout(delay300000(), 50);
+            setTimeout(delay3000(), 150);
+        }
+        </script>
+    </body>
+</html>

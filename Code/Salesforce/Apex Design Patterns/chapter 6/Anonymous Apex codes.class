@@ -1,0 +1,21 @@
+/* Anonymous Apex code */
+
+/* Equals and Hashcode - Comparable interface */
+DealInfo o = new DealInfo();
+o.amount = 200;
+o.amountCurrency = 'USD';
+
+DealInfo o1 = new DealInfo();
+o1.amount = 200;
+o1.amountCurrency = 'USD';
+
+System.assertEquals(o, o1);
+
+/*Circular dependency*/
+ClassA a = new ClassA();
+
+/* Override toString() method*/
+ToStringDemo obj = new ToStringDemo();
+obj.companyName = 'Salesforce';
+obj.city = 'SFO';
+System.debug(obj);

@@ -1,0 +1,380 @@
+/*** RESET ***/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video{
+    margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-size:100%;
+    -webkit-text-size-adjust: 100%;
+	font-weight:inherit;
+    font-style:inherit;
+    font-family:inherit;
+	vertical-align:baseline;
+}
+table{
+    border-collapse:collapse;
+	border-spacing:0;
+}
+address,caption,cite,code,dfn,em,strong,th,var{
+    font-style:normal;
+	font-weight:normal;
+}
+ol, ul {
+    list-style:none;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section{
+	display:block;
+}
+blockquote, q{
+	quotes:none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:'';
+	content:none;
+}
+:focus {
+	outline:1px dotted #666;
+} 
+/** STICKY FOOTER **/
+html, body, .wrapper {
+    height: 100%;
+}
+body > .wrapper{
+    height:auto;
+    min-height:100%;
+    overflow:hidden;
+}
+.main{
+    overflow:hidden;
+}
+footer,.push{
+    height:2.0em;
+    clear:both
+}
+footer{
+    position:relative;
+    margin-top:-2.0em;
+}
+/** GENERAL STYLES **/
+html,*{
+    font-family:Helvetica,Arial, sans-serif; 
+}
+aside{
+    float:right;
+    width:200px;
+    padding:30px 0 10px 0;
+    margin:0 10px;
+    background-color:#E4E4E4;
+    /** TOP 5 ROUNDED BORDER **/ 
+    border-radius:0 0 8px 8px;
+    -moz-border-radius:0 0 8px 8px;
+    -webkit-border-radius:0 0 8px 8px;
+    -o-border-radius:0 0 8px 8px;
+    /** BOX OFFICE GRADIENT **/
+    background:linear-gradient(bottom, rgb(200,200,200) 35%, rgb(210,210,210) 68%, rgb(220,220,220) 98%, rgb(80,80,80) 100%);
+    background:-o-linear-gradient(bottom, rgb(200,200,200) 35%, rgb(210,210,210) 68%, rgb(220,220,220) 98%, rgb(80,80,80) 100%);
+    background:-moz-linear-gradient(bottom, rgb(200,200,200) 35%, rgb(210,210,210) 68%, rgb(220,220,220) 98%, rgb(80,80,80) 100%);
+    background:-webkit-linear-gradient(bottom, rgb(200,200,200) 35%, rgb(210,210,210) 68%, rgb(220,220,220) 98%, rgb(80,80,80) 100%);
+    background:-ms-linear-gradient(bottom, rgb(200,200,200) 35%, rgb(210,210,210) 68%, rgb(220,220,220) 98%, rgb(80,80,80) 100%);
+    /** BOX OFFICE INNER SHADOW **/
+    box-shadow:0 -1px 1px 1px #aaa inset;
+    -moz-box-shadow:0 -1px 1px 1px #aaa inset;
+    -webkit-box-shadow:0 -1px 1px 1px #aaa inset;
+    -o-box-shadow:0 -1px 1px 1px #aaa inset; 
+}
+nav{
+    background-color:#666
+    background-image:linear-gradient(top, rgb(102,102,102) 0%, rgb(70,70,70) 100%);
+    background-image:-moz-linear-gradient(top, rgb(102,102,102) 0%, rgb(70,70,70) 100%);
+    background-image:-webkit-linear-gradient(top, rgb(102,102,102) 0%, rgb(70,70,70) 100%);
+    background-image:-o-linear-gradient(top, rgb(102,102,102) 0%, rgb(70,70,70) 100%);
+    background-image:-ms-linear-gradient(top, rgb(102,102,102) 0%, rgb(70,70,70) 100%);
+    /** NAVIGATION SHADOW **/
+    box-shadow: 0 1px 3px #999;
+    -moz-box-shadow: 0 1px 3px #999;
+    -webkit-box-shadow: 0 1px 3px #999;
+    -o-box-shadow: 0 1px 3px #999;
+    border-top:1px solid #777;
+    font-size:.9em;
+
+}
+/*
+@keyframes movierolling{
+    from {background-position: 0 0;}
+    to {background-position: -19px 0;}
+}*/
+/* Firefox */
+/*
+@-moz-keyframes movierolling{
+    from {background-position: 0 0;}
+    to {background-position: -19px 0;}
+    
+}*/
+/* Safari and Chrome */
+/*
+@-webkit-keyframes movierolling{
+    from {background-position: 0 0;}
+    to {background-position: -19px 0;}
+    
+}*/
+/* Opera */
+/*
+@-o-keyframes movierolling{
+    from {background-position: 0 0;}
+    to {background-position: -19px 0;}
+} */
+header{
+    color:#fff;
+    height:122px;
+    /** HEADER GRADIENT **/
+    background-color:#1A1A1A;
+    background-image:url(../img/logo_back.png), linear-gradient(right, rgb(26,26,26) 35%, rgb(40,40,40) 68%, rgb(61,61,61) 85%);
+    background-image:url(../img/logo_back.png), -moz-linear-gradient(right, rgb(26,26,26) 35%, rgb(40,40,40) 68%, rgb(61,61,61) 85%);
+    background-image:url(../img/logo_back.png), -webkit-linear-gradient(right, rgb(26,26,26) 35%, rgb(40,40,40) 68%, rgb(61,61,61) 85%);
+    background-image:url(../img/logo_back.png), -o-linear-gradient(right, rgb(26,26,26) 35%, rgb(40,40,40) 68%, rgb(61,61,61) 85%);
+    background-image:url(../img/logo_back.png), -ms-linear-gradient(right, rgb(26,26,26) 35%, rgb(40,40,40) 68%, rgb(61,61,61) 85%);
+    border-bottom:1px solid #222;
+    /** HEADER MOVIE ROLLING ANIMATION **/
+    /*animation:movierolling .5s; 
+    -moz-animation:movierolling .5s;
+    -webkit-animation:movierolling .5s;
+    -o-animation:movierolling .5s;
+    animation-iteration-count:infinite;
+    -moz-animation-iteration-count:infinite;
+    -webkit-animation-iteration-count:infinite;
+    -o-animation-iteration-count:infinite;
+    animation-timing-function:linear;
+    -moz-animation-timing-function:linear;
+    -webkit-animation-timing-function:linear;
+    -o-animation-timing-function:linear;*/
+}
+footer{
+    background-color:#000;
+    color:#fff;
+    font-size:.6em;
+    line-height:2em;
+    text-align:center;
+}
+/** RESPONSIVE WEB DESIGN MEDIA QUERIES **/
+.wrapper{
+    background-color:#fff;
+    /** PAGE SIDES SHADOWS **/
+    box-shadow: 1px 0 2px 1px #aaa;
+    -moz-box-shadow: 0 -1px 1px 1px #aaa;
+    -webkit-box-shadow: 0 -1px 1px 1px #aaa;
+    -o-box-shadow: 0 -1px 1px 1px #aaa;
+}
+.wrapper,footer{
+    width:960px;
+    margin-left:auto;
+    margin-right:auto;
+}
+header div{
+    width:320px;
+    height:122px;
+    background:url(../img/logo.png);
+}
+html,body{
+    background-color:#ccc;
+}
+.wrapper section,nav{
+    padding:5px 35px;
+}
+nav a{
+    color:#ccc;
+    text-decoration:none;
+    
+}
+nav a:hover{
+    color:#fff;
+    text-shadow: 2px 2px 1px #222;
+    filter: dropshadow(color=#222222, offx=2, offy=2);
+}
+article h1{
+    font-size:1.5em;
+    margin:10px 0 5px;
+    line-height:50px
+}
+aside ol{
+    padding:20px 0 0 36px;
+    margin:0;
+    counter-reset:counter;
+    border-top:1px dashed #f8f8f8;
+}
+aside ol li:before {
+    counter-increment:counter;
+    content:counter(counter) ". ";
+    margin-right:5px;
+    color: #333;
+    position:absolute;
+    top:0;
+    left:-16px;
+}
+aside h2{
+    padding:0 20px 10px;
+    margin:0 0 0;
+    font-size:1.3em;
+    text-shadow: 1px 1px 0px #f2f2f2;
+    filter: dropshadow(color=#f2f2f2, offx=1, offy=1);
+    border-bottom:1px dashed #bbb;
+}
+aside li p{
+    color:#888;
+}
+aside li{
+    color:#555;
+    font-size:.8em;
+    line-height:1.2em;
+    margin:0 0 8px 0;
+    position:relative;
+}
+/** MOVIE STYLES **/
+.wrapper, #movies-near-me li section.main-info{
+    background-color:#f1f1f1;
+}
+#movies-near-me{
+    margin-right: 200px;
+}
+#movies-near-me li{
+    position:relative;
+    height:178px;
+    overflow:hidden;
+    border-top:1px solid #fff;
+    border-bottom:1px solid #ccc;
+    background-color: #202125;
+    cursor:pointer;
+}
+#movies-near-me li img{
+    float:left;
+    margin-right:10px;
+}
+#movies-near-me li h3{
+    font-size:1.2em;
+    font-weight:bold;
+    padding:10px 0 3px 14px;
+    
+}
+#movies-near-me li p{
+    padding:5px 14px;
+}
+#movies-near-me li .details{
+    color:#333;
+    font-size:.9em;
+}
+#movies-near-me li .theater{
+    color:#555;
+    font-style:italic;
+    font-size:.9em;
+}
+
+#movies-near-me li .actors{
+    color:#666;
+    font-size:.8em;
+}
+#movies-near-me li,#movies-near-me li section.main-info,#movies-near-me li section.description{
+    height:178px;
+}
+#movies-near-me li section.main-info{
+    position:absolute;
+    top:0;
+    left:0%;
+    right:0%;
+    margin-left:120px;
+    padding: 5px 0;
+    transition: right .3s, left .3s;
+    -moz-transition: right .3s, left .3s;
+    -webkit-transition: right .3s, left .3s;
+    -o-transition: right .3s, left .3s;
+}
+
+#movies-near-me li.open section.main-info{
+    left:100%;
+    right:-100%;
+}
+
+#movies-near-me li section.description{
+    color:#f1f1f1;
+    font-size:.9em;
+    line-height:1.4em;
+    box-shadow:1px -8px 3px 4px #000 inset;
+    -moz-box-shadow:1px -8px 3px 4px #000 inset;
+    -webkit-box-shadow:1px -8px 3px 4px #000 inset;
+    -o-box-shadow:1px -8px 3px 4px #000 inset;
+    
+    
+}
+
+
+/** TABLETS **/
+@media only screen and (min-width: 738px) and (max-width: 1024px){
+   .wrapper,footer{
+        width:100%;
+    }
+}
+/** PHONES AND SMALL TABLETS **/
+@media only screen and (max-width: 737px){
+    aside{
+        display:none
+    }
+    #movies-near-me,.wrapper,footer{
+        width:100%;
+    }
+    nav,article h1{
+        padding:5px 15px;
+    }
+    
+    .wrapper section{
+        padding:5px 0;
+    }
+    header div{
+        background-position:-50px 0px
+    }
+    #movies-near-me li img{
+        transition: margin-left .3s;
+        -moz-transition: margin-left .3s;
+        -webkit-transition: margin-left .3s;
+        -o-transition: margin-left .3s; 
+    }
+    #movies-near-me li.open img{
+        margin-left:-120px;
+    }
+    #movies-near-me li .actors,#movies-near-me li .genre{
+        display:none
+    }
+    
+    
+}
+/** RETINA DISPLAY IMAGES **/
+@media only screen and (-webkit-min-device-pixel-ratio:2),
+only screen and (min-device-pixel-ratio: 2){
+   
+    header div{
+        background:url(../img/logo2x.png);
+        -webkit-background-size:320px 122px; 
+    }
+}
+/** IPAD RETINA DISPLAY SPECIFIC **/
+@media only screen and (-webkit-min-device-pixel-ratio:2) and (min-device-width: 768px) and (max-device-width: 1024px),
+only screen and (min-device-pixel-ratio: 2) and (min-device-width: 768px) and (max-device-width: 1024px){
+   .wrapper,footer{
+        width:100%;
+    }
+}
+/** IPHONE RETINA DISPLAY SPECIFIC **/
+@media only screen and (-webkit-min-device-pixel-ratio:2) and (max-device-width: 480px),
+only screen and (min-device-pixel-ratio: 2) and (max-device-width: 480px){
+    
+}

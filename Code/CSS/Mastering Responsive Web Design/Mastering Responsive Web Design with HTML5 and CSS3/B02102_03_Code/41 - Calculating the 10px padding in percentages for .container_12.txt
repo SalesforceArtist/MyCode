@@ -1,0 +1,6 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+41 - Calculating the 10px padding in percentages for .container_12
+*/
+
+(10px ÷ 960px) x 100 = 1.041666666666667%

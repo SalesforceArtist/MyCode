@@ -1,0 +1,57 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+31 - (AWD) Again, all the SCSS code
+*/
+
+.container_12 {
+    @include forSmallScreens(980px) {
+        width: 768px;
+    }
+    @include forSmallScreens(768px) {
+        width: 640px;
+    }
+    @include forSmallScreens(640px) {
+		width: 480px;
+	}
+	@include forSmallScreens(480px) {
+		width: 320px;
+		padding: 0;
+  	}
+    .grid_12 { //Header and Footer sections
+        @include forSmallScreens(980px) {
+            width: 728px;
+        }
+        @include forSmallScreens(768px) {
+            width: 600px;
+        }
+    }
+    .grid_3 { //Nav section
+        @include forSmallScreens(980px) {
+            width: 200px;
+        }
+        @include forSmallScreens(768px) {
+            width: 160px;
+        }
+        @include forSmallScreens(640px) {
+        	height: 50px; //This is only for styling
+    	}
+    }
+    .grid_9 { //Content section
+        @include forSmallScreens(980px) {
+            width: 508px;
+        }
+        @include forSmallScreens(768px) {
+            width: 420px;
+        }
+    }
+	.grid_3,
+	.grid_9,
+	.grid_12 {
+		@include forSmallScreens(640px) {
+			width: 440px;
+		}
+		@include forSmallScreens(480px) {
+		 	width: 300px;
+		}
+	}
+}

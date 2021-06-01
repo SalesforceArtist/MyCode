@@ -1,0 +1,8 @@
+**/node_modules
+**/flow-typed
+**/flow-coverage
+**/coverage
+**/build
+**/dist
+**/out
+**/*.env

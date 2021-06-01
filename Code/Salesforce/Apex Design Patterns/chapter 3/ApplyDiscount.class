@@ -1,0 +1,13 @@
+/**
+ * Apex Design Patterns - 	Chapter 3 
+ * This class calculates discounted price in Facade Pattern
+ * */
+public class ApplyDiscount {
+
+    //return discounted price
+    public decimal calculate(Decimal actualPrice,Decimal discount){ 
+        Decimal finalPrice = actualPrice - (discount/100 *actualPrice) ;
+        System.debug('Final price, After '+  discount/100 +'% discount applied is '+finalPrice);
+        return finalPrice;
+    } 
+}

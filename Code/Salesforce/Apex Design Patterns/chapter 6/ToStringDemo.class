@@ -1,0 +1,14 @@
+/**
+ * Chapter 6   	:   Anti Pattern
+ * Author    	:  	Jitendra Zaa
+ * Description	:	This class shows usage of toString() method
+ * */
+public class ToStringDemo { 
+    public String companyName {get;set;}
+    public String city {get;set;}
+    
+    //override toString()
+    public override String toString(){
+        return companyName+' is situated at '+city;
+    }
+}

@@ -1,0 +1,12 @@
+/**
+ * Chapter 3   -   Behavioral Design Pattern
+ * Author    -  Anshul Verma
+ * */ 
+public class PayByCardAdapter implements IPaymentAdapter{
+    PayByCardProcessor processor;
+    
+    //submit request to processor class to invoke payment processing
+    public void submitRequest(String xmlData){
+        processor.processPayment(xmlData);
+    } 
+}

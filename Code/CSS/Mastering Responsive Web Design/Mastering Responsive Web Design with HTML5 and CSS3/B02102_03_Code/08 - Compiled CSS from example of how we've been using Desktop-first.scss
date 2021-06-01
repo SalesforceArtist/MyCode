@@ -1,0 +1,14 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+8 - Compiled CSS from example of how we've been using Desktop-first
+*/
+
+header {
+    width: 50%;
+}
+
+@media (max-width: 48em) {
+    header {
+        width: 100%;
+    }
+}

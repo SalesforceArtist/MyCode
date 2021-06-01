@@ -1,0 +1,18 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Example of Decorator Pattern. Base abstract class to be used in composite pattern.
+ * */
+public abstract class SalesforceSupport {  
+    
+    public virtual String getDescription(){
+        return 'This is base Abstract class';
+    } 
+    
+    /**
+     * This methods must be implemented by all child classes.
+     * It returns total cost to resolve case of specified type.
+     * */
+    public abstract Double getCost();
+    
+}

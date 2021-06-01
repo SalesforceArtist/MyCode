@@ -1,0 +1,54 @@
+<html>
+<head>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+</head>
+<body onload="doAjax()">
+
+<p>Hello world</p>
+<p>
+  <div id="debug"></div>
+</p>
+<p>
+  <div id="json"></div>
+</p>
+<p>
+  <div id="result"></div>
+</p>
+
+<p>Powered by <a href="http://www.aprs.fi">aprs.fi</a></p>
+
+<script>
+
+function doAjax() {
+  $('#debug').html("loaded... executing.");
+ 	
+  var request = { 
+    call: "kf6gpe-7"
+  };
+
+  $.ajax({
+    type: "POST",
+    url: "/",
+    data: JSON.stringify(request),
+	dataType:"json",
+  })
+  .fail(function() {
+    $('#debug').html( $('#debug').html() + "<br/>failed");
+  })
+  .always(function() {
+    $('#debug').html( $('#debug').html() + "<br/>complete");
+  })
+  .done(function(result) {
+    $('#json').html(JSON.stringify(result));
+    $('#result').html(result.call + ":" + result.lat + ", " + result.lng);
+  })
+
+
+  
+  
+}
+
+</script>
+</body>
+</html>

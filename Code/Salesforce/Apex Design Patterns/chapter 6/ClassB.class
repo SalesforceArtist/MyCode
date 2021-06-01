@@ -1,0 +1,14 @@
+/**
+ * Chapter 6   	:   Anti Pattern
+ * Author    	:  	Jitendra Zaa
+ * Description	:	Example to demonstrate Circular dependency
+ * */
+public class ClassB {
+    
+    public ClassB()
+    {
+        ClassA a = new ClassA();
+        System.debug('*** Class B Constructor ');
+    }
+
+}

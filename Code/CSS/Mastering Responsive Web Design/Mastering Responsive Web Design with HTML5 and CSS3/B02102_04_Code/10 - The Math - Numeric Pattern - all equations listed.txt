@@ -1,0 +1,17 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+10 - The Math – Numeric Pattern: all equations listed
+*/
+
+1 	column:    80 ÷ 1200 x 100 = 6.67%
+2 	columns:  180 ÷ 1200 x 100 = 15%
+3 	columns:  280 ÷ 1200 x 100 = 23.33%
+4 	columns:  380 ÷ 1200 x 100 = 31.67%
+5 	columns:  480 ÷ 1200 x 100 = 40%
+6 	columns:  580 ÷ 1200 x 100 = 48.33%
+7 	columns:  680 ÷ 1200 x 100 = 56.67%
+8 	columns:  780 ÷ 1200 x 100 = 65%
+9 	columns:  880 ÷ 1200 x 100 = 73.33%
+10 	columns:  980 ÷ 1200 x 100 = 81.67%
+11 	columns: 1080 ÷ 1200 x 100 = 90%
+12 	columns: 1180 ÷ 1200 x 100 = 98.33%

@@ -1,0 +1,52 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Pattern				-	Bridge Design Pattern
+ * Description			-	Child Theme Class
+ * */
+public abstract class CoreFramework {
+
+    protected ITheme theme;   
+    
+    private String title;
+    private String keyword;
+    private String content;
+	
+    //Child class must implement it
+    public abstract void capability() ;
+    
+    public void setProperties(String title, String keyword, String content){
+        this.title = title;
+        this.keyword = keyword;
+        this.content = content;
+    }
+    
+    public void printTitle(){
+        System.debug('Title - '+title);
+    }
+    
+    public void printKeyword(){
+        System.debug('Keyword - '+keyword);
+    }
+    
+    public void printContent(){
+        System.debug('Content - '+content);
+    }
+    
+	//constructor    
+    public CoreFramework(ITheme t){
+        theme = t;
+    } 
+    
+    //Child class can reuse this method or override it
+    public virtual void showHeader_Footer(){
+        theme.styleHeader();
+        theme.styleFooter();
+    } 
+    
+    //Child class can reuse this method or override it
+    public virtual void showMenu_Body(){
+        theme.styleMenu();
+        theme.styleContent();
+    }    
+}

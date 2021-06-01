@@ -1,0 +1,37 @@
+//Code 1 : Before Facade
+OrderDetail order = new OrderDetail('IBN-abcd123','Apex Design Pattern', 1, '06042',40,15,'123456789098754','Manchester Buckland hills');
+
+Inventory inv = new Inventory();
+inv.updateInventory(order.productId , order.productCount );
+
+AddressVerification add = new AddressVerification();
+add.verify(order.zipCode);
+
+ApplyDiscount disc = new ApplyDiscount();
+disc.calculate(order.price , order.discount);
+
+PaymentVerification pym = new PaymentVerification();
+pym.verify(order.paymentCardNumber);
+
+ShipToAddress shipProduct = new ShipToAddress();
+shipProduct.ship(order.address , order.productName);
+
+//Output
+1 Product with Id IBN-abcd123 is subtracted from Inventory
+Product can be shipped at zip - 06042
+Final price, After 0.15% discount applied is 34.00
+Card with number 123456789098754 is used for payment
+"Apex Design Pattern" is shipped to Manchester Buckland hills
+
+
+//Code 2 : After Facade
+OrderDetail order = new OrderDetail('IBN-abcd123','Apex Design Pattern', 1, '06042',40,15,'123456789098754','Manchester Buckland hills');
+OnlineStoreFacade facade = new OnlineStoreFacade();
+facade.processSteps(order);
+
+//Output
+1 Product with Id IBN-abcd123 is subtracted from Inventory
+Product can be shipped at zip - 06042
+Final price, After 0.15% discount applied is 34.00
+Card with number 123456789098754 is used for payment
+"Apex Design Pattern" is shipped to Manchester Buckland hills

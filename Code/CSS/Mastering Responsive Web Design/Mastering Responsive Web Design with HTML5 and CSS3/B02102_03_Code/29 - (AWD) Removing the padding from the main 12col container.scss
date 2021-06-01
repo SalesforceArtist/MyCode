@@ -1,0 +1,9 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+29 - (AWD) Removing the padding from the main 12col container
+*/
+
+@include forSmallScreens(480px) {
+	width: 320px;
+	padding: 0;
+}

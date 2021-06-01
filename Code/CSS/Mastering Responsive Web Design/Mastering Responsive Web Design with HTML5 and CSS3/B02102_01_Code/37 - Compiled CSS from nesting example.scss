@@ -1,0 +1,21 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+37 - Compiled CSS from nesting example
+*/
+
+nav ul {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+nav li {
+	margin: 5px;
+	background: #000000;
+}
+nav a {
+	display: block;
+	padding: 5px 15px;
+	text-decoration: none;
+	color: #416e8e;
+}

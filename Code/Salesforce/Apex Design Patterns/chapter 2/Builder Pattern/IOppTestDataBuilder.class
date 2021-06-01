@@ -1,0 +1,19 @@
+/**
+ * Chapter 2 	- 	Builder Pattern  
+ * Author		-	Jitendra Zaa
+ * */
+public interface IOppTestDataBuilder {
+    
+    //Insert manager record
+    void createManager();
+    
+    //Insert Area office with manager field populated
+    void createAreaOffice();
+    
+    //Create Opportunity but do not insert it
+    void createOpportunity();
+    
+    //return created opportunity
+    Opportunity getOpportunity(); 
+
+}

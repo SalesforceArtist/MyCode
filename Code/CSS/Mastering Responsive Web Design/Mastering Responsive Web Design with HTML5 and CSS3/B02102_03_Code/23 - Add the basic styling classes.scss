@@ -1,0 +1,27 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+23 - Add the basic styling classes
+*/
+
+//Retrofitting with Adaptive Web Design
+@import "980gs";
+
+//Desktop-first Media Query Mixin
+@mixin forSmallScreens($media) {
+    @media (max-width: $media) { @content; }
+}
+
+//Basic styling
+.container_12 {
+    background: #aaa;
+    font-size: 30px;
+    text-shadow: 0 1px 1px rgba(black,.5);
+}
+header { background: #429032; }
+nav { background: #2963BD; }
+section { background: #c90; }
+footer { background: #c03; }
+
+//Give heights to elements for better perception of sections
+header, footer { height: 150px; }
+nav, section { height: 440px; }

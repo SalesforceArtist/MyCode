@@ -1,0 +1,134 @@
+/*** VIDEO PLAYER ***/
+/*** Controls ***/
+.controls{
+	background-color:#000;
+	height:35px;
+	line-height:35px;
+	position:relative;
+}
+.play-button,.volume-button,.fullscreen-button{
+	width:35px;
+	height:35px;
+	cursor:pointer;
+	background-image:url(../img/player-control.png);
+}
+.play-button.playing{
+	background-position:0 -35px;
+}
+.volume-button{
+	background-position:0 -70px;
+	position:absolute;
+	left:0;
+	background-color:#000;
+	z-index:1000;
+}
+.fullscreen-button{
+	background-position:0 -105px;
+}
+
+/*** Timer ***/
+.timer{
+	color:#fff;
+	font-size:.8em;
+	padding:1px 8px 0;
+}
+.play-button,.seek{
+	float:left;
+}
+.timer,.volume-container,.fullscreen-button{
+	float:right;
+}
+.media{
+	float:left;
+}
+.media-area{
+	overflow:hidden;
+	background-color:#000;
+}
+.seek{
+	top:12px;
+	left:48px;
+	right:133px;
+	height:10px;
+	position:absolute;
+}
+
+/*** Classes to hide features not available ***/
+.no-fullscreen .fullscreen-button{
+	display:none;
+}
+.no-volume .volume-container{
+	display:none;
+}
+.no-volume .seek,.no-fullscreen .seek{
+	right:88px;
+}
+.no-fullscreen.no-volume .seek{
+	right:53px;
+}
+
+/*** JQuery UI Slider styles for seek and volume ***/
+.ui-state-active{
+	background-image:none;
+}
+.ui-slider .ui-slider-handle {
+	cursor:pointer;
+	outline:none;
+}
+.seek .ui-slider-handle {
+	width:16px;
+	height:16px;
+	top: -4px;
+	-moz-border-radius:10px;
+    -ms-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;	
+}
+.ui-slider-range {
+	-moz-border-radius:15px;
+    -ms-border-radius:15px;
+	-webkit-border-radius:15px;
+	border-radius:15px;
+	box-shadow:inset 0 -3px 3px #39a2ce;
+}	
+.seek .ui-slider-range {
+	background: #4cbae8;
+	background-image:-moz-linear-gradient(top, #4cbae8, #39a2ce);
+	background-image:-webkit-gradient(linear,left top,left bottom,color-stop(0, #4cbae8),color-stop(1, #39a2ce));
+}
+.volume-slider .ui-slider-range {
+	background:#4cbae8;
+}
+.volume-slider{
+	margin:12px auto;
+	width:6px;
+	height:76px;
+}
+.volume-slider .ui-slider-handle {
+	width:12px;
+	height:12px;
+	left: -4px;
+}
+.volume-container {	
+	width:35px;
+	height:35px;
+	position:relative;
+}
+.volume-slider-container{
+	-moz-transition:all 0.1s ease-in-out;
+    -ms-transition:all 0.1s ease-in-out;
+    -o-transition:all 0.1s ease-in-out;
+	-webkit-transition:all 0.1s ease-in-out;
+	transition:all 0.1s ease-in-out; 
+	position:absolute;
+	bottom:1px;
+	left:0;
+	height:34px;
+	width:35px;
+	background-color:#000;
+	z-index:900;
+	overflow:hidden;
+}
+.volume-container:hover .volume-slider-container{
+	height:135px;
+}

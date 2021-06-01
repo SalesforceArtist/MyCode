@@ -1,0 +1,11 @@
+<!--
+Chapter 6: Working with Images and Video in RWD
+2 - Using the <picture> Element
+-->
+
+<picture>
+    <source srcset="images/grandmasters-small.jpg" media="(max-width: 40em)">
+    <source srcset="images/grandmasters-medium.jpg" media="(max-width: 64em)">
+    <source srcset="images/grandmasters-default.jpg">
+    <img src="images/grandmasters-default.jpg" alt="Fallback image">
+</picture>

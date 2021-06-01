@@ -1,0 +1,37 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type=“text/css”>
+#packt1, #packt2
+{float:left; width:85px; height:35px;  
+margin:11px;padding:11px;border:3px solid navy;}
+</style>
+<script>
+function dropItem(ev)
+{
+ev.preventDefault();
+}
+
+function drag(ev)
+{
+ev.dataTransfer.setData(“Text”,ev.target.id);
+}
+
+function drop(ev)
+{
+ev.preventDefault();
+var abc = ev.dataTransfer.getData(“Text”);
+ev.target.appendChild(document.getElementById(abc));
+}
+</script>
+</head>
+<body>
+<div id=“packt1” ondrop=“drop(event)”  
+ondragover=“dropItem(event)”>
+<img src=“packt.png” draggable=“true” 
+ondragstart=“drag(event)” id=“drag1” width=“75”  
+height=“39”></div>
+<div id=“packt2” ondrop=“drop(event)”  
+ondragover=“dropItem(event)”></div>
+</body>
+</html>

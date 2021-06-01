@@ -1,0 +1,39 @@
+<html>
+<head>
+<title> 2D CSS3 Transforms </title>
+<style>
+div
+{
+width:70px;
+height:70px;
+background-color: lime;
+border:1px solid black;
+}
+div#div1 {
+  transform:skew(35deg) translateX(35px);
+-webkit-transform:skew(35deg) translateX(35px);
+}
+div#div2 {
+  transform:scale(1,0.5) translateX(35px);
+-webkit-transform:scale(1,0.5) translateX(35px);
+}
+div#div3 {
+  transform:rotate(45deg) translateX(35px);
+-webkit-transform:rotate(45deg) translateX(35px);
+}
+div#div4 {
+  transform:translate(30px, 40px);
+-webkit- transform:translate(30px, 40px);
+}
+</style>
+</head>
+<body>
+<div id="div1">Alpha</div>
+<br><br>
+<div id="div2">Beta</div>
+<br><br>
+<div id="div3">Gamma</div>
+<br><br>
+<div id="div4">Sigma</div>
+</body>
+</html>

@@ -1,0 +1,233 @@
+<template>
+    <article
+        class="slds-card slds-card_boundary forceBaseCard forceRelatedListCardDesktop"
+    >
+        <div class="slds-card__body slds-card__body_inner">
+            <lightning-layout>
+                <lightning-layout-item size="9" padding="around-small">
+                    <article
+                        class="slds-card slds-card_boundary forceBaseCard forceRelatedListCardDesktop"
+                    >
+                        <div class="slds-card__body slds-card__body_inner">
+                            <div class="slds-grid--pull-padded">
+                                <div class="slds-scrollable--y">
+                                    <div>
+                                        <table
+                                            class="slds-table slds-table--bordered slds-max-medium-table--stacked-horizontal slds-table-expandable"
+                                        >
+                                            <thead>
+                                                <tr
+                                                    class="skyBlueTheme slds-line-height_reset"
+                                                >
+                                                    <th
+                                                        class=" slds-text-heading__label"
+                                                        scope="col"
+                                                    >
+                                                        <div>Chat ID</div>
+                                                    </th>
+                                                    <th
+                                                        class="slds-text-heading__label"
+                                                        scope="col"
+                                                    >
+                                                        <div>Chat Text</div>
+                                                    </th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                <template
+                                                    for:each={chatData.data}
+                                                    for:item="chat"
+                                                >
+                                                    <tr
+                                                        key={chat.Id}
+                                                        data-highlight={chat.Id}
+                                                        data-item={chat.Id}
+                                                        data-name={chat.Name}
+                                                        class="slds-line-height_reset"
+                                                        onclick={setRowRecordId}
+                                                    >
+                                                        <td
+                                                            key={chat.Id}
+                                                            data-item={chat.Id}
+                                                            data-name={chat.Name}
+                                                            data-label="Chat ID"
+                                                            class="tableCellWordWrap"
+                                                        >
+                                                            {chat.Name}
+                                                        </td>
+
+                                                        <td
+                                                            key={chat.Id}
+                                                            data-item={chat.Id}
+                                                            data-name={chat.Name}
+                                                            data-label="Chat Text"
+                                                            class="tableCellWordWrap"
+                                                        >
+                                                            {chat.Body}
+                                                        </td>
+                                                    </tr>
+                                                </template>
+                                            </tbody>
+                                        </table>
+                                        <div
+                                            if:true={isGridLoaded}
+                                            class="slds-is-relative"
+                                        >
+                                            <lightning-spinner
+                                                alternative-text="Loading..."
+                                                variant="brand"
+                                            >
+                                            </lightning-spinner>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+                </lightning-layout-item>
+                <lightning-layout-item
+                    size="3"
+                    padding="around-small"
+                    class="rightAlignFixed"
+                >
+                <div class="skyBlueGradient"> 
+
+                    <article
+                    class="skyBlueGradient slds-card slds-card_boundary forceBaseCard forceRelatedListCardDesktop"
+                    >
+                        <div class="slds-card__body slds-card__body_inner">
+                            <div class="slds-text-align_center">
+                                <lightning-button
+                                    variant="brand"
+                                    label="Analyze Chat"
+                                    title="Analyze Chat"
+                                    onclick={handleAnalyzeChat}
+                                    class="slds-m-left_x-small"
+                                ></lightning-button>
+                            </div>
+                        </div>
+
+                        <template if:true={rowRecordId}>
+
+                            <div class="slds-text-align_center"> Chat Id {chatId} is Selected</div>
+
+                        </template>
+
+
+
+
+
+
+
+
+
+
+                        <lightning-card title="">
+                            
+        
+                           <lightning-tile label="" href="/path/to/somewhere">
+                            <p class="slds-p-horizontal_small">
+                                Please Click on the Row and Click on Analyze Chat button to to see the Results
+                            </p>
+                            <div if:true={isLoaded} class="slds-is-relative">
+                                <lightning-spinner
+                                    alternative-text="Loading..."
+                                    variant="brand"
+                                >
+                                </lightning-spinner>
+                            </div>
+                        </lightning-tile>
+        
+                            <div if:true={calloutError}>
+                                
+                                    
+                                <div class="slds-p-around_medium lgc-bg">
+                                    <div class="slds-box">
+                                        <p class="slds-p-horizontal_small">
+                                        Response not recieved from API call. Please Contact you System
+                                        Administrator.
+                                        </p>
+                                    </div></div>
+                                    
+                            </div>
+        
+                            <template if:true={apiResponse}>
+                                <div class="textStyling">
+                                <div class="slds-p-around_medium lgc-bg">
+                                    <div class="slds-box boxColorHighlight">
+                                        <p class="slds-p-horizontal_small">
+                                            <template if:true={apiResponse.topic}
+                                                >Topic: 
+                                                <span class="yellowTextColor"> {apiResponse.topic} </span>
+                                            </template>
+                                        </p>
+                                        <p class="slds-p-horizontal_small">
+                                            <template
+                                                if:true={apiResponse.topic_confidence}
+                                                >Confidence:
+                                                <span class="yellowTextColor"> {apiResponse.topic_confidence} </span>
+                                                
+                                            </template>
+                                        </p>
+                                    </div>
+                                </div>
+        
+                                <div class="slds-p-around_medium lgc-bg">
+                                    <div class="slds-box boxColorHighlight">
+                                        <p class="slds-p-horizontal_small">
+                                            <template if:true={apiResponse.subtopic}
+                                                >Sub Topic: 
+                                                <span class="yellowTextColor"> {apiResponse.subtopic} </span>
+                                                
+                                            </template>
+                                        </p>
+                                        <p class="slds-p-horizontal_small">
+                                            <template
+                                                if:true={apiResponse.subtopic_confidence}
+                                                >Confidence:
+                                                <span class="yellowTextColor">  {apiResponse.subtopic_confidence} </span>
+                                               
+                                            </template>
+                                        </p>
+                                    </div>
+                                </div>
+                                
+                                <div class="slds-p-around_medium lgc-bg">
+                                    <div class="slds-box boxColorHighlight">
+                                        <p class="slds-p-horizontal_small">
+                                            <template
+                                                if:true={apiResponse.chat_sentiment}
+                                                >Sentiment: 
+                                                <span class="yellowTextColor">  {apiResponse.chat_sentiment}</span>
+                                                
+                                            </template>
+                                        </p>
+                                        <p class="slds-p-horizontal_small">
+                                            <template
+                                                if:true={apiResponse.chat_sentiment_confidence}
+                                                >Confidence:
+                                                <span class="yellowTextColor"> {apiResponse.chat_sentiment_confidence}</span>
+                                                
+                                            </template>
+                                        </p>
+                                    </div>
+                                </div></div>
+                            </template>
+                        </lightning-card>
+
+
+
+
+
+
+
+
+
+                    </article>
+                </div>
+                </lightning-layout-item>
+            </lightning-layout>
+        </div>
+    </article>
+</template>

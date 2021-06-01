@@ -1,0 +1,27 @@
+<!-- Memento design pattern demo page -->
+<apex:page controller="GenerateQuoteController"> 
+    <apex:form >
+        <apex:sectionHeader title="Quote" subtitle="New Quote"/>
+        <apex:pageBlock mode="edit">
+            <apex:pageBlockButtons >
+            	<apex:commandButton value="Save" action="{!save}"/>
+                <apex:commandButton value="Undo" action="{!undo}"/>
+                <apex:commandButton value="Cancel" action="{!cancel}"/>
+            </apex:pageBlockButtons>
+            
+            <apex:pageBlockSection title="Quote Information">
+                <apex:inputfield value="{!Quote.Name}"/>
+                <apex:inputfield value="{!Quote.OpportunityID}"/>
+                <apex:inputfield value="{!Quote.ExpirationDate}"/>
+                <apex:inputfield value="{!Quote.Status}"/>
+            </apex:pageBlockSection>
+            
+            <apex:pageBlockSection title="Legal Terms">
+                <apex:inputfield value="{!Quote.Scope__c}"/>
+                <apex:inputfield value="{!Quote.Assumptions__c}"/>
+                <apex:inputfield value="{!Quote.OutOfScope__c}"/>
+                <apex:inputfield value="{!Quote.LegalClauses__c}"/>
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

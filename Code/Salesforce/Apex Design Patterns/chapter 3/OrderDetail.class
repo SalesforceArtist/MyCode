@@ -1,0 +1,28 @@
+/**
+ * Apex Design Patterns - 	Chapter 3 
+ * This class stores complete Order detail in Facade Pattern
+ * */
+public class OrderDetail {
+    //public properties
+    public String productId {get;set;}
+    public String productName {get;set;}
+    public Integer productCount  {get;set;}
+    public String zipCode {get;set;}
+    public Decimal price {get;set;}
+    public Decimal discount {get;set;}
+    public String paymentCardNumber {get;set;}
+    public String address {get;set;}
+    
+    //Constructor
+    public OrderDetail(String productId, String productName, Integer productCount, String zipCode, Decimal price, Decimal discount, 
+                       String paymentCardNumber, String address ){
+                           this.productId = productId;
+                           this.productName = productName;
+                           this.productCount = productCount;
+                           this.zipCode = zipCode;
+                           this.price = price;
+                           this.discount = discount;
+                           this.paymentCardNumber = paymentCardNumber;
+                           this.address = address; 
+    }
+}

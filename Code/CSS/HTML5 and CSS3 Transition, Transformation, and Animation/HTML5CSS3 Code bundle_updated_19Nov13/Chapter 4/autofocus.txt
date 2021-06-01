@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Autofocus attribute </title>
+<h1>The Autofocus Attribute</h1>
+</head>
+<p> Login page for Packt Publishing</p>
+<div>
+<br>
+<label for="name">Login Name :</label>
+<input id ="name" type="text" />
+<input type="submit" value="Go">
+<br>
+or
+<br>
+<label for="loginid">Login Id :</label>
+<input id ="loginid" type="text" autofocus /> 
+<input type="submit" value="Go">
+</div>
+</html>

@@ -1,0 +1,16 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+10 - Compiled CSS of IE7 and IE8 can't see inside the media query
+*/
+
+header {
+    width: 100%;
+}
+
+@media (min-width: 48em) {
+    header {
+        width: 50%;
+    }
+}
+
+

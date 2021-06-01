@@ -1,0 +1,9 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+41 - Using @extend directive
+*/
+
+.box-customer-service {
+	@extend .generic-container;
+	padding: 25px;
+}

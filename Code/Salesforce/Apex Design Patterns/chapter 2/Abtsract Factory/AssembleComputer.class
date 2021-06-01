@@ -1,0 +1,32 @@
+/**
+ * Chapter 2 	- 	Creational Design Pattern
+ * Author		-	Jitendra Zaa
+ * */
+public class AssembleComputer
+{
+    IComputerFactory computer ;
+    IProcessor processor ;
+    IStorage storage ;
+    IMonitor monitor ;
+    
+    /**
+     * Constructor to instatiate all factories
+     * */
+    public AssembleComputer(IComputerFactory comp)
+    {
+        computer = comp;
+        processor = computer.getProcessor();
+        storage = computer.getStorage();
+        monitor = computer.getMonitor();
+    }
+    
+    /**
+     * run test to see if all factories are assembled together
+     * */
+    public void runSystemDiagnosis()
+    { 
+        processor.performOperation();
+        storage.storeData();    
+        monitor.display();
+    }
+}

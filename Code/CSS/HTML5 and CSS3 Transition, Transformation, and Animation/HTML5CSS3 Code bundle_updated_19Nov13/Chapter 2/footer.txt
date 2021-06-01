@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<body>
+<header>
+<h2> Importance of the Footer element </h2><hr>
+</header>
+<p> Footer element gives additional info about the website or any blog </p>
+<footer>
+<a href="www.packtpub.com"> Packt Publishing </a>
+<br>
+<p> Copyright by Packt </p>
+<a HREF="/index.html">Index</a>
+</footer>
+</body>
+</html>

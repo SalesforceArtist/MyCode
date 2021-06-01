@@ -1,0 +1,5 @@
+<apex:page>
+	//Reference a Label
+	My Favorite Color is 
+	<apex:outputText value="{!$Setup.personalSetting__c.Favorite_Color__c}" />
+</apex:page>

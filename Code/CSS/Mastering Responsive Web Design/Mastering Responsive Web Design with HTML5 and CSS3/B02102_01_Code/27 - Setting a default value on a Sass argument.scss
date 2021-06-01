@@ -1,0 +1,14 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+27 - Setting a default value on a Sass argument
+*/
+
+$brandBlue: #416e8e;
+$supportGray: #ccc;
+
+@mixin genericContainer($padding: 8px) {
+	padding: 10px;
+	border: $brandBlue 1px solid;
+	background: $supportGray;
+	box-shadow: 1px 1px 1px rgba(black, .3);
+}

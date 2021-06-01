@@ -1,0 +1,25 @@
+<apex:page standardController="account">
+	<apex:sectionHeader title="Account Edit" />
+	<apex:pageMessages id="pageMessages" />
+	<apex:form id="theForm" >
+		<apex:pageBlock title="Account Edit" mode="edit" >
+			<apex:pageBlockButtons >
+				<apex:commandButton value="Save" 
+					action="{!save}" 
+					reRender="pageMessages, theForm" 
+				/>
+				<apex:commandButton value="Cancel" action="{!cancel}" />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Account Info" columns="3" >
+				<apex:inputField required="true"
+					value="{!account.name}" 
+					rendered="{!account.id == null}" 
+				/>
+				<apex:outputField value="{!account.name}" 
+					rendered="{!account.id != null}" 
+				/>
+				<!-- keep adding more fields -->
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

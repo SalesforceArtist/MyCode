@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Month </title>
+<h2> Input type: Month </h2>
+</head>
+<body>
+<label for="packt"> Select Month </label>
+<input id="packt" type="month" />
+</body>
+</html>
+

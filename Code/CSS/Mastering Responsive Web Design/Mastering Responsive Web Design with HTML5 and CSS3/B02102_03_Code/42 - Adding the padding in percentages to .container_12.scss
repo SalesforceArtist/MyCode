@@ -1,0 +1,21 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+42 - Adding the padding in percentages to .container_12
+*/
+
+.container_12 {
+    width: 980px;
+    padding: 0 1.04%;
+    margin: auto;
+}
+.container_12 {
+	.grid_12 { //Header and Footer sections
+		width: 97.91%;
+	}
+	.grid_3 { //Nav section
+		width: 22.91%;
+	}
+	.grid_9 { //Content section
+		width: 72.91%;
+	}
+}

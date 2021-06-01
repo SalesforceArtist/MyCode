@@ -1,0 +1,20 @@
+/**
+ * 	Chapter 2 	- 	Creational Design Pattern
+ * Author		-	Jitendra Zaa
+ *   Factory class to return actual implementation of Storage
+ */
+public class StorageFactory{ 
+    
+    //Factory method to return instance of concrete class of Storage
+    public static IStorage getInstance(String storageName){
+        IStorage retVal = null;
+        
+        if(storageName == 'SSDStorage'){
+            retVal = new SSDStorage();            
+        }else if(storageName == 'HDDStorage'){
+            retVal = new HDDStorage();
+            
+        }
+        return retVal; 
+    }
+}

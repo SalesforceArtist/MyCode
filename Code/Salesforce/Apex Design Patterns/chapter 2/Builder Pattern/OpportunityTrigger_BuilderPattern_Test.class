@@ -1,0 +1,24 @@
+/**
+ * Chapter 2 	- 	Builder Pattern  
+ * Author		-	Jitendra Zaa
+ * */
+@isTest
+public class OpportunityTrigger_BuilderPattern_Test {
+     
+    static testMethod void validateState()
+    { 
+        oppTestData_Director director = new oppTestData_Director(); 
+        Opportunity opp =  director.Construct(new OppTestData_ValidOfficeImpl()) ;
+        
+        Test.startTest();
+        insert opp;
+        Test.stopTest();
+        
+        Opportunity oppInserted = [SELECT Area_Office__c FROM Opportunity Where Id=:opp.Id];
+        
+        //Confirm that Area office lookup is not blank
+        System.assertNotEquals(oppInserted.Area_Office__c, null) ; 
+        
+    }
+
+}

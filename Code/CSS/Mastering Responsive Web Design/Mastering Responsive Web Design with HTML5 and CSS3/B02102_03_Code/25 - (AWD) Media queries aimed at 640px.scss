@@ -1,0 +1,37 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+25 - (AWD) Media queries aimed at 640px
+*/
+
+.container_12 {
+    @include forSmallScreens(980px) {
+        width: 768px;
+    }
+    @include forSmallScreens(768px) {
+        width: 640px;
+    }
+    .grid_12 { //Header and Footer sections
+        @include forSmallScreens(980px) {
+            width: 728px;
+        }
+        @include forSmallScreens(768px) {
+            width: 600px;
+        }
+    }
+    .grid_3 { //Nav section
+        @include forSmallScreens(980px) {
+            width: 200px;
+        }
+        @include forSmallScreens(768px) {
+            width: 160px;
+        }
+    }
+    .grid_9 { //Content section
+        @include forSmallScreens(980px) {
+            width: 508px;
+        }
+        @include forSmallScreens(768px) {
+            width: 420px;
+        }
+    }
+}

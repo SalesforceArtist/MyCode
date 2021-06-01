@@ -1,0 +1,33 @@
+/* HTML5 Enterprise Application Development 
+ * by Nehal Shah & Gabriel Balda 
+ * MovieNow Geolocation Handler
+*/
+var movienow = movienow || {};
+movienow.geolocation = (function(){
+    var that = this;
+    jQuery(document).ready(function(){  
+        jQuery('button#find-movies').click(function(){that.getLocation();});
+    });
+    this.getLocation = function(){
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(this.locationCallback);
+      }
+    }
+    this.locationCallback = function(loc){
+      //jQuery('div#movies-near-me').html('Lat: ' + loc.coords.latitude + ' ' + 'Lon: ' + loc.coords.longitude); 
+      that.reverseGeocode(loc);
+    }
+    this.reverseGeocode = function(loc){
+      jQuery.ajax({
+          url: 'http://maps.googleapis.com/maps/api/geocode/json',
+          data: 'latlng=' + loc.coords.latitude + ',' + loc.coords.longitude + '&sensor=false',
+          dataType: 'jsonp',
+          success: function(data){
+              alert(data);
+          },
+          error: function(error){
+              alert('');
+          }
+      });
+    }
+})();

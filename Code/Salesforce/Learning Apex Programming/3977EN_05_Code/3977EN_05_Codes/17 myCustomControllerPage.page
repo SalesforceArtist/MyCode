@@ -1,0 +1,22 @@
+<apex:page controller=”myCustomController”>
+	<apex:sectionHeader title=”Account Edit” subtitle=”{!myAccount.name}” />
+	<apex:pageMessages id="pageMessages" />	
+	<apex:form>
+		<apex:pageBlock title=”Account Edit” mode=”edit” >
+			<apex:pageBlockButtons>
+				<apex:commandButton value=”Save” action=”{!save}” />
+				<apex:commandButton value=”Cancel” action=”{!cancel}” />
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title=”Account Info” columns=”3” >
+				<apex:inputField value=”{!myAccount.name}” />
+				<apex:inputField value=”{!myAccount.phone}” />
+				<apex:inputField value=”{!myAccount.website}” />
+
+				<apex:inputField value=”{!myAccount.industry}” />
+				<apex:inputField value=”{!myAccount.fax}” />
+				<apex:inputField value=”{!myAccount.type}” />
+				<!-- keep adding more fields -->
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

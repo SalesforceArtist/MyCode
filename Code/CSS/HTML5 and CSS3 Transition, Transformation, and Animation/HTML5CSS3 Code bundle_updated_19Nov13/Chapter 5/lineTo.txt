@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type=“application/javascript”>
+function drawArc(){
+var canvas = document.getElementById(‘packt’);
+var context = canvas.getContext(‘2d’);
+context.beginPath();
+context.arc(75,75,50,0,Math.PI*2,true); 
+context.moveTo(110,75);
+context.arc(75,75,35,0,Math.PI*2,false);    
+context.stroke(); 	
+context.fill();
+}
+</script>
+</head>
+<body onload=“drawArc();”>
+<canvas id=“packt” width=“300” height=“300”></canvas>
+ </body>
+</html>  

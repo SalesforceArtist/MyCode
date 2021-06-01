@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id=“packt”>Your physical location</p>
+<button onclick=“getLocation()”>Latitude and Longitude</button>
+<script>
+var x=document.getElementById(“packt”);
+function getLocation()
+  {
+  if (navigator.geolocation)
+    {
+    navigator.geolocation.getCurrentPosition(showLocation,displayError);
+    }
+  else{x.innerHTML=“Your browser does not support the GeoLocation feature”;}
+  }
+function showLocation(position)
+  {
+  x.innerHTML=“Latitude: “ + position.coords.latitude + 
+  “<br>Longitude: “ + position.coords.longitude;	
+  }
+function displayError(error)
+  {
+  switch(error.code) 
+    {
+    case error.PERMISSION_DENIED:
+      x.innerHTML=“Permission issues, Access Denied.”
+      break;
+    case error.POSITION_UNAVAILABLE:
+      x.innerHTML=“As of now, Location info is not available.”
+      break;
+    case error.TIMEOUT:
+      x.innerHTML=“There seems to be a timeout issue, Please try later.”
+      break;
+    case error.UNKNOWN_ERROR:
+      x.innerHTML=“Error cause not found.”
+      break;
+    }
+  }
+</script>
+</body>
+</html>

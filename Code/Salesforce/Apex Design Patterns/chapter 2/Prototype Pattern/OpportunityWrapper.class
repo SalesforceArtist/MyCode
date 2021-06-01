@@ -1,0 +1,31 @@
+/**
+ * Chapter 2 	- 	Creational Design Pattern - Problem statement prototype Pattern
+ * Author		-	Jitendra Zaa
+ * */
+public class OpportunityWrapper implements IClone{
+    
+    private Opportunity opp ;
+    
+    public void setOpportunity(Opportunity o){
+        opp = o ;
+    }
+    
+    public String getOpportunityName()
+    {
+        return opp != null ? opp.Name : '' ;
+    }
+    
+    public void setOpportunityName(String Name)
+    {
+		if(opp != null)
+            opp.Name = Name ;
+    } 
+    public IClone cloneObject(){ 
+        
+        OpportunityWrapper clonedObject = new OpportunityWrapper(); 
+        Opportunity clonedOpp = opp.clone(false,false,false,false); 
+        clonedObject.setOpportunity(clonedOpp) ;
+        
+        return clonedObject;
+    } 
+}

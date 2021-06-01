@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Search Input type </title>
+<h1> Search Input type </h1>
+</head>
+<p> Enter the search string in the textbox below and click on Go </p>
+<div>
+<label for="searchid"> <em> Packt Search : </em> </label>
+<input id="searchid" type="search" placeholder="Enter Search Item here"> 
+<input type="submit" value="Go">
+</div>
+</html>

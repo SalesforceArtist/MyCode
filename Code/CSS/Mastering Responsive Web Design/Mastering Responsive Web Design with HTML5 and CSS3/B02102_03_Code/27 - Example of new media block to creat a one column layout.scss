@@ -1,0 +1,12 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+27 - Example of new media block to creat a one column layout
+*/
+
+.grid_3,
+.grid_9,
+.grid_12 {
+	@include forSmallScreens(640px) {
+		width: 440px;
+	}
+}

@@ -1,0 +1,32 @@
+<apex:page controller="OrderStatusUpdate" id="pageId">
+    <script type="text/javascript">
+        function updateStatus(input,id) {
+        
+            if(input.checked){
+                document.getElementById(id).value="Processing";
+                //alert(document.getElementById(id).value);
+            }else{
+                document.getElementById(id).value="New";
+                //alert(document.getElementById(id).value);
+            }
+        }
+    </script>
+    <apex:form id="formId">
+    <apex:pageBlock id="pageBId">
+        <apex:pageBlockTable id="tableId" value="{!Orders}" var="order">
+            <apex:column value="{!order.Name}"/>
+            <apex:column value="{!order.Customer__c}"/>
+            <apex:column id="checkId" headerValue="Status">
+                <apex:inputField id="inputStatus" value="{!order.Status__c}" />
+            </apex:column>
+            <apex:column headerValue="Started Processing" >
+                <apex:selectCheckboxes onclick="updateStatus(this,'{!$Component.inputStatus}');" >
+                    
+                 </apex:selectCheckboxes>
+            </apex:column>
+            
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+    
+</apex:page>

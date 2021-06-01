@@ -1,0 +1,22 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Pattern				-	Bridge Design Pattern
+ * Description			-	Blog Framework
+ * */
+public class BlogFramework extends CoreFramework {
+
+    public BlogFramework(ITheme t){
+        //Call constructor of parent class
+        super(t);
+    }
+    
+    public override void capability(){
+        System.debug('This is Blog Framework and does not suppoer Menu');
+    }
+    
+    //As blog does not support Menu, we will not style it
+    public override void showMenu_Body(){ 
+        theme.styleContent(); 
+    }   
+}

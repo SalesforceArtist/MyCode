@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Chapter 08 - 04</title>
+<style type="text/css">
+	body { font-family: monospace;  font-size: 1em; }
+	#results { margin-top: 1em; }
+</style>
+</head>
+
+<body>
+<button onclick="makeAPromise()">Make A Promise</button>
+
+<div id="results"></div>
+	
+<script type="text/javascript">
+
+	function makeAPromise() {
+		var timerCount = 0;
+		document.getElementById("results").innerHTML += 
+		timerCount + ": <strong>First</strong> count <br />";
+		
+		var promiseNo1 = new Promise(
+	    function(resolve) {       
+	      	for (var i = 0; i <= 1000; i++) {
+		      	timerCount = i * Math.random();
+	      	}
+	        resolve(timerCount);
+	    });
+	    promiseNo1.then(
+		    function(response) {
+				var totalCount = response + timerCount;
+			    window.setTimeout(function(){
+					document.getElementById("results").innerHTML += 
+					totalCount + 
+					": <strong>Second</strong> count (delayed)<br />";
+				}, timerCount);
+		    }
+	    ).then(
+		    function() {
+			    document.getElementById("results").innerHTML += 
+				timerCount +  ": <strong>Third</strong> count <br />";
+		    }
+	    );
+	}
+
+</script>
+</body>
+</html>

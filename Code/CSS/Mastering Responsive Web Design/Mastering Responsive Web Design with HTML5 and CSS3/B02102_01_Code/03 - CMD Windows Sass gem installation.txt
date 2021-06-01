@@ -1,0 +1,7 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+03 - CMD Windows Sass gem installation
+*/
+
+gem install sass
+

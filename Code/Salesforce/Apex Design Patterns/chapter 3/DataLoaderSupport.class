@@ -1,0 +1,28 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * This class extends "SalesforceSupportDecorator" abstract class to give information about cost of Dataloader supports.
+ * */
+public class DataLoaderSupport extends SalesforceSupportDecorator {
+    
+    SalesforceSupport support ;
+    Integer totalCase = 1 ;
+    
+    public DataLoaderSupport(SalesforceSupport s, Integer totalCasePerMonth)
+    {
+        support = s;
+        totalCase = totalCasePerMonth;
+    }
+    
+    /**
+     * Total cost to resolve one case
+     * */
+    public override Double getCost(){
+        return 80.0 * totalCase + support.getCost();
+    }
+    
+    public override String getDescription(){
+        return support.getDescription() + ', Decorator class - DataLoaderSupport';
+    } 
+
+}

@@ -1,0 +1,8 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+35 - Compiled CSS from declaring the first property of multiple arguments
+*/
+
+.selector-a {
+	@include genericContainer(25px);
+}

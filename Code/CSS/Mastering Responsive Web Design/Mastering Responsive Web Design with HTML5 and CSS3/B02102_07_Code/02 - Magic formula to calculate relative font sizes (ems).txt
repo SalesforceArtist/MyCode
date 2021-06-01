@@ -1,0 +1,6 @@
+/*
+Chapter 7: Meaningful Typography for RWD
+2 - Magic formula to calculate relative font sizes (ems)
+*/
+
+target ÷ context = result

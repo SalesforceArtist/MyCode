@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <script type=“application/javascript”>
+    function drawRectangle()  {
+      var canvas = document.getElementById(‘packt’);
+      var context = canvas.getContext(“2d”);
+      context.fillStyle = “rgb(200,0,0)”;
+      context.fillRect (90, 90, 190, 190);
+      context.clearRect(130,130,110,110);
+      context.strokeRect(150,150,70,70); 	
+      
+}
+  </script>
+ </head>
+ <body onload=“drawRectangle();”>
+   <canvas id=“packt” width=“300” height=“300”></canvas>
+ </body>
+</html>

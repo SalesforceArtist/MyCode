@@ -1,0 +1,20 @@
+/**
+ * Adapter implementation for "PaymentForYou" payment service
+ * Hides entire complexity to communicate to underlying service
+ * */ 
+public class PaymentForYouAdapter implements IPaymentAdapter{
+    PaymentForYouProcessor processor;
+    
+    //submit request to processor class to invoke payment processing
+    public void submitRequest(PaymentRequest request){
+        String xmlData = generateXMLData(request);
+        processor.submitRequest(xmlData);
+    }
+    /*
+     * placeholder method to generate XML stream for payment 
+     * request as per underlying service requirements
+     */
+    String generateXMLData(PaymentRequest request){
+        return 'XML Data';
+    }
+}

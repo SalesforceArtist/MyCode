@@ -1,0 +1,75 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+32 - (AWD) Compiled CSS file of all media queries
+*/
+
+@media (max-width: 980px) {
+	.container_12 {
+		width: 768px;
+	}
+}
+@media (max-width: 768px) {
+	.container_12 {
+		width: 640px;
+	}
+}
+@media (max-width: 640px) {
+	.container_12 {
+		width: 480px;
+	}
+}
+@media (max-width: 480px) {
+	.container_12 {
+		width: 320px;
+		padding: 0;
+	}
+}
+@media (max-width: 980px) {
+	.container_12 .grid_12 {
+		width: 728px;
+	}
+}
+@media (max-width: 768px) {
+	.container_12 .grid_12 {
+		width: 600px;
+	}
+}
+@media (max-width: 980px) {
+	.container_12 .grid_3 {
+		width: 200px;
+	}
+}
+@media (max-width: 768px) {
+	.container_12 .grid_3 {
+		width: 160px;
+	}
+}
+@media (max-width: 640px) {
+	.container_12 .grid_3 {
+		height: 50px;
+	}
+}
+@media (max-width: 980px) {
+	.container_12 .grid_9 {
+		width: 508px;
+	}
+}
+@media (max-width: 768px) {
+	.container_12 .grid_9 {
+		width: 420px;
+	}
+}
+@media (max-width: 640px) {
+	.container_12 .grid_3,
+	.container_12 .grid_9,
+	.container_12 .grid_12 {
+		width: 440px;
+	}
+}
+@media (max-width: 480px) {
+	.container_12 .grid_3,
+	.container_12 .grid_9,
+	.container_12 .grid_12 {
+		width: 300px;
+	}
+}

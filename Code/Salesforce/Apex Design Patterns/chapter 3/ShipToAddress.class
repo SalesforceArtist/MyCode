@@ -1,0 +1,13 @@
+/**
+ * Apex Design Patterns - 	Chapter 3 
+ * This class ships product to customer in Facade Pattern
+ * */
+public class ShipToAddress {
+    
+    //Ship product to address
+    public boolean ship(String add, String prodName){
+        System.debug('"'+prodName+'" is shipped to '+add);
+        return true;
+    }
+
+}

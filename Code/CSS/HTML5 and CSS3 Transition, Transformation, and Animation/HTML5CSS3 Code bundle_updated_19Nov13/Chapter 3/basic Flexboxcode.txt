@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<style>
+	#flex-container {
+	    display: -webkit-flex;
+	    display: flex;
+	    width: 500px;
+	    height: 500px;
+	    background-color: Navy;
+	}
+	
+	#flex-item {
+	    background-color: Silver;
+	    width: 200px;
+	    height: 200px;
+	    margin: 20px;
+	}
+	</style>
+	</head>
+	<body>
+	<div id="flex-container">
+	<div id="flex-item">Alpha</div>
+	<div id="flex-item">Beta</div>
+	</div>
+	</body>
+	</html>
+

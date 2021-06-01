@@ -1,0 +1,3 @@
+<apex:page standardController="My_Custom_Object__c">
+	<!-- markup goes here -->
+</apex:page>

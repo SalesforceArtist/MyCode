@@ -1,0 +1,13 @@
+/**
+ * Chapter 2 	- 	Creational Design Pattern
+ * Author		-	Jitendra Zaa
+ * */
+Public interface IComputerFactory {
+
+		IProcessor getProcessor();
+
+		IStorage getStorage();
+
+		IMonitor getMonitor();  
+      
+    }

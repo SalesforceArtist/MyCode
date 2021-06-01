@@ -1,0 +1,32 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+21 - The SCSS for the Flexbox example
+*/
+
+/*
+  Custom Fluid & Responsive Grid System
+  Structure: Mobile-first (min-width)
+  Syntax: SCSS
+  Grid: Flexbox-based
+  Created by: Your Name
+  Date: MM/DD/YY
+*/
+
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+//Moble-first Media Queries Mixin
+@mixin forLargeScreens($media) {
+    @media (min-width: $media/16+em) { @content }
+}
+
+//Main container
+.main-container {
+    width: 100%;
+    //Change this value to ANYTHING you want, no need to edit anything else
+    max-width: 1200px;
+    //Any value you want
+    padding: 0 1.67%;
+    margin: auto;
+}

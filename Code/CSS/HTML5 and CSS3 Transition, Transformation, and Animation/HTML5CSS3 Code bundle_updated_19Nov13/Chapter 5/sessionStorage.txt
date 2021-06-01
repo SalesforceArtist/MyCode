@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<title> Session Storage: A part of HTML5 webstorage </title>
+</head>
+<body>
+
+  <script type=“text/javascript”>
+    if( sessionStorage.visitWebsite ){
+       sessionStorage.visitWebsite = Number(sessionStorage.visitWebsite) +1;
+    }else{
+       sessionStorage.visitWebsite = 1;
+    }
+    document.write(“The user has visited this webpage :” + sessionStorage.visitWebsite +” times” );
+  </script>
+  <p> Click on F5 or Right click and click on Reload for information on the number of times this page has been visited.</p>
+</body>
+</html>

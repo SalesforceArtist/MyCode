@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>Chapter 7 - 05</title>
+        
+        <style type="text/css">
+            body { font-family: sans-serif; }
+            #dot {
+                width: 100px;
+                height: 100px;
+                -webkit-border-radius: 50px;
+                background-color: #333;
+                position: absolute;
+                left: 50px;
+                top: 50px;
+                -webkit-transform: -webkit-translate3d(0,0,0);
+                will-change: left;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Data goes here -->
+        <div id="dot"></div>
+    </body>
+    <script type="text/javascript">
+        (function(){
+         var dot = document.getElementById("dot");
+         var i = 50;
+         
+         console.time("JavaScript Animation");
+         var interval = setInterval(function(){
+            i++;
+            dot.style.left = i + "px";
+            if(i === 450) {
+            clearInterval(interval);
+            console.timeEnd("JavaScript Animation");
+            }
+            }, 1);
+         
+         
+         }())
+        </script>
+</html>

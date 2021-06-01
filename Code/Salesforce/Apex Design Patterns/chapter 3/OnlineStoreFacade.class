@@ -1,0 +1,22 @@
+/**
+ * Apex Design Patterns - 	Chapter 3 
+ * This is Facade class
+ * */
+public class OnlineStoreFacade {
+    
+    Inventory inv = new Inventory();
+    AddressVerification add = new AddressVerification();
+    ApplyDiscount disc = new ApplyDiscount();
+    PaymentVerification pym = new PaymentVerification();
+    ShipToAddress shipProduct = new ShipToAddress();
+    
+    //This method takes care of processing all steps in sub systems
+    public void processSteps(OrderDetail order){
+        inv.updateInventory(order.productId , order.productCount );
+        add.verify(order.zipCode);
+        disc.calculate(order.price , order.discount);
+        pym.verify(order.paymentCardNumber);
+        shipProduct.ship(order.address , order.productName);
+    }
+
+}

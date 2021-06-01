@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type=“text/javascript”>
+function demoScale(){
+
+ var canvas = document.getElementById(‘packt’);
+ 
+ var context = canvas.getContext(‘2d’);
+
+
+context.fillStyle = “navy”;
+context.fillRect(10, 10, 50, 90);
+
+context.scale(3,3);
+
+context.fillStyle = “silver”;
+context.fillRect(10, 10, 50, 90);
+}
+</script>
+</head>
+<body onload=“demoScale();”>
+   <canvas id=“packt” width=“400” height=“400”></canvas>
+</body>
+</html>

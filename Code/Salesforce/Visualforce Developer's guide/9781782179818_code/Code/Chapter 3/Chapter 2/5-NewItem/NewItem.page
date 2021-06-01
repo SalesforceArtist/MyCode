@@ -1,0 +1,22 @@
+<apex:page controller="ItemController">
+    <apex:form >
+        <apex:pageBlock title="Existing Items">
+            <apex:pageBlockTable value="{!ExistingITems}" var="oneItem" rendered="{!ExistingITems.size > 0}">
+                <apex:column value="{!oneItem.Item_Name__c}"/>
+                <apex:column value="{!oneItem.Unit_Price__c}"/>
+            </apex:pageBlockTable> 
+            <apex:outputText value="No records to display" rendered="{!ExistingITems.size == 0}"></apex:outputText>       
+        </apex:pageBlock>
+        
+        <apex:pageBlock title="New Item">
+        <apex:pageMessages ></apex:pageMessages>
+            <apex:pageBlockSection >                
+                <apex:inputField value="{!NewItem.Item_Name__c}"/>                
+                <apex:inputField value="{!NewItem.Unit_Price__c}"/>               
+            </apex:pageBlockSection>            
+            <apex:pageBlockButtons >
+                <apex:commandButton action="{!insertNewItem}" value="save"/>
+            </apex:pageBlockButtons>            
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

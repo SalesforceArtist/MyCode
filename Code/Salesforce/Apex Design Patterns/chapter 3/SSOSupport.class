@@ -1,0 +1,29 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * This class extends "SalesforceSupportDecorator" abstract class to give information about cost of SSO related supports.
+ * */
+public class SSOSupport extends SalesforceSupport {
+    
+    SalesforceSupport support ;
+    Integer totalCase = 1 ;
+    
+    public SSOSupport(SalesforceSupport s, Integer totalCasePerMonth)
+    {
+        support = s;
+        totalCase = totalCasePerMonth; 
+    }
+
+    
+    /**
+     * Total cost to resolve one case
+     * */
+    public override Double getCost( ){
+        return 65.0  * totalCase + support.getCost();
+    }
+    
+    public override String getDescription(){
+        return 'This class represents informations related to SSO cases';
+    } 
+
+}

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+<header>
+<h2> Importance of the Navigation element </h2>
+</header>
+<p> Use of the Nav element  </p>
+<hr>
+<p> We can go to forums or refer to the articles on this page
+<nav>
+<ul>
+<li> <a href="www.packtpub.com"> Packt Publishing </li>
+<li> <a href="http://www.packtpub.com/books/ajax"> Books on AJAX </li>
+<li> <a href="http://www.packtpub.com/latest_articles"> Latest Articles </li>
+<li> <a href="http://packtlib.packtpub.com/"> Packt Online Library </li>
+<li> <a href="http://www.packtpub.com/news-center"> News </li>
+</nav>
+<br>
+<footer>
+<p> Copyright by Packt </p>
+<p> <a href ="http://www.packtpub.com/contact?r=1"> Contact us </a> <p>
+<a href="http://www.packtpub.com/aboutl">About us</a>
+</footer>
+</body>
+</html>

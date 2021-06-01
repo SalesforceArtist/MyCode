@@ -1,0 +1,34 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * This class uses Decorator pattern to add dynamic behavior to Admin and Developer cases.
+ * */
+public class DecoratorPatternSupport {
+
+    
+    /**
+     * This method computes total cost for month for Dataloader,
+     * Community and Admin Cases 
+     * */ 
+    public static void getDataloaderCommunityAdminCost(Integer adminCaseCount, Integer communityCaseCount, Integer dataloaderCaseCount){
+        
+        SalesforceSupport admin = new AdminSupport(adminCaseCount);
+        admin = new CommunitySupport(admin, communityCaseCount);
+        admin = new DataLoaderSupport(admin, dataloaderCaseCount);
+        System.debug(' Total Cost of all Supports - '+admin.getCost());
+        System.debug(' Dexcription of all support cases types- '+admin.getDescription());
+    }
+    
+    /**
+     * This method computes total cost for month for Dataloader,
+     * Community and Admin Cases 
+     * */ 
+    public static void getSSODeveloperCost(Integer developerCaseCount, Integer ssoCaseCount ){
+        
+        SalesforceSupport dev = new ApexSupport(developerCaseCount);
+        dev = new SSOSupport(dev, ssoCaseCount); 
+        System.debug(' Total Cost of all Supports - '+dev.getCost());
+        System.debug(' Dexcription of all support cases types- '+dev.getDescription());
+    }
+    
+}

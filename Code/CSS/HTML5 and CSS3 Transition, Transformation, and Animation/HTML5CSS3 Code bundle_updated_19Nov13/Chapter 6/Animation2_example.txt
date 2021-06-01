@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style> 
+body {
+    background:#000;
+    color:#fff;
+}
+#trigger {
+    width:100px;
+    height:100px;
+    position:absolute;
+    top:50%;
+    margin:-50px 0 0 -50px;
+    left:50%;
+    background: black;
+    border-radius:50px;
+
+    /*set the animation*/
+    /*[animation name] [animation duration] [animation timing function] [animation delay] [animation iterations count] [animation direction]*/
+    animation: glowness 5s linear 0s 5 alternate;
+    -moz-animation: glowness 5s linear 0s 5 alternate; /* Firefox */
+    -webkit-animation: glowness 5s linear 0s 5 alternate; /* Safari and Chrome */
+    -o-animation: glowness 5s linear 0s 5 alternate; /* Opera */
+    -ms-animation: glowness 5s linear 0s 5 alternate; /* IE10 */
+    
+}
+#trigger:hover {
+    animation-play-state: paused;
+    -moz-animation-play-state: paused;
+    -webkit-animation-play-state: paused;
+    -o-animation-play-state: paused;
+    -ms-animation-play-state: paused;
+}
+/*animation keyframes*/
+@keyframes glowness
+{
+0%   {box-shadow: 0 0 80px orange;}
+25%  {box-shadow: 0 0 150px red;}
+50%  {box-shadow: 0 0 70px pink;}
+75%  {box-shadow: 0 0 50px violet;}
+100% {box-shadow: 0 0 100px yellow;}
+}
+
+@-moz-keyframes glowness /* Firefox */
+{
+0%   {box-shadow: 0 0 80px orange;}
+25%  {box-shadow: 0 0 150px red;}
+50%  {box-shadow: 0 0 70px pink;}
+75%  {box-shadow: 0 0 50px violet;}
+100% {box-shadow: 0 0 100px yellow;}
+}
+
+@-webkit-keyframes glowness /* Safari and Chrome */
+{
+0%   {box-shadow: 0 0 80px orange;}
+25%  {box-shadow: 0 0 150px red;}
+50%  {box-shadow: 0 0 70px pink;}
+75%  {box-shadow: 0 0 50px violet;}
+100% {box-shadow: 0 0 100px yellow;}
+} 
+
+@-o-keyframes glowness /* Opera */
+{
+0%   {box-shadow: 0 0 80px orange;}
+25%  {box-shadow: 0 0 150px red;}
+50%  {box-shadow: 0 0 70px pink;}
+75%  {box-shadow: 0 0 50px violet;}
+100% {box-shadow: 0 0 100px yellow;}
+} 
+
+@-ms-keyframes glowness /* IE10 */
+{
+0%   {box-shadow: 0 0 20px green;}
+25%  {box-shadow: 0 0 150px red;}
+50%  {box-shadow: 0 0 70px pink;}
+75%  {box-shadow: 0 0 50px violet;}
+100% {box-shadow: 0 0 100px yellow;}
+} 
+</style>
+<script>
+// animation started (buggy on firefox)
+$('#trigger').on('animationstart mozanimationstart webkitAnimationStart oAnimationStart msanimationstart',function(){
+    $('p').html('animation started');
+})
+// animation paused
+$('#trigger').on('mouseover',function(){
+    $('p').html('animation paused');
+})
+// animation re-started
+$('#trigger').on('mouseout',function(){
+    $('p').html('animation re-started');
+})
+// animation ended
+$('#trigger').on('animationend mozanimationend webkitAnimationEnd oAnimationEnd msanimationend',function(){
+    $('p').html('animation ended');
+})
+//iteration count 
+var i =0;
+$('#trigger').on('animationiteration mozanimationiteration webkitAnimationIteration oAnimationIteration msanimationiteration',function(){
+    i++;
+    $('p').html('animation iteration='+i);
+})
+</script>
+</head>
+<body>
+
+<div id="trigger"></div>
+
+</body>
+</html>
+

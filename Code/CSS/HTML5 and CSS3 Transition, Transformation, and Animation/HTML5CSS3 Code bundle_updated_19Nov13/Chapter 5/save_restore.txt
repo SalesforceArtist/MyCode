@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script type=“text/javascript”>
+function saveRestoreDemo(){
+ var canvas = document.getElementById(‘packt’);
+  var ctx = canvas.getContext(‘2d’);
+    ctx.fillStyle = ‘silver’;
+    
+     ctx.fillRect(0,0,150,150);
+     ctx.save();      
+                
+     ctx.fillStyle = ‘lime’;         
+     ctx.fillRect(30,30,90,90);
+   
+
+     // Restore the saved silver rectangle however change  
+	the dimensions of the rectangle.
+     ctx.restore();
+     ctx.fillRect(40,40,30,30);  
+    			} 
+</script>
+</head>
+<body onload=“saveRestoreDemo();”>
+   <canvas id=“packt”></canvas>
+</body>
+</html>

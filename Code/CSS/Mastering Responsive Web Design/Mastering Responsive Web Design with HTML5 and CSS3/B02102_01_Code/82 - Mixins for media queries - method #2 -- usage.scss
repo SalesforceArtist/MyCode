@@ -1,0 +1,13 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+82 - Mixins for media queries - method #2 -- usage
+*/
+
+header {
+	width: 50%;
+	background: red;
+	@include breakpoint(medium) {
+		width: 100%;
+		background: blue;
+	}
+}

@@ -1,0 +1,6 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+35 - Solution B - 960 divided by 980
+*/
+
+(960px ÷ 980px) x 100 = 97.95918367346939% (97.95%)

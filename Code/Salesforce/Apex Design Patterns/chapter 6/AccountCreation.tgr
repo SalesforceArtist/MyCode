@@ -1,0 +1,17 @@
+/**
+ * Chapter 6    :   Anti Pattern
+ * Author       :   Anshul Verma
+ * Description  :   This trigger shows how to effectively handle SOQL queries within loops/ triggers
+ * */
+trigger AccountCreation on Account (after insert) {
+    List<Contact> lstNewContacts = new List<Contact>();
+    /* Iterate over all accounts inserted */
+    
+    for(Account account :Trigger.new){
+        /* generate new account */
+        Contact c = new Contact(LastName = account.Name, accountid = account.id);
+        lstNewContacts.add(c);
+    }
+    /* insert all new contacts */
+    insert lstNewContacts;
+}

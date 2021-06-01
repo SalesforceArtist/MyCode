@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Info about Packt </title>
+</head>
+<body>
+<section itemscope itemtype="www.packtpub.com">
+<h1 itemprop="name"> Packt Publishing Ltd. </h1>
+<p itemprop="street-address"> Livery Place </p>
+<p itemprop="street-name"> 35 Livery St., Birmingham </p> 
+<p itemprop="Pin-code"> B3 2PB </p>
+<p itemprop="country"> United Kingdom </p>
+<p itemprop="contact-info"> contact@packtpub.com </p>
+</body>
+</html>

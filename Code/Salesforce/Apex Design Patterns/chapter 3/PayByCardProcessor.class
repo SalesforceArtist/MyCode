@@ -1,0 +1,9 @@
+/**
+* It interacts with external Payment service “PayByCard” and existing 
+* code uses it via adapter resulting in loose coupling 
+**/
+public class PayByCardProcessor{
+    public void processPayment(String jsonData){
+        //process payment
+    } 
+}

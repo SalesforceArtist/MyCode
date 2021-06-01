@@ -1,0 +1,12 @@
+/**
+ * Apex Design Patterns - 	Chapter 3 
+ * This class represents Address Verification module in Facade Pattern
+ * */
+public class AddressVerification {
+	
+    //This method is used to verify address
+    public boolean verify(String zipAdd){
+        System.debug('Product can be shipped at zip - '+zipAdd);
+        return true;
+    }
+}

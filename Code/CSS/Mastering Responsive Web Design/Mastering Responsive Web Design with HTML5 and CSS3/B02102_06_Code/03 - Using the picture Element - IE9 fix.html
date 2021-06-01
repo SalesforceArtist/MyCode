@@ -1,0 +1,13 @@
+<!--
+Chapter 6: Working with Images and Video in RWD
+3 - Using the <picture> Element - IE9 fix
+-->
+
+<picture>
+    <!--[if IE 9]><video style="display: none;"><![endif]-->
+    <source srcset="images/grandmasters-small-ad.jpg" media="(max-width: 40em)">
+    <source srcset="images/grandmasters-medium-ad.jpg" media="(max-width: 64em)">
+    <source srcset="images/grandmasters-default.jpg">
+    <!--[if IE 9]></video><![endif]-->
+    <img src="images/grandmasters-default.jpg" alt="Fallback image">
+</picture>

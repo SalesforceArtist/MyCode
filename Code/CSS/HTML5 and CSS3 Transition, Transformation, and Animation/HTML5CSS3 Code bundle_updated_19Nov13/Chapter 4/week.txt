@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Week </title>
+<h2> Input type : Week </h2>
+</head>
+<body>
+<label for="packt"> Select Week </label>
+<input id="packt" type="week" > 
+</body>
+</html>
+

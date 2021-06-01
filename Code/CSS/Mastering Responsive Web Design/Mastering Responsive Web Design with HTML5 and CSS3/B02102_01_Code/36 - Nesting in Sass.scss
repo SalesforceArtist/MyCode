@@ -1,0 +1,27 @@
+/*
+Chapter 1: Harness the Power of Sass for Responsive Web Design
+36 - Nesting in Sass
+*/
+
+$brandBlue: #416e8e;
+
+nav {
+	ul {
+		display: flex;
+		margin: 0;
+		padding: 0;
+		list-style: none;
+	}
+
+	li {
+		margin: 5px;
+		background: #000;
+	}
+
+	a {
+		display: block;
+		padding: 5px 15px;
+		text-decoration: none;
+		color: $brandBlue;
+	}
+}

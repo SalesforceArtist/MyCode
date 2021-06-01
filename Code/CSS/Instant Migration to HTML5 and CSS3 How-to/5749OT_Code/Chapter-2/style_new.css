@@ -1,0 +1,17 @@
+@charset "utf-8";
+/* CSS Document */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section { display:block;}
+header, nav, footer {clear:both;}
+header, nav, footer, article, aside {margin:5px; border:1px solid #999; padding:10px;}
+article {width:72%;float:left;}
+aside {width:22%;float:left;}
+
+nav ul {margin:0; padding:0;}
+nav ul li {display:inline; margin-right:30px;}
+footer {font-size:0.7em; color:#000;}
+
+header hgroup {font-weight:bold;}
+article hgroup {font-weight:normal;}
+aside hgroup {text-decoration:none;}
+
+

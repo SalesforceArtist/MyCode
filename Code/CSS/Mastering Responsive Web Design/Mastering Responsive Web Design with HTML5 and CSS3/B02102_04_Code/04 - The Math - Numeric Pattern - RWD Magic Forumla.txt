@@ -1,0 +1,6 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+4 - The Math – Numeric Pattern: RWD Magic Forumla
+*/
+
+(target ÷ context) x 100 = result %

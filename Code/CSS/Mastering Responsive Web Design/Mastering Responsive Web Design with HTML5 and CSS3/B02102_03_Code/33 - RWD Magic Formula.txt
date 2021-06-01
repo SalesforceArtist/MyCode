@@ -1,0 +1,7 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+33 - RWD Magic Formula
+*/
+
+
+(target ÷ context) x 100 = result %

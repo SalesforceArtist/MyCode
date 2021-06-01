@@ -1,0 +1,52 @@
+<apex:page controller="CustomerReviewController">
+    <apex:form >
+    <apex:sectionHeader title="Products" />
+    
+    
+    <apex:pageblock >
+        <apex:pageblockTable value="{!Products}" var="p">
+            <apex:column value="{!p.Name}" headerValue="Name"/>
+            <apex:column value="{!p.ProductCode}" headerValue="Product Code"/>
+            <apex:column value="{!p.TaxRate}" headerValue="Tax Rate"/>
+            <apex:column headerValue="Tax Type">
+                <apex:outputtext value="{!p.TaxType}"/>
+                <img src="/img/alohaSkin/help_orange.png" title="{!p.TaxDetails}"/>
+            </apex:column>
+            <apex:column headerValue="Total Tax">
+                <apex:outputText value="$ {0, number, ###,###,##0.00}">
+                   <apex:param value="{!p.TotalTax}"/>
+                </apex:outputText>
+            </apex:column>
+            <apex:column value="{!p.VendorName}" headerValue="Vendor Name"/>
+            <apex:column value="{!p.VendorShippingAddress}" headerValue="Shipping Address"/>
+            <apex:column value="{!p.VendorContactPhone}" headerValue="Vendor Phone"/>
+            <apex:column value="{!p.VendorContactEmail}" headerValue="Vendor Email"/>
+        </apex:pageblockTable>
+    </apex:pageblock>
+    <!--
+    <apex:pageblock >
+        <apex:pageblockTable value="{!Products}" var="p">
+            <apex:column value="{!p.Name}" headerValue="Name"/>
+            <apex:column value="{!p.ProductCode}" headerValue="Product Code"/>
+            <apex:column value="{!p.ProductTax.Rate}" headerValue="Tax Rate"/>
+            <apex:column headerValue="Tax Type">
+                <apex:outputtext value="{!p.ProductTax.Name}"/>
+                <img src="/img/alohaSkin/help_orange.png" title="{!p.ProductTax.Description}"/>
+            </apex:column>
+            <apex:column headerValue="Total Tax">
+                <apex:outputText value="$ {0, number, ###,###,##0.00}">
+                   <apex:param value="{!p.TotalTax}"/>
+                </apex:outputText>
+            </apex:column>
+            <apex:column value="{!p.ProductVendor.Name}" headerValue="Vendor Name"/>
+            <apex:column value="{!p.ProductVendor.ShippingAddress}" headerValue="Shipping Address"/>
+            <apex:column value="{!p.ProductVendor.Phone}" headerValue="Vendor Phone"/>
+            <apex:column value="{!p.ProductVendor.Email}" headerValue="Vendor Email"/>
+        </apex:pageblockTable>
+    </apex:pageblock>
+    -->
+    
+    </apex:form>
+    
+    
+</apex:page>

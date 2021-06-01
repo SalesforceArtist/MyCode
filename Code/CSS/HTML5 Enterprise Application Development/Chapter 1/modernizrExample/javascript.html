@@ -1,0 +1,27 @@
+<!-- HTML5 Enterprise Applications 
+  -- by Nehal Shah & Gabriel Balda 
+  -- July 2012
+  -- Modernizr Example: Use of Javascript
+  -->
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <script src="js/modernizr.js" type="text/javascript"></script>
+        <style>
+            header{
+                color:#ff0000;
+                font-size:40px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>Hello HTML5!</header>
+        <script type="text/javascript">
+            if (Modernizr.geolocation){
+                alert("Congrats! Your browser supports Geolocation!");         
+            }else{
+                alert("Your browser doesn’t support Geolocation :(");         
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+<article>
+<h1> Fruit Facts </h1>
+<section>
+<h2> Citrus fruits </h2>
+Citrus fruits are good for your health.
+<br> 
+Oranges and Sweet lime are examples of Citrus fruits.
+<br>
+It contains Vitamin C which is good for colds and coughs.
+</section>
+<section>
+<h2> Dry fruits </h2>
+Dry fruits are very nutritious. 
+<br>
+It is advisable to eat almonds to maintain good health.
+<br>
+Dry fruits help boost the immune system.
+</section>
+</article>
+</body>
+</html> 

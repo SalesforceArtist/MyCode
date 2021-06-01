@@ -1,0 +1,31 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+12 - Add the UTF-8 Character Set Directive and a Credits Section
+*/
+
+@charset "UTF-8";
+
+/*
+    Custom Fluid & Responsive Grid System
+    Structure: Mobile-first (min-width)
+    Syntax: SCSS
+    Grid: Float-based
+    Created by: Your Name
+    Date: MM/DD/YY
+*/
+
+//Grid 12 Columns
+.grid {
+	&-1  { width:6.67%; }
+	&-2  { width:15%; }
+	&-3  { width:23.33%; }
+	&-4  { width:31.67%; }
+	&-5  { width:40%; }
+	&-6  { width:48.33%; }
+	&-7  { width:56.67%; }
+	&-8  { width:65%; }
+	&-9  { width:73.33%; }
+	&-10 { width:81.67%; }
+	&-11 { width:90%; }
+	&-12 { width:98.33%; }
+}

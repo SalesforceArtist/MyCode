@@ -1,0 +1,19 @@
+{
+  "name": "concurrent-javascript",
+  "version": "1.0.0",
+  "devDependencies": {
+	"babel-runtime": "<6.0",
+	"paralleljs": "",
+	"co": "",
+	"commander": "",
+	"http-proxy": "",
+	"formidable": "",
+	"load-grunt-tasks": "",
+	"grunt": "",
+	"grunt-contrib-clean": "",
+	"grunt-contrib-copy": "",
+	"grunt-babel": "<6.0",
+	"grunt-preprocess": "",
+	"lodash": ""
+  }
+}

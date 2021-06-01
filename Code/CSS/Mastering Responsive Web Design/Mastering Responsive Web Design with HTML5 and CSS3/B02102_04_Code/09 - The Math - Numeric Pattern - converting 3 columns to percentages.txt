@@ -1,0 +1,6 @@
+/*
+Chapter 4: CSS Grids, Frameworks, UI Kits and Flexbox
+9 - The Math – Numeric Pattern: converting 3 columns to percentages
+*/
+
+280 ÷ 1200 x 100 = 23.33%

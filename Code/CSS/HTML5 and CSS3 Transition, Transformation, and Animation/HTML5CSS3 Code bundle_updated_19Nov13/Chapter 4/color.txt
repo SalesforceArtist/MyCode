@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Color input type in HTML5 </title>
+<h2>  Input Type: Color </h2>
+</head>
+<div>
+<label for="color-ref"> Select a color of your choice :</label>
+<input id="color-ref" type="color" />
+<input type="submit" value="Go">
+</div>
+</html>
+
+

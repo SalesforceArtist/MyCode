@@ -1,0 +1,21 @@
+<html>
+  <head>
+  </head>
+ 
+<body ng-app="aprsapp">
+ 
+  <div ng-controller="AprsController">
+      <button ng-click="doAjax()">Send AJAX Request</button>
+	  <div>{{debug}}</div>
+      <div>{{json}}</div>
+	  <br/>
+      <div>{{message}}<div>
+  </div>
+
+  <p>Powered by <a href="http://www.aprs.fi">aprs.fi</a></p>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.2/angular.min.js"></script>
+<script src="json-example-angularjs.js"></script>
+</body>
+</html>
+

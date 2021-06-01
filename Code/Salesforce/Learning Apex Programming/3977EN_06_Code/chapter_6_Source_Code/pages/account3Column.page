@@ -1,0 +1,42 @@
+<apex:page standardController="account" 
+	extensions="accountExtension">
+	<apex:sectionHeader title="Account Edit" 
+		subtitle="{!account.name}" />
+	<!-- pageMessages will show our messages!-->
+	<apex:pageMessages />	
+	<apex:form>
+		<apex:pageBlock title="Account Edit" mode="edit" >
+			<apex:pageBlockButtons>
+				<!--Standard Save for non-guests-->
+				<apex:commandButton value="Save" 
+					action="{!save}" 
+					rendered="{!NOT(isGuestUser)}"/>
+				
+				<!--Custom save method shown if Guest user-->
+				<apex:commandButton value="Save" 
+					action="{!customSave}" 
+					rendered="{!isGuestUser}"/>
+				
+				<!-- Standard Cancel not shown for Guest-->	
+				<apex:commandButton value="Cancel" 
+					action="{!cancel}" 
+					rendered="{!NOT(isGuestUser)}"/>
+
+				<!--Custom Cancel will take Guests back to componentExample-->
+				<apex:commandButton value="Cancel" 
+					action="/componentExample" 
+					rendered="{!isGuestUser}"
+					immediate="true"/>
+					<!-- Immediate allows us to ignore required fields-->
+			</apex:pageBlockButtons>
+			<apex:pageBlockSection title="Account Info" columns="3" >
+				<apex:inputField value="{!thisAccount.name}" />
+				<apex:inputField value="{!thisAccount.phone}" />
+				<apex:inputField value="{!thisAccount.website}" />
+				<apex:inputField value="{!thisAccount.industry}" />
+				<apex:inputField value="{!thisAccount.fax}" />
+				<apex:inputField value="{!thisAccount.type}" />
+			</apex:pageBlockSection>
+		</apex:pageBlock>
+	</apex:form>
+</apex:page>

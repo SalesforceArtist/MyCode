@@ -1,0 +1,21 @@
+<apex:page >
+	<script type="text/javascript">
+		function doStuff(){
+			var x = document.getElementById("myId");
+			console.log(x);
+		}
+	</script>
+	<img src="http://www.thisbook.com/logo.png" />
+	<h1>This is my title</h1>
+	<h2>This is my subtitle</h2>
+	<p>In a world where books are full of code, there was only one that taught you everything you needed to know about Apex!</p>
+	<ol>
+		<li>My first item</li>
+		<li>Etc.</li>
+	</ol>
+	<span id="myId"></span>
+	<iframe src="http://www.thisbook.com/mypage.html" />
+	<form action="http://thisbook.com/submit.html" >
+		<input type="text" name="yoursecret" />
+	</form>
+</apex:page>

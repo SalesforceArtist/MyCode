@@ -1,0 +1,21 @@
+/**
+ * Apex Design Patterns - 	Chapter 3
+ * Author				-	Jitendra Zaa
+ * Pattern				-	Bridge Design Pattern
+ * Description			-	Child Theme Class
+ * */
+public class Theme_WhiteBlue implements ITheme {
+	
+    public void styleHeader(){
+        System.debug('Header - Font size : 16px, Background	: Blue,	Color : Black');
+    }
+    public void styleFooter(){
+        System.debug('Footer - Font size : 14px, Background	: White,	Color : Blue');
+    }
+    public void styleMenu(){
+        System.debug('Menu - Font size : 12px, Background	: Blue,	Color : White');
+    }
+    public void styleContent(){
+        System.debug('Content - Font size : 16px, Background	: White,	Color : Black');
+    }
+}

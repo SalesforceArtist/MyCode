@@ -1,0 +1,10 @@
+/*
+Chapter 3: Mobile first or Desktop first?
+13 - Compiled CSS used to style the base HTML to use Respond.js with
+*/
+
+article { background: red; }
+
+@media (min-width: 40em) {
+    article { background: green; }
+}
