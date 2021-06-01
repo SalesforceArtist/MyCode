@@ -1,6 +1,6 @@
 
 @IsTest
-public class TestDataFactory {
+public class TestDataFactory { 
 
     /** Default value provider instance */
     private static DefaultValueProvider dvPrvdr = new DefaultValueProvider();
